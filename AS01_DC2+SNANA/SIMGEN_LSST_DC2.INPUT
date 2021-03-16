@@ -1,0 +1,85 @@
+
+
+NGENTOT_LC: 50
+GENVERSION: DC2_TEMP
+GENSOURCE:  RANDOM
+
+# --------------------
+# GENMODEL:   $SNDATA_ROOT/models/SALT2/SALT2.Guy10_UV2IR   # 10/20/2020  Bruno
+GENMODEL:   $SNDATA_ROOT/models/SALT2/SALT2.Guy10_UV2IR_NoOffset
+GENMAG_SMEAR_MODELNAME: NONE
+#GENMAG_OFF_GLOBAL:  1.0  # empirically needed to match SIM_mB ??
+
+# from https://github.com/rbiswas4/SNPop/blob/master/snpop/saltdists.py#L158
+
+GENPEAK_SALT2x1:     0.8727
+GENSIGMA_SALT2x1:    1.428 0.3587
+GENRANGE_SALT2x1:   -3.0   2.0
+
+GENPEAK_SALT2c:    -0.0475
+GENSIGMA_SALT2c:    0.04284 0.0965
+GENRANGE_SALT2c:   -0.40   0.40
+
+GENPEAK_SALT2ALPHA:   0.137
+GENPEAK_SALT2BETA:    3.2091
+
+# -----------------------
+SIMLIB_FILE:     $SNANA_LSST_ROOT/simlibs/LSST_DC2_Run2.2i_WFD.SIMLIB
+SIMLIB_MSKOPT:   0
+
+# HOSTLIB_FILE:    DC2.HOSTLIB
+# HOSTLIB_MSKOPT:  4  # apply SNMAGSHIFT in wgt map
+
+# ---------------------------------------------------
+
+RANSEED:        123459
+FORMAT_MASK:    32           ! 2=TEXT  32=FITS
+
+GENFILTERS:   ugrizY
+KCOR_FILE:    $SNANA_LSST_ROOT/kcor/2017-04_approx/kcor_LSST.fits
+
+# selection criteria for generation: 59580 - 60675
+GENRANGE_PEAKMJD:  59585 61445
+GENSIGMA_SEARCH_PEAKMJD:  1.0
+
+DNDZ: POWERLAW 2.5E-5  1.5  # Dilday 2008
+GENRANGE_REDSHIFT:  0.02   1.00
+GENSIGMA_REDSHIFT:  0.001
+GENRANGE_TREST:    -20.0  60.0
+SOLID_ANGLE: 6.0e-4     # 2 sq degrees
+#GENSIGMA_VPEC: 300.0  # peculiar velocity spread without correction, km/sec
+#VPEC_ERR:      300.0  # --> no correction
+
+UVLAM_EXTRAPFLUX:  500  # extrapolate fluxes down to 500 A.
+
+LENSING_PROBMAP_FILE:  $SNDATA_ROOT/models/lensing/LENSING_PROBMAP_LogNormal+MICECATv1.DAT
+
+# smear flags: 0=off, 1=on
+SMEARFLAG_FLUX:    1  # photo-stat smearing of signal, sky, etc ...
+SMEARFLAG_ZEROPT:  1  # smear zero-point with zptsig
+
+
+OPT_MWEBV:      2    # SFD98
+#OPT_MWEBV:      3    # SFD98 + Schalfly2011
+OPT_MWCOLORLAW: 99   # Fitzpatrick
+
+# 1=> software trigger 3=software & spec trigger
+APPLY_SEARCHEFF_OPT:  1
+SEARCHEFF_PIPELINE_EFF_FILE: $SNANA_LSST_ROOT/models/searcheff/SEARCHEFF_PIPELINE_LSST_DC2_Run2.2i_WFD.DAT
+
+# define pipeline logic for trigger (e.g., 2 detetions)
+SEARCHEFF_PIPELINE_LOGIC_FILE:  $SNANA_LSST_ROOT/models/searcheff/SEARCHEFF_PIPELINE_LOGIC.DAT
+
+
+# allow zero epochs so that we get generated SIM_[c,x1,mb] for
+# every event in the Simgen-dump
+APPLY_CUTWIN_OPT: 1
+CUTWIN_NEPOCH:  0 99999
+NEWMJD_DIF: 0.021  # to make trigger, 30 min between detections
+
+SIMGEN_DUMPALL:  22
+   CID LIBID SIM_EFFMASK  ZCMB ZHELIO ZCMB_SMEAR RA DEC  MWEBV
+   MU PEAKMJD MJD_TRIGGER
+   SIM_c SIM_x1 SIM_x0 SIM_mB
+   PEAKMAG_u PEAKMAG_g PEAKMAG_r PEAKMAG_i PEAKMAG_z PEAKMAG_Y
+

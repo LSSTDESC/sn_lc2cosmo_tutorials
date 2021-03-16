@@ -1,0 +1,85 @@
+#
+# Read SALT2 fit parameters and fit for distances in redshift bins
+# using technique from Marriner 2011 (https://arxiv.org/abs/1107.4631)
+#
+# For DC2, code is fast enough to run interactively with
+#   SALT2mu.exe SALT2mu_DC2_M11.INPUT
+#
+
+CONFIG:
+  BATCH_INFO: sbatch  $SBATCH_TEMPLATES/SBATCH_Cori.TEMPLATE 4
+  BATCH_WALLTIME:  '00:10:00'
+  
+  INPDIR+:
+  - $SNANA_DC2_DIR/OUT1_SALT2FITS_DATAONLY
+#  - point to other sample here; e.g, LOWZ
+
+  OUTDIR:  OUT1_SALT2mu_DC2_M11
+
+# examples of repeating fit with different options
+  MUOPT: 
+  - minos=1    # repeat with better errors
+  - powzbin=4  # change z binning of HD
+
+# give wfit options to trigger post-processing with wfit
+  WFITMUDIF_OPT: -cmb_sim 
+
+#END_YAML
+
+# =================================================================
+datafile=OUT1_SALT2FITS_DATAONLY/DC2_run22i_FITS/FITOPT000.FITRES
+prefix=OUT1_SALT2mu_DC2_M11
+
+opt_biascor=0
+#simfile_biascor=NONE
+#simfile_ccprior=NONE
+
+minos=0          # faster fit with MIGRAD errors
+powzbin=2.0      # bin size ~ (1+z)^2
+blindflag=0
+
+lensing_zpar=0.055
+min_per_zbin=1
+redchi2_tol=.01
+fitflag_sigmb=0
+sig1=0.001
+zmin=0.01
+zmax=1.00
+nzbin=10
+x1min=-3.0
+x1max=+3.0
+cmax=+0.3
+cmin=-0.3
+CUTWIN  x1ERR     0. 2.0
+CUTWIN  PKMJDERR  0. 3.0
+CUTWIN  FITPROB   0.05 1.0
+errmask_write=0
+p1=0.14
+p2=3.1
+p3=0.0
+p4=0.0
+p5=0.0
+p6=0.0
+p7=0.0
+p8=0.0
+p9=0.685
+p10=0.0
+p11=-1.0
+p12=0.0
+p13=0.0
+u1=1
+u2=1
+u3=0
+u4=0
+u5=0
+u6=0
+u7=0
+u8=0
+u9=0
+u10=0
+u11=0
+u12=0
+u13=0
+h0=70.0
+mag0=-30.00
+uave=1

@@ -1,0 +1,13 @@
+echo 'Run snana jobs to create SNANA table with epoch info ... '
+snana.exe LCFIT_DATA-ONLY.NML \
+  SNTABLE_LIST SNANA+EPOCHS \
+  ROOTFILE_OUT OUT_TABLE+EPOCHS.ROOT \
+             > OUT_TABLE+EPOCHS.LOG
+
+echo 'Extract flux-outliers '
+
+sntable_dump.pl OUT_TABLE+EPOCHS.ROOT SNANA -outlier_sim 50 1.0E8 \
+  > OUT_SNTABLE_DUMP.LOG
+
+tail -10   OUT_SNTABLE_DUMP.LOG
+

@@ -1,0 +1,67 @@
+
+# the yaml config block is for submit_batch script
+CONFIG:
+  BATCH_INFO: sbatch  $SBATCH_TEMPLATES/SBATCH_Cori.TEMPLATE 18
+  BATCH_WALLTIME:  '01:00:00'
+
+  OUTDIR: OUT2_SALT2FITS_DATA+BIASCOR
+
+  VERSION:
+  - DC2_run22i_FITS
+  - DC2SIM_StarterKit*
+  
+# repeat LC fits with variations
+#  FITOPT:
+#  - USESIM_TRUEFLUX T
+
+# command to extract extra variables into text table output
+  APPEND_TABLE_VARLIST: RA DEC SNRMAX_u SNRMAX_g SNRMAX_r SNRMAX_i SNRMAX_z SNRMAX_Y FLUXCALMAX_u FLUXCALMAX_g FLUXCALMAX_r FLUXCALMAX_i FLUXCALMAX_z FLUXCALMAX_Y TrestMIN TrestMAX T0GAPMAX TGAPMAX TrestRange
+
+#END_YAML
+
+# ================================================
+# below is science input for snlc_fit.exe
+
+ &SNLCINP
+   PRIVATE_DATA_PATH  = '$SNANA_LSST_ROOT/lcmerge'  
+   VERSION_PHOTOMETRY = 'DC2_run22i_FITS'
+   SNTABLE_LIST       = 'SNANA FITRES'
+   TEXTFILE_PREFIX    = 'OUT_DC2_DATA'
+   ROOTFILE_OUT       = 'OUT_DC2_DATA.ROOT'
+   ABORT_ON_NOEPOCHS  = F
+
+   KCOR_FILE = '$SNANA_LSST_ROOT/kcor/2017-04_approx/kcor_LSST.fits'
+
+   USE_MINOS      = F
+   NFIT_ITERATION = 2
+   OPT_SETPKMJD     = 20  ! 16=maxClump method; 4=> don't abort on trouble
+   OPT_MWEBV        =  2  ! SFD98
+
+   cutwin_Nepoch    =  6
+   cutwin_redshift  =  0.00,  1.2
+   cutwin_Trest     = -20.0, 60.0
+   cutwin_Trestmin  = -99.0, 0.0
+   cutwin_Trestmax  =  10.0, 200.0
+
+   CUTWIN_SNRMAX       =  4.0, 1.0E8
+   CUTWIN_NFILT_SNRMAX =  1.0, 99.
+
+   CUTWIN_SNRMAX2       = 3.0, 1.0E8
+   CUTWIN_NFILT_SNRMAX2 = 2, 99
+
+ &END
+
+ &FITINP
+     FITMODEL_NAME  = 'SALT2.Guy10'  !# Not using the mB modification
+
+     PRIOR_SHAPE_RANGE = -5.0, +4.0  ! flat prior to avoid craziness
+     PRIOR_MJDSIG      = 10          ! weak t0 prior to avoid craziness
+
+     FUDGEALL_ITER1_MAXFRAC = 0.05
+     
+     FITWIN_TREST = -15.0,  45.0     ! restrict epochs after 1st fit iter
+     FITWIN_SHAPE = -3.00, +3.00     ! cut on fitted x1 
+     FITWIN_COLOR = -0.30, +0.30     ! cut on fitted c
+     FITWIN_PROB  = -0.01,  1.01     ! cut on PROB(chi2,Ndof)
+     FILTLIST_FIT = 'ugrizY'         ! fit with all LSST bands
+  &END

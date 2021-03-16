@@ -1,0 +1,91 @@
+#
+# Read SALT2 fit parameters and fit for distances in redshift bins
+# using BBC technique from https://arxiv.org/abs/1610.04677
+#
+
+CONFIG:
+  BATCH_INFO: sbatch  $SBATCH_TEMPLATES/SBATCH_Cori.TEMPLATE 3
+  BATCH_WALLTIME:  '00:15:00'
+  
+  INPDIR+:
+  - $SNANA_DC2_DIR/OUT2_SALT2FITS_DATA+BIASCOR
+#  - point to other sample here; e.g, LOWZ
+
+  STRING_VERSION_IGNORE: BiasCor
+  
+  OUTDIR:  OUT2_SALT2mu_DC2_BBC
+
+# examples of repeating fit with different options
+  MUOPT: 
+  - minos=1    # repeat with better errors
+  - powzbin=4  # change z binning of HD
+
+# give wfit options to trigger post-processing with wfit
+  WFITMUDIF_OPT: -cmb_sim 
+
+#END_YAML
+
+# =================================================================
+# note that input FITRES files are gzipped, but no need to specify .gz
+
+datafile=none
+prefix=OUT2_SALT2mu_DC2_BBC
+
+# Here we select 1D biasCor instead of default 5D;
+# see all biasCor options with
+#    grep MASK_BIASCOR $SNANA_DIR/src/SALT2mu.c | grep def
+opt_biascor=1
+
+simfile_biascor=$SNANA_DC2_DIR/OUT2_SALT2FITS_DATA+BIASCOR/DC2SIM_StarterKit_BiasCor/FITOPT000.FITRES
+
+#simfile_ccprior=NONE
+
+minos=0          # faster fit with MIGRAD errors
+powzbin=2.0      # bin size ~ (1+z)^2
+blindflag=0
+
+lensing_zpar=0.055
+min_per_zbin=1
+redchi2_tol=.01
+fitflag_sigmb=0
+sig1=0.001
+zmin=0.01
+zmax=1.00
+nzbin=10
+x1min=-3.0
+x1max=+3.0
+cmax=+0.3
+cmin=-0.3
+CUTWIN  x1ERR     0.    2.0
+CUTWIN  PKMJDERR  0.    3.0
+CUTWIN  FITPROB   0.05  1.0
+errmask_write=0
+p1=0.14
+p2=3.1
+p3=0.0
+p4=0.0
+p5=0.0
+p6=0.0
+p7=0.0
+p8=0.0
+p9=0.70
+p10=0.0
+p11=-1.0
+p12=0.0
+p13=0.0
+u1=1
+u2=1
+u3=0
+u4=0
+u5=0
+u6=0
+u7=0
+u8=0
+u9=0
+u10=0
+u11=0
+u12=0
+u13=0
+h0=70.0
+mag0=-30.00
+uave=1
