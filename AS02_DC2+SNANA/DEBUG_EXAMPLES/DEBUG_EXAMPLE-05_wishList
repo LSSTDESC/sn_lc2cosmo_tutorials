@@ -1,0 +1,3 @@
+echo ' for each MJD-band-CCDNUM that has outlier flux: '
+echo ' + fetch stamps for Search/Template/Diff'
+echo ' + create command+files to repeat DIA '

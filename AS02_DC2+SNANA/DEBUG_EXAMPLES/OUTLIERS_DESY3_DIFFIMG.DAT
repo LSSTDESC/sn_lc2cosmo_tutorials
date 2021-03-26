@@ -1,0 +1,28 @@
+
+Flux-outlier fractions for DES-Y3 fakes overlaid on real images during 
+DES operations. Processing is from real-time difference-imaging, 
+analogous to LSST-AP.
+
+    FLUX-OUTLIER SUMMARY per BAND for 
+    |F_data-F_true(SIM)|/Sigma_F >  3.00 : 
+       g-Outlier frac =  0.00997   (   890/ 89280)
+       r-Outlier frac =  0.01799   (  1815/100879)
+       i-Outlier frac =  0.01641   (  1673/101968)
+       z-Outlier frac =  0.01013   (  1048/103444)
+  
+
+    FLUX-OUTLIER SUMMARY per BAND for 
+    |F_data-F_true(SIM)|/Sigma_F > 10.00 : 
+       g-Outlier frac =  0.00059   (    53/ 89280)
+       r-Outlier frac =  0.00118   (   119/100879)
+       i-Outlier frac =  0.00105   (   107/101968)
+       z-Outlier frac =  0.00041   (    42/103444)
+  
+
+    FLUX-OUTLIER SUMMARY per BAND for 
+    |F_data-F_true(SIM)|/Sigma_F > 50.00 : 
+       g-Outlier frac =  0.00002   (     2/ 89280)
+       r-Outlier frac =  0.00005   (     5/100879)
+       i-Outlier frac =  0.00002   (     2/101968)
+       z-Outlier frac =  0.00000   (     0/103444)
+  

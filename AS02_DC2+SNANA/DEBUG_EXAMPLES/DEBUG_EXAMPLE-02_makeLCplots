@@ -1,0 +1,14 @@
+echo ' Create LC plots for those flagged to have outliers'
+
+plot_snana.py \
+  -i MS_9172_497,MS_9299_324,MS_9427_345 \
+  -a -50 \
+  -b 100 \
+  -v DC2_run22i_FITS \
+  -p $SNANA_LSST_ROOT/lcmerge
+
+    
+echo ' Use evince on output PDF file '
+
+#  -f LCFIT_DATA-ONLY.NML \
+

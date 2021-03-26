@@ -1,0 +1,29 @@
+
+CONFIG: 
+    BATCH_INFO: sbatch  $SBATCH_TEMPLATES/SBATCH_Cori.TEMPLATE 10
+    BATCH_WALLTIME:  '01:00:00'
+    RANSEED_REPEAT: 10  123459
+    RESET_CIDOFF:  2
+    FORMAT_MASK:   48                  # +32->FITS format, +16->random SNIDs
+    PATH_SNDATA_SIM:  $SNANA_LSST_SIM  # Reroute sim data to scratch
+    SIMGEN_INFILE_Ia:
+    - SIMGEN_LSST_DC2.INPUT
+    GENPREFIX:    DC2
+
+GENVERSION_LIST:
+  - GENVERSION: DC2SIM_StarterKit_Data
+    GENOPT:
+        NGENTOT_LC: 1500
+
+  - GENVERSION: DC2SIM_StarterKit_BiasCor
+    GENOPT:
+        NGENTOT_LC: 20000
+
+# for curiosity, generate another biasCor sim with nominal
+# SALT2 model that allows Flam<0 in UV
+  - GENVERSION: DC2SIM_StarterKit_BiasCor+negFlux
+    GENOPT:
+        GENMODEL_MSKOPT: 0  
+        NGENTOT_LC:  20000
+
+#END_YAML

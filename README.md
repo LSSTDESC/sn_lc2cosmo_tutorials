@@ -22,3 +22,5 @@ Python 3.7.4
 echo $SNANA_DIR
 /global/cfs/cdirs/lsst/groups/SN/snana/SNANA
 ```
+
+Once that's done, follow the directions in each individual tutorial, typically in an `AAA_README.TXT` file

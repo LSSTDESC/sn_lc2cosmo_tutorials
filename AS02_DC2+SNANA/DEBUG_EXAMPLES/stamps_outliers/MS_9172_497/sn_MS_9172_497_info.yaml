@@ -1,0 +1,426 @@
+Files:
+  ForcedPhotLC:
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/forced_lc.csv
+    contents: forced phot lightcurve
+    columns:
+    - mjd
+    - filter
+    - visit
+    - detector
+    - DBid
+    - base_PsfFlux_flux
+    - base_PsfFlux_fluxErr
+    - base_PsfFlux_mag
+    - base_PsfFlux_magErr
+    - base_PsfFlux_instFlux
+    - base_PsfFlux_instFluxErr
+    - base_PsfFlux_area
+    - base_PsfFlux_flag
+  TruePhotLC:
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/truth_lc.csv
+    contents: truth phot lightcurve
+    columns:
+    - mjd
+    - filter
+    - visit
+    - detector
+    - DBid
+    - x_image
+    - y_image
+    - in_ccd
+    - img_mask_area
+    - matched
+    - delta_flux
+    - delta_ABmag
+    - instFlux
+    - instFluxErr
+    - psf_eq_NA_px
+  JointPhotLC:
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/joint_lc.png
+    contents: combined truth - forced phot mag lightcurve plot
+    status: stored
+  JointPhotLC_flux:
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/joint_lc_flux.png
+    contents: combined truth - forced phot flux lightcurve plot
+    status: stored
+  JointPhotLC_flux_pulls:
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/joint_lc_flux_offsets.png
+    contents: truth - forced phot flux residual lightcurve plot
+    status: stored
+  Stamps:
+  - Filter: u
+    type: template
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/stamp_MS_9172_497_coadd_u
+    extensions:
+    - fits
+    - png
+  - Filter: u
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_760245_det_111_fltr_u_scien
+    visit: 760245
+    detector: 111
+    mjd: 60702.08980422338
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: u
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_760245_det_111_fltr_u_diff
+    visit: 760245
+    detector: 111
+    mjd: 60702.08980422338
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: u
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_782201_det_160_fltr_u_scien
+    visit: 782201
+    detector: 160
+    mjd: 60731.05535622452
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: u
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_782201_det_160_fltr_u_diff
+    visit: 782201
+    detector: 160
+    mjd: 60731.05535622452
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: g
+    type: template
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/stamp_MS_9172_497_coadd_g
+    extensions:
+    - fits
+    - png
+  - Filter: g
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_755808_det_6_fltr_g_scien
+    visit: 755808
+    detector: 6
+    mjd: 60696.13669222223
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: g
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_755808_det_6_fltr_g_diff
+    visit: 755808
+    detector: 6
+    mjd: 60696.13669222223
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: g
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_781459_det_139_fltr_g_scien
+    visit: 781459
+    detector: 139
+    mjd: 60730.085098219904
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: g
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_781459_det_139_fltr_g_diff
+    visit: 781459
+    detector: 139
+    mjd: 60730.085098219904
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: r
+    type: template
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/stamp_MS_9172_497_coadd_r
+    extensions:
+    - fits
+    - png
+  - Filter: r
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_753586_det_129_fltr_r_scien
+    visit: 753586
+    detector: 129
+    mjd: 60693.11888522106
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: r
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_753586_det_129_fltr_r_diff
+    visit: 753586
+    detector: 129
+    mjd: 60693.11888522106
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: r
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_787960_det_131_fltr_r_scien
+    visit: 787960
+    detector: 131
+    mjd: 60739.02937722223
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: r
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_787960_det_131_fltr_r_diff
+    visit: 787960
+    detector: 131
+    mjd: 60739.02937722223
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: r
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_788003_det_147_fltr_r_scien
+    visit: 788003
+    detector: 147
+    mjd: 60739.04890422338
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: r
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_788003_det_147_fltr_r_diff
+    visit: 788003
+    detector: 147
+    mjd: 60739.04890422338
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: r
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_788845_det_83_fltr_r_scien
+    visit: 788845
+    detector: 83
+    mjd: 60740.05788321991
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: r
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_788845_det_83_fltr_r_diff
+    visit: 788845
+    detector: 83
+    mjd: 60740.05788321991
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: i
+    type: template
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/stamp_MS_9172_497_coadd_i
+    extensions:
+    - fits
+    - png
+  - Filter: i
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_766972_det_49_fltr_i_scien
+    visit: 766972
+    detector: 49
+    mjd: 60711.09851922338
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: i
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_766972_det_49_fltr_i_diff
+    visit: 766972
+    detector: 49
+    mjd: 60711.09851922338
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: i
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_767014_det_97_fltr_i_scien
+    visit: 767014
+    detector: 97
+    mjd: 60711.118301224524
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: i
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_767014_det_97_fltr_i_diff
+    visit: 767014
+    detector: 97
+    mjd: 60711.118301224524
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: z
+    type: template
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/stamp_MS_9172_497_coadd_z
+    extensions:
+    - fits
+    - png
+  - Filter: z
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_749664_det_2_fltr_z_scien
+    visit: 749664
+    detector: 2
+    mjd: 60687.152694223376
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: z
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_749664_det_2_fltr_z_diff
+    visit: 749664
+    detector: 2
+    mjd: 60687.152694223376
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: z
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_749697_det_69_fltr_z_scien
+    visit: 749697
+    detector: 69
+    mjd: 60687.16865922338
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: z
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_749697_det_69_fltr_z_diff
+    visit: 749697
+    detector: 69
+    mjd: 60687.16865922338
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: y
+    type: template
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/stamp_MS_9172_497_coadd_y
+    extensions:
+    - fits
+    - png
+  - Filter: y
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_748062_det_18_fltr_y_scien
+    visit: 748062
+    detector: 18
+    mjd: 60685.058253219904
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: y
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_748062_det_18_fltr_y_diff
+    visit: 748062
+    detector: 18
+    mjd: 60685.058253219904
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: y
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_748072_det_131_fltr_y_scien
+    visit: 748072
+    detector: 131
+    mjd: 60685.063430221075
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: y
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_748072_det_131_fltr_y_diff
+    visit: 748072
+    detector: 131
+    mjd: 60685.063430221075
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: y
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_751793_det_74_fltr_y_scien
+    visit: 751793
+    detector: 74
+    mjd: 60690.14059122454
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: y
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_751793_det_74_fltr_y_diff
+    visit: 751793
+    detector: 74
+    mjd: 60690.14059122454
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: y
+    type: science
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_751843_det_73_fltr_y_scien
+    visit: 751843
+    detector: 73
+    mjd: 60690.16301922338
+    status: stored
+    extensions:
+    - fits
+    - png
+  - Filter: y
+    type: diff
+    filename: /global/cscratch1/sd/bos0109/v2diff_run2.2i_stamps/SN_stamps/sn_z_lt_0.5/MS_9172_497/stamps/snid_MS_9172_497_vn_751843_det_73_fltr_y_diff
+    visit: 751843
+    detector: 73
+    mjd: 60690.16301922338
+    status: stored
+    extensions:
+    - fits
+    - png
+SNInfo:
+  id: MS_9172_497
+  ra: 57.3754596600875
+  dec: -30.2533523887153
+  z: 0.45966
+  match_ang_dist: 0.06662369966296999
+  diaO_id: 20407640186159567
+  n_data: 9
+  htmid_level_6: 9197
+  galaxy_id: 3375297712
+  c: 0.051699999584824304
+  mB: 23.245279331194666
+  t0: 60700.213959734516
+  x0: 7.986999260890809e-06
+  x1: -0.5687341849864057
+  tract: 4640
+  patch_x: 5
+  patch_y: 4
+  coord_ra: 1.0013906668285364
+  coord_dec: -0.5280209317207509

@@ -1,0 +1,4 @@
+rm  OUTLIERS_DC2_run22i.DAT DC2_run22i_FITS.pdf OUT_DC2_DATA.ROOT
+rm -r DC2_run22i_OUTLIERS_TEXT
+rm  OUT_DEBUG*  OUT_LCFIT*
+rm  outliers_reformat_text.log

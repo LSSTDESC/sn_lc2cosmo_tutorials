@@ -1,0 +1,19 @@
+echo ' extract a few TEXT data files from FITS '
+
+VERSION_TEXT=DC2_run22i_OUTLIERS_TEXT
+
+if [ -f $VERSION_TEXT ] ; then
+  rm -r $VERSION_TEXT
+fi
+   
+snana.exe NOFILE \
+   PRIVATE_DATA_PATH      $SNANA_LSST_ROOT/lcmerge \
+   VERSION_PHOTOMETRY     DC2_run22i_FITS  \
+   VERSION_REFORMAT_TEXT  $VERSION_TEXT \
+   SNCCID_LIST            MS_9172_497,MS_9299_324,MS_9427_345 \
+   > outliers_reformat_text.log
+
+echo ' '
+echo "See output TEXT data files under /$VERSION_TEXT"
+ls -dl $VERSION_TEXT/
+ls     $VERSION_TEXT

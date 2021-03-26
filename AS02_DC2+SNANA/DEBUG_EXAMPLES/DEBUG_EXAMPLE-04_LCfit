@@ -1,0 +1,28 @@
+echo 'Run snlc_fit.exe interactively on a few events with 10sigma outliers '
+
+echo ' '
+echo ' Nominal SALT2 fit ... '
+snlc_fit.exe LCFIT_DATA-ONLY.NML \
+    SNCCID_LIST   MS_9172_5,MS_9172_246 \
+    ROOTFILE_OUT  NONE \
+    TEXTFILE_PREFIX OUT_LCFIT_BAD_APPLES_noCheat \
+                  > OUT_LCFIT_BAD_APPLES_noCheat.LOG
+
+grep fitpar OUT_LCFIT_BAD_APPLES_noCheat.LOG | grep x0
+
+echo ' '
+echo ' Fit again after removing 3 sigma outliers (cheat mode) ... '
+# and illustrate alternate syntax if you like equal signs) 
+snlc_fit.exe LCFIT_DATA-ONLY.NML \
+    SNCCID_LIST=MS_9172_5,MS_9172_246 \
+    CUTWIN_SIMPULL=-3,3 \
+    ROOTFILE_OUT=NONE \
+    TEXTFILE_PREFIX OUT_LCFIT_BAD_APPLES+cheat \
+                  > OUT_LCFIT_BAD_APPLES+cheat.LOG
+
+grep fitpar OUT_LCFIT_BAD_APPLES+cheat.LOG | grep x0
+
+echo ' '
+echo 'Pop quiz: for MS_9172_5, why does fit work with outliers'
+echo '          but fail after rejecting 3sigma outliers (cheat mode) ? ' 
+echo ' '

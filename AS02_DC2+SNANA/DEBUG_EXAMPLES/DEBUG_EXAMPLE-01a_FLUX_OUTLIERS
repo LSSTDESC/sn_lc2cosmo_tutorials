@@ -1,0 +1,31 @@
+echo 'Run snana.exe jobs interactively to create OUTLIER table ... '
+echo ' '
+#  PRIVATE_DATA_PATH $SNANA_LSST_USERS/bos0109/DC2_Run2.2i_SNANA_SIM \
+
+
+OUTLIER_FILE=OUTLIERS_DC2_run22i.DAT
+
+echo ' 3 sigma ... '
+snana.exe LCFIT_DATA-ONLY.NML \
+    SNTABLE_LIST 'OUTLIER  SNANA' \
+    TEXTFILE_PREFIX OUT_DEBUG_03sigma \
+  > OUT_DEBUG_03sigma.LOG
+tail -11 OUT_DEBUG_03sigma.LOG > $OUTLIER_FILE
+
+echo ' 10 sigma ... '
+snana.exe LCFIT_DATA-ONLY.NML \
+    SNTABLE_LIST 'OUTLIER(nsig:10)' \
+    TEXTFILE_PREFIX OUT_DEBUG_10sigma \
+  > OUT_DEBUG_10sigma.LOG
+tail -11 OUT_DEBUG_10sigma.LOG >> $OUTLIER_FILE
+
+echo ' 50 sigma ... '
+snana.exe LCFIT_DATA-ONLY.NML \
+    SNTABLE_LIST 'OUTLIER(nsig:50)' \
+    TEXTFILE_PREFIX OUT_DEBUG_50sigma \
+  > OUT_DEBUG_50sigma.LOG
+tail -11 OUT_DEBUG_50sigma.LOG >> $OUTLIER_FILE
+
+echo ' '
+echo " See summaries in $OUTLIER_FILE "
+

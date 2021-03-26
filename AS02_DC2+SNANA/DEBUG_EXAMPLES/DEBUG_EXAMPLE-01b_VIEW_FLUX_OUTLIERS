@@ -1,0 +1,10 @@
+echo ' Nicer view of outliers from particular list of SN: '
+get_fitres_values.py -f OUT_DEBUG_50sigma.OUTLIER.TEXT \
+   -v MJD,BAND,CCDNUM,NSIG,ZP,PSF -c MS_9172_497,MS_9299_324,MS_9427_345
+
+echo ' '
+echo ' Nicer view of outliers for first 10 rows in in table: '
+get_fitres_values.py -f OUT_DEBUG_50sigma.OUTLIER.TEXT \
+   -v MJD,BAND,CCDNUM,NSIG,ZP,PSF --nrow 10
+   
+
