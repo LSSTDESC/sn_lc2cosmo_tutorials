@@ -1,0 +1,1368 @@
+  Full command: snana.exe NOFILE VERSION_PHOTOMETRY DC2_run22i_FITS PRIVATE_DATA_PATH /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/lcmerge SNTABLE_LIST OUTLIER(nsig:10) TEXTFILE_PREFIX OUT_OPTIMIZE-03 PHOTFLAG_BITLIST_REJECT 16
+  
+  
+  ######################################################## 
+     INIT_SNVAR: Init variables.
+  ######################################################## 
+  
+   Allocate 12.50 MB for CIDMASK array (to check duplicates)
+   HOST MACHINE = x86_64-conda_cos6-linux-gnu   (x86_64-suse-linux)
+   SNDATA_ROOT = /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT
+   SNANA_DIR = /global/cfs/cdirs/lsst/groups/SN/snana/SNANA    (v11_02m)
+  
+  ######################################################## 
+     READ SNLCINP NAMELIST. 
+  ######################################################## 
+  
+      PROCESS COMMAND LINE ARG: VERSION_PHOTOMETRY
+      PROCESS COMMAND LINE ARG: PRIVATE_DATA_PATH
+      PROCESS COMMAND LINE ARG: SNTABLE_LIST
+      PROCESS COMMAND LINE ARG: TEXTFILE_PREFIX
+      PROCESS COMMAND LINE ARG: PHOTFLAG_BITLIST_REJECT
+&SNLCINP
+ VERSION_PHOTOMETRY="DC2_run22i_FITS                                                         ", 11*"NULL                                                                    ",
+ VERSION_REFORMAT_FITS="NULL                                                                    ",
+ VERSION_REFORMAT_TEXT="NULL                                                                    ",
+ PRIVATE_DATA_PATH="/global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/lcmerge                                                                                                ",
+ FILTER_UPDATE_PATH="                                                                                                                                                                ",
+ NONSURVEY_FILTERS="                                                                                                    ",
+ SNRMAX_FILTERS="                                                                                                    ",
+ VPEC_ERR_OVERRIDE=  0.00000000    ,
+ FILTER_REPLACE="                                                                                                    ",
+ FILTLIST_LAMSHIFT="                                                                                                    ",
+ JOBSPLIT= 2*1          ,
+ JOBSPLIT_EXTERNAL= 2*1          ,
+ SIM_PRESCALE=  1.00000000    ,
+ MXLC_FIT=999888777  ,
+ OPT_YAML=0          ,
+ OPTSIM_LCWIDTH=0          ,
+ OPT_REFORMAT_TEXT=0          ,
+ OPT_REFORMAT_SALT2=0          ,
+ REFORMAT_KEYS="NULL                                                                                                                                                                                                    ",
+ OPT_REFORMAT_FITS=0          ,
+ SNMJD_LIST_FILE="                                                                                                                                                                                                        ",
+ SNMJD_OUT_FILE="                                                                                                                                                                                                        ",
+ MNFIT_PKMJD_LOGFILE="MNFIT_PKMJD.LOG                                                                                                                                                                                         ",
+ HFILE_OUT="                                                                                                                                                                                                        ",
+ ROOTFILE_OUT="                                                                                                                                                                                                        ",
+ TEXTFILE_PREFIX="OUT_OPTIMIZE-03                                                                                                                                                                                         ",
+ SNTABLE_LIST="OUTLIER(nsig:10)                                                                                                                                                                                        ",
+ SNTABLE_FILTER_REMAP="                                                                                                                                                                                                        ",
+ MARZFILE_OUT="                                                                                                                                                                                                        ",
+ KCOR_FILE="NULL                                                                                                                                                                                                    ",
+ OVERRIDE_RESTLAM_BOUNDARY="                                                                                ",
+ USERTAGS_FILE="                                                                                                                                                                                                        ",
+ VPEC_FILE="                                                                                                                                                                                                        ",
+ HEADER_OVERRIDE_FILE="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ",
+ EPOCH_IGNORE_FILE="DEFAULT                                                                                                                                                                                                 ",
+ OUT_EPOCH_IGNORE_FILE="                                                                                                                                                                                                        ",
+ SNCID_LIST_FILE="                                                                                                                                                                                                        ",
+ OPT_SNCID_LIST=0          ,
+ NONLINEARITY_FILE="                                                                                                                                                                                                        ",
+ SIMLIB_OUT="                                                                                                                                                                                                        ",
+ SIMLIB_OUTFILE="                                                                                                                                                                                                        ",
+ SIMLIB_ZPERR_LIST="                                                                                                                                                                                                        ",
+ OPT_SIMLIB_OUT=1          ,
+ SIMLIB_OUT_TMINFIX=99999      ,
+ NFIT_ITERATION=0          ,
+ MINUIT_PRINT_LEVEL=-1         ,
+ INTERP_OPT=1          ,
+ USE_MINOS=F,
+ OPT_SETPKMJD=0          ,
+ SNRCUT_SETPKMJD=  5.00000000    ,
+ MJDWIN_SETPKMJD=  60.0000000    ,
+ SHIFT_SETPKMJD=  0.00000000    ,
+ OPT_DEBUG=0          ,
+ LSIM_SEARCH_SPEC=F,
+ LSIM_SEARCH_ZHOST=F,
+ LDMP_SNFAIL=F,
+ LDMP_SNANA_VERSION=F,
+ LTEST_KCOR=F,
+ LTEST_INTERP=F,
+ LTEST_MAG=F,
+ LTEST_U3BAND=F,
+ USESIM_SNIA=T,
+ USESIM_SNCC=T,
+ USESIM_TRUEFLUX=F,
+ USE_SNHOST_ZPHOT=F,
+ RESTORE_DES3YR=F,
+ RESTORE_WRONG_VPEC=F,
+ REQUIRE_DOCANA=0          ,
+ LPROB_TRUEFLUX=F,
+ ABORT_ON_NOEPOCHS=T,
+ ABORT_ON_BADAVWARP=T,
+ ABORT_ON_NOPKMJD=T,
+ ABORT_ON_BADZ=T,
+ ABORT_ON_BADKCOR=T,
+ ABORT_ON_BADSURVEY=T,
+ ABORT_ON_MARGPDF0=T,
+ ABORT_ON_TRESTCUT=T,
+ ABORT_ON_DUPLCID=T,
+ ABORT_ON_DUPLMJD=F,
+ ABORT_ON_BADFILTER=T,
+ H0_REF=  70.000000000000000     ,  7.0000000000000000     ,
+ OLAM_REF= 0.68500000238418579     ,  2.9999999329447746E-002,
+ OMAT_REF= 0.31499999761581421     ,  2.9999999329447746E-002,
+ W0_REF= -1.0000000000000000     , 0.10000000149011612     ,
+ DWDA_REF= 2*0.0000000000000000       ,
+ USE_MWCOR=F,
+ MXLC_PLOT=100        ,
+ NCCID_PLOT=0          ,
+ SNCCID_PLOT= 52*"                    ",
+ DTOBS_MODEL_PLOT=  2.00000000    ,
+ MULTISEASON_OPTMASK=0          ,
+ MULTISEASON_TGAP=  1.00000000E+09,
+ ZTOL_HELIO2CMB=  1.99999996E-02,
+ MULTISEASON_NREJECT_OUTLIER=  0.00000000    ,
+ MULTISEASON_CHI2RED_ACTIVE=  5.00000000    ,
+ PHOTFLAG_DETECT=0          ,
+ PHOTFLAG_TRIGGER=0          ,
+ SNTYPE_LIST= 52*0          ,
+ SNCID_LIST= 52*0          ,
+ SNCCID_LIST= 52*"                    ",
+ MXEVT_PROCESS=999888777  ,
+ SNCCID_IGNORE= 52*"                    ",
+ SNCID_IGNORE_FILE="                                                                                                                                                                                                        ",
+ SNCID_IGNORE= 52*0          ,
+ SNTYPE_IGNORE= 52*0          ,
+ CCDNUM_LIST= 52*0          ,
+ SIM_TEMPLATE_INDEX_LIST= 52*0          ,
+ SNFIELD_LIST="ALL                                                         ", 51*"                                                            ",
+ SNTEL_LIST="ALL                 ", 51*"                    ",
+ PHOTFLAG_MSKREJ=65536      , 4*0          ,
+ PHOTFLAG_BITLIST_REJECT=16         , 29*-9         ,
+ CUTWIN_CID= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_REDSHIFT= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_REDSHIFT_ERR= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_RA= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_DEC= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_HOSTSEP= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_NEPOCH= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_SNRMAX= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_SNRMAX2= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_NFIELD=  1.00000000    ,  999.000000    ,
+ CUTWIN_MWEBV= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_NSEASON_ACTIVE= -99.0000000    ,  99.0000000    ,
+ CUTWIN_TRESTMIN= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TRESTMAX= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TRESTRANGE= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TREST= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TOBS= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TGAPMAX= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_T0GAPMAX= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TOBSMIN= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TOBSMAX= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_PEAKMJD= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_MJD= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_PSF= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_ZP= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_ZPADU= 2*0.00000000      ,
+ CUTWIN_ZPNPE= 2*0.00000000      ,
+ CUTWIN_ZPERR= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_PHOTPROB= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_ERRTEST= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_SIMPULL= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TREST_TRUEFLUX= 2*999.000000      ,
+ CUTWIN_NBAND_THRESH= 2*-9.00000000     ,
+ CUTWIN_NFILT_SNRMAX=  1.00000000    ,  100.000000    ,
+ CUTWIN_NFILT_SNRMAX2=  1.00000000    ,  100.000000    ,
+ CUTWIN_NFILT_TRESTMIN=  1.00000000    ,  100.000000    ,
+ CUTWIN_NFILT_TRESTMAX=  1.00000000    ,  100.000000    ,
+ CUTWIN_TREST2= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_NFILT_TREST2=  1.00000000    ,  100.000000    ,
+ CUTWIN_RESTLAM=  2000.00000    ,  25000.0000    ,
+ CUTWIN_LAMREST=  2000.00000    ,  25000.0000    ,
+ CUTWIN_LAMOBS=  2000.00000    ,  25000.0000    ,
+ CUTWIN_SNR_NODETECT= 2*0.00000000      ,
+ PRIVATE_CUTWIN_STRING= 10*"                                                                                                                                                                ",
+ SIMVAR_CUTWIN_STRING="                                                                                                                                                                ",
+ EARLYLC_STRING="                                                                                                                                                                ",
+ REQUIRE_EPOCHS_STRING="                                                                                                    ",
+ DUMP_STRING="                                                                                                    ",
+ SNCUT_SNRMAX="                                                                                                                                                                ",
+ SNCUT_HOST_SBFLUX="                                                                                                                                                                ",
+ EPCUT_SNRMIN="                                                                                                                                                                ",
+ EPCUT_SKYSIG="                                                                                                                                                                ",
+ EPCUT_PSFSIG="                                                                                                                                                                ",
+ MAGOBS_SHIFT_PRIMARY="                                                                                                                                                                ",
+ MAGOBS_SHIFT_ZP="                                                                                                                                                                ",
+ MAGREST_SHIFT_PRIMARY="                                                                                                                                                                ",
+ MAGREST_SHIFT_ZP="                                                                                                                                                                ",
+ FILTER_LAMSHIFT="                                                                                                                                                                ",
+ MAGOBS_SHIFT_PRIMARY_PARAMS= 3*0.00000000      ,
+ MAGOBS_SHIFT_ZP_PARAMS= 3*0.00000000      ,
+ FUDGE_FLUXCAL_OFFSET="                                                                                                                                                                ",
+ FUDGE_FLUXCAL_ERROR="                                                                                                                                                                ",
+ FUDGE_FLUXCAL_ERRPIX="                                                                                                                                                                ",
+ FUDGE_FLUXERR_SCALE="                                                                                                                                                                ",
+ FUDGE_MAG_ERROR="                                                                                                                                                                ",
+ FUDGE_MAG_COVERR="                                                                                                                                                                ",
+ FLUXERRMODEL_FILE="                                                                                                                                                                                                        ",
+ SIM_FLUXERRMODEL_FILE="                                                                                                                                                                                                        ",
+ FLUXERRMODEL_OPTMASK=0          ,
+ MAGCOR_FILE="                                                                                                                                                                                                        ",
+ SIM_MAGCOR_FILE="                                                                                                                                                                                                        ",
+ FUDGE_HOSTNOISE_FILE="                                                                                                                                                                                                        ",
+ RV_MWCOLORLAW= -9.00000000    ,
+ OPT_MWCOLORLAW=-9         ,
+ OPT_MWEBV=-9         ,
+ MWEBV_SCALE=  1.00000000    ,
+ MWEBV_SHIFT=  0.00000000    ,
+ MWEBV_FORCE= -9.00000000    ,
+ REDSHIFT_FINAL_SHIFT=  0.00000000    ,
+ FLUXERRCALC_ZPTERR= -9.89999962    ,
+ CUTWIN_MJD_EXCLUDE= 2*0.00000000      ,
+ CUTWIN_MJD_INCLUDE= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_NMJD_INCLUDE= 0.990000010    ,  9.99999996E+11,
+ /
+  init_SNDATA_GLOBAL: 
+
+	 ***** DOCANA WARNING ******* 
+  Missing required 'DOCUMENTATION:'  key in 
+    /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/lcmerge/DC2_run22i_FITS/DC2_run22i_FITS.README 
+  See DOCANA examples with linux command: 
+    grep -R DOCUMENTATION_END $SNDATA_ROOT 
+  File must begin with 'DOCUMENTATION:' key
+
+  ###################################################### 
+  RD_SNFITSIO_PREP: 
+  Prepare to read PHOTOMETRY VERSION 'DC2_run22i_FITS' from 
+	 /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/lcmerge/DC2_run22i_FITS 
+  ###################################################### 
+  
+  ######################################################## 
+    RDGLOBAL: FETCH GLOBAL SURVEY INFO from HEADER              
+  ######################################################## 
+  
+   Found PRIVATE(SIM_PEAKMJD)                                                  
+   Found PRIVATE(SIM_SALT2x0)                                                  
+   Found PRIVATE(SIM_SALT2mB)                                                  
+   Found PRIVATE(SIM_SALT2x1)                                                  
+   Found PRIVATE(SIM_HOSTLESS)                                                 
+   Found PRIVATE(NOBS)                                                         
+   Found PRIVATE(TRESTMIN)                                                     
+   Found PRIVATE(TRESTMAX)                                                     
+    Found SURVEY  = LSST   (IDSURVEY= 12)
+    Found FILTERS = ugrizY   (NFILTDEF=  6)
+    Found    2182 SN Candidates to Process.
+  
+  
+  INIT_CUTMASK: NCUTBIT          =           59
+  INIT_CUTMASK: CUTMASK8_SN_ALL  =       562949953421311
+  INIT_CUTMASK: CUTMASK8_MJD_ALL =    575897802350002176
+  
+  ######################################################## 
+    INIT_GALextinct
+  ######################################################## 
+  
+    RV_MWCOLORLAW  ->  3.10 from Default
+    OPT_MWCOLORLAW ->  94 from Default
+    OPT_MWCOLORLAW =   94 -> CCM89+ODonell94
+  
+    OPT_MWEBV ->   1 from Default
+    OPT_MWEBV =    1 -> FILE value (SIMLIB or data header)
+  
+  ######################################################## 
+    INIT_SNTABLE_OPTIONS  
+  ######################################################## 
+  
+        SNANA-table: USE=0   TEXTFORMAT=key 
+       FITRES-table: USE=0   TEXTFORMAT=key 
+      SNLCPAK-table: MXLC_PLOT=     0   TEXTFORMAT=none
+      SPECPAK-table: MXLC_PLOT=     0   TEXTFORMAT=none
+    MODELSPEC-table: USE=0   TEXTFORMAT=none
+         MARZ-table: USE=0   TEXTFORMAT=none
+        SNANA-table: select CUTFLAG_SNANA &  63
+  
+  ######################################################## 
+    PLOT THEORY HUBBLE DIAGRAMS for REFERENCE
+  ######################################################## 
+  
+  
+  ######################################################## 
+    CALL USRINI
+  ######################################################## 
+  
+
+	 ***** DOCANA WARNING ******* 
+  Missing required 'DOCUMENTATION:'  key in 
+    /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/lcmerge/DC2_run22i_FITS/DC2_run22i_FITS.README 
+  See DOCANA examples with linux command: 
+    grep -R DOCUMENTATION_END $SNDATA_ROOT 
+  File must begin with 'DOCUMENTATION:' key
+
+  
+  ######################################################## 
+    READ_EPIGNORE_FILE:
+  ######################################################## 
+  
+    Read epochs to ignore from: 
+    /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/lcmerge/DC2_run22i_FITS/DC2_run22i_FITS.IGNORE
+  ###################################################### 
+  RD_SNFITSIO_PREP: 
+  Prepare to read PHOTOMETRY VERSION 'DC2_run22i_FITS' from 
+	 /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/lcmerge/DC2_run22i_FITS 
+  ###################################################### 
+   DC2_run22i_FITS_HEAD.FITS contains 91 columns. 
+	  Found HEAD-Param[ 1] = SUBSURVEY (form = 40A)
+	  Found HEAD-Param[ 2] = SNID (form = 16A)
+	  Found HEAD-Param[ 3] = IAUC (form = 16A)
+	  Found HEAD-Param[ 4] = FAKE (form = 1I)
+	  Found HEAD-Param[ 5] = MASK_FLUXCOR_SNANA (form = 1I)
+	  Found HEAD-Param[ 6] = RA (form = 1D)
+	  Found HEAD-Param[ 7] = DEC (form = 1D)
+	  Found HEAD-Param[ 8] = PIXSIZE (form = 1E)
+	  Found HEAD-Param[ 9] = NXPIX (form = 1I)
+	  Found HEAD-Param[10] = NYPIX (form = 1I)
+	  Found HEAD-Param[11] = SNTYPE (form = 1J)
+	  Found HEAD-Param[12] = NOBS (form = 1J)
+	  Found HEAD-Param[13] = PTROBS_MIN (form = 1J)
+	  Found HEAD-Param[14] = PTROBS_MAX (form = 1J)
+	  Found HEAD-Param[15] = MWEBV (form = 1E)
+	  Found HEAD-Param[16] = MWEBV_ERR (form = 1E)
+	  Found HEAD-Param[17] = REDSHIFT_HELIO (form = 1E)
+	  Found HEAD-Param[18] = REDSHIFT_HELIO_ERR (form = 1E)
+	  Found HEAD-Param[19] = REDSHIFT_FINAL (form = 1E)
+	  Found HEAD-Param[20] = REDSHIFT_FINAL_ERR (form = 1E)
+	  Found HEAD-Param[21] = VPEC (form = 1E)
+	  Found HEAD-Param[22] = VPEC_ERR (form = 1E)
+	  Found HEAD-Param[23] = HOSTGAL_NMATCH (form = 1I)
+	  Found HEAD-Param[24] = HOSTGAL_NMATCH2 (form = 1I)
+	  Found HEAD-Param[25] = HOSTGAL_OBJID (form = 1K)
+	  Found HEAD-Param[26] = HOSTGAL_PHOTOZ (form = 1E)
+	  Found HEAD-Param[27] = HOSTGAL_PHOTOZ_ERR (form = 1E)
+	  Found HEAD-Param[28] = HOSTGAL_SPECZ (form = 1E)
+	  Found HEAD-Param[29] = HOSTGAL_SPECZ_ERR (form = 1E)
+	  Found HEAD-Param[30] = HOSTGAL_RA (form = 1D)
+	  Found HEAD-Param[31] = HOSTGAL_DEC (form = 1D)
+	  Found HEAD-Param[32] = HOSTGAL_SNSEP (form = 1E)
+	  Found HEAD-Param[33] = HOSTGAL_DDLR (form = 1E)
+	  Found HEAD-Param[34] = HOSTGAL_CONFUSION (form = 1E)
+	  Found HEAD-Param[35] = HOSTGAL_LOGMASS (form = 1E)
+	  Found HEAD-Param[36] = HOSTGAL_LOGMASS_ERR (form = 1E)
+	  Found HEAD-Param[37] = HOSTGAL_sSFR (form = 1E)
+	  Found HEAD-Param[38] = HOSTGAL_sSFR_ERR (form = 1E)
+	  Found HEAD-Param[39] = HOSTGAL_MAG_u (form = 1E)
+	  Found HEAD-Param[40] = HOSTGAL_MAG_g (form = 1E)
+	  Found HEAD-Param[41] = HOSTGAL_MAG_r (form = 1E)
+	  Found HEAD-Param[42] = HOSTGAL_MAG_i (form = 1E)
+	  Found HEAD-Param[43] = HOSTGAL_MAG_z (form = 1E)
+	  Found HEAD-Param[44] = HOSTGAL_MAG_Y (form = 1E)
+	  Found HEAD-Param[45] = HOSTGAL_MAGERR_u (form = 1E)
+	  Found HEAD-Param[46] = HOSTGAL_MAGERR_g (form = 1E)
+	  Found HEAD-Param[47] = HOSTGAL_MAGERR_r (form = 1E)
+	  Found HEAD-Param[48] = HOSTGAL_MAGERR_i (form = 1E)
+	  Found HEAD-Param[49] = HOSTGAL_MAGERR_z (form = 1E)
+	  Found HEAD-Param[50] = HOSTGAL_MAGERR_Y (form = 1E)
+	  Found HEAD-Param[51] = HOSTGAL2_OBJID (form = 1K)
+	  Found HEAD-Param[52] = HOSTGAL2_PHOTOZ (form = 1E)
+	  Found HEAD-Param[53] = HOSTGAL2_PHOTOZ_ERR (form = 1E)
+	  Found HEAD-Param[54] = HOSTGAL2_SPECZ (form = 1E)
+	  Found HEAD-Param[55] = HOSTGAL2_SPECZ_ERR (form = 1E)
+	  Found HEAD-Param[56] = HOSTGAL2_RA (form = 1D)
+	  Found HEAD-Param[57] = HOSTGAL2_DEC (form = 1D)
+	  Found HEAD-Param[58] = HOSTGAL2_SNSEP (form = 1E)
+	  Found HEAD-Param[59] = HOSTGAL2_DDLR (form = 1E)
+	  Found HEAD-Param[60] = HOSTGAL2_LOGMASS (form = 1E)
+	  Found HEAD-Param[61] = HOSTGAL2_LOGMASS_ERR (form = 1E)
+	  Found HEAD-Param[62] = HOSTGAL2_sSFR (form = 1E)
+	  Found HEAD-Param[63] = HOSTGAL2_sSFR_ERR (form = 1E)
+	  Found HEAD-Param[64] = HOSTGAL2_MAG_u (form = 1E)
+	  Found HEAD-Param[65] = HOSTGAL2_MAG_g (form = 1E)
+	  Found HEAD-Param[66] = HOSTGAL2_MAG_r (form = 1E)
+	  Found HEAD-Param[67] = HOSTGAL2_MAG_i (form = 1E)
+	  Found HEAD-Param[68] = HOSTGAL2_MAG_z (form = 1E)
+	  Found HEAD-Param[69] = HOSTGAL2_MAG_Y (form = 1E)
+	  Found HEAD-Param[70] = HOSTGAL2_MAGERR_u (form = 1E)
+	  Found HEAD-Param[71] = HOSTGAL2_MAGERR_g (form = 1E)
+	  Found HEAD-Param[72] = HOSTGAL2_MAGERR_r (form = 1E)
+	  Found HEAD-Param[73] = HOSTGAL2_MAGERR_i (form = 1E)
+	  Found HEAD-Param[74] = HOSTGAL2_MAGERR_z (form = 1E)
+	  Found HEAD-Param[75] = HOSTGAL2_MAGERR_Y (form = 1E)
+	  Found HEAD-Param[76] = HOSTGAL_SB_FLUXCAL_u (form = 1E)
+	  Found HEAD-Param[77] = HOSTGAL_SB_FLUXCAL_g (form = 1E)
+	  Found HEAD-Param[78] = HOSTGAL_SB_FLUXCAL_r (form = 1E)
+	  Found HEAD-Param[79] = HOSTGAL_SB_FLUXCAL_i (form = 1E)
+	  Found HEAD-Param[80] = HOSTGAL_SB_FLUXCAL_z (form = 1E)
+	  Found HEAD-Param[81] = HOSTGAL_SB_FLUXCAL_Y (form = 1E)
+	  Found HEAD-Param[82] = PEAKMJD (form = 1E)
+	  Found HEAD-Param[83] = SEARCH_TYPE (form = 1J)
+	  Found HEAD-Param[84] = PRIVATE(SIM_PEAKMJD) (form = 1D)
+	  Found HEAD-Param[85] = PRIVATE(SIM_SALT2x0) (form = 1D)
+	  Found HEAD-Param[86] = PRIVATE(SIM_SALT2mB) (form = 1D)
+	  Found HEAD-Param[87] = PRIVATE(SIM_SALT2x1) (form = 1D)
+	  Found HEAD-Param[88] = PRIVATE(SIM_HOSTLESS) (form = 1D)
+	  Found HEAD-Param[89] = PRIVATE(NOBS) (form = 1D)
+	  Found HEAD-Param[90] = PRIVATE(TRESTMIN) (form = 1D)
+	  Found HEAD-Param[91] = PRIVATE(TRESTMAX) (form = 1D)
+   DC2_run22i_FITS_PHOT.FITS contains 18 columns. 
+	  Found PHOT-Param[ 1] = MJD (form = 1D)
+	  Found PHOT-Param[ 2] = BAND (form = 2A)
+	  Found PHOT-Param[ 3] = CCDNUM (form = 1I)
+	  Found PHOT-Param[ 4] = FIELD (form = 12A)
+	  Found PHOT-Param[ 5] = PHOTFLAG (form = 1J)
+	  Found PHOT-Param[ 6] = PHOTPROB (form = 1E)
+	  Found PHOT-Param[ 7] = FLUXCAL (form = 1E)
+	  Found PHOT-Param[ 8] = FLUXCALERR (form = 1E)
+	  Found PHOT-Param[ 9] = PSF_NEA (form = 1E)
+	  Found PHOT-Param[10] = SKY_SIG (form = 1E)
+	  Found PHOT-Param[11] = SKY_SIG_T (form = 1E)
+	  Found PHOT-Param[12] = RDNOISE (form = 1E)
+	  Found PHOT-Param[13] = ZEROPT (form = 1E)
+	  Found PHOT-Param[14] = ZEROPT_ERR (form = 1E)
+	  Found PHOT-Param[15] = GAIN (form = 1E)
+	  Found PHOT-Param[16] = XPIX (form = 1E)
+	  Found PHOT-Param[17] = YPIX (form = 1E)
+	  Found PHOT-Param[18] = SIM_MAGOBS (form = 1E)
+   Allocated  1.288 MB of memory for HEAD table (LEN=2182). 
+   Allocated  0.017 MB of memory for PHOT table (LEN=83). 
+  
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=     1 for MS_9427_1280
+     Done Reading CID MS_9427_1280      NMJD(found,stored)=  36   36
+  SNTABLE_CREATE_TEXT: init OUTLIER TEXT-table in key format. 
+     Create BLOCK = OUTLIER  for TABLE ID =  7800
+       Analyze ISN=       1  for MS_9427_1280    NMJD(stored,cuts)=  36->  36
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=     2 for MS_9427_1223
+     Done Reading CID MS_9427_1223      NMJD(found,stored)=  47   47
+       Analyze ISN=       2  for MS_9427_1223    NMJD(stored,cuts)=  47->  47
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=     3 for MS_9427_2739
+     Done Reading CID MS_9427_2739      NMJD(found,stored)=  19   19
+       Analyze ISN=       3  for MS_9427_2739    NMJD(stored,cuts)=  19->  19
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=     4 for MS_9427_138
+     Done Reading CID MS_9427_138       NMJD(found,stored)=  47   47
+       Analyze ISN=       4  for MS_9427_138     NMJD(stored,cuts)=  47->  47
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=     5 for MS_9427_688
+     Done Reading CID MS_9427_688       NMJD(found,stored)=  44   44
+       Analyze ISN=       5  for MS_9427_688     NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=     6 for MS_9427_34
+     Done Reading CID MS_9427_34        NMJD(found,stored)=  31   31
+       Analyze ISN=       6  for MS_9427_34      NMJD(stored,cuts)=  31->  31
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=     7 for MS_9427_109
+     Done Reading CID MS_9427_109       NMJD(found,stored)=  43   43
+       Analyze ISN=       7  for MS_9427_109     NMJD(stored,cuts)=  43->  43
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=     8 for MS_9427_416
+     Done Reading CID MS_9427_416       NMJD(found,stored)=  44   44
+       Analyze ISN=       8  for MS_9427_416     NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=     9 for MS_9427_1220
+     Done Reading CID MS_9427_1220      NMJD(found,stored)=  52   46
+       Analyze ISN=       9  for MS_9427_1220    NMJD(stored,cuts)=  46->  46
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    10 for MS_9427_1286
+     Done Reading CID MS_9427_1286      NMJD(found,stored)=  54   54
+       Analyze ISN=      10  for MS_9427_1286    NMJD(stored,cuts)=  54->  54
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    11 for hl_ms_22914
+     Done Reading CID hl_ms_22914       NMJD(found,stored)=  56   56
+       Analyze ISN=      11  for hl_ms_22914     NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    12 for MS_9427_1173
+     Done Reading CID MS_9427_1173      NMJD(found,stored)=   3    3
+       Analyze ISN=      12  for MS_9427_1173    NMJD(stored,cuts)=   3->   3
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    13 for MS_9427_909
+     Done Reading CID MS_9427_909       NMJD(found,stored)=  35   35
+       Analyze ISN=      13  for MS_9427_909     NMJD(stored,cuts)=  35->  35
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    14 for MS_9427_670
+     Done Reading CID MS_9427_670       NMJD(found,stored)=  11   11
+       Analyze ISN=      14  for MS_9427_670     NMJD(stored,cuts)=  11->  11
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    15 for MS_9427_1076
+     Done Reading CID MS_9427_1076      NMJD(found,stored)=  21   21
+       Analyze ISN=      15  for MS_9427_1076    NMJD(stored,cuts)=  21->  21
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    16 for MS_9427_1579
+     Done Reading CID MS_9427_1579      NMJD(found,stored)=  78   78
+       Analyze ISN=      16  for MS_9427_1579    NMJD(stored,cuts)=  78->  78
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    17 for MS_9427_908
+     Done Reading CID MS_9427_908       NMJD(found,stored)=  23   23
+       Analyze ISN=      17  for MS_9427_908     NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    18 for MS_9427_507
+     Done Reading CID MS_9427_507       NMJD(found,stored)=  64   64
+       Analyze ISN=      18  for MS_9427_507     NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    19 for MS_9427_2852
+     Done Reading CID MS_9427_2852      NMJD(found,stored)=  32   32
+       Analyze ISN=      19  for MS_9427_2852    NMJD(stored,cuts)=  32->  32
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    20 for MS_9427_2914
+     Done Reading CID MS_9427_2914      NMJD(found,stored)=  23   23
+       Analyze ISN=      20  for MS_9427_2914    NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    21 for MS_9427_451
+     Done Reading CID MS_9427_451       NMJD(found,stored)=   8    8
+       Analyze ISN=      21  for MS_9427_451     NMJD(stored,cuts)=   8->   8
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    22 for MS_9427_171
+     Done Reading CID MS_9427_171       NMJD(found,stored)=   1    1
+       Analyze ISN=      22  for MS_9427_171     NMJD(stored,cuts)=   1->   1
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    23 for MS_9427_1616
+     Done Reading CID MS_9427_1616      NMJD(found,stored)=  42   42
+       Analyze ISN=      23  for MS_9427_1616    NMJD(stored,cuts)=  42->  42
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    24 for MS_9427_1845
+     Done Reading CID MS_9427_1845      NMJD(found,stored)=  70   70
+       Analyze ISN=      24  for MS_9427_1845    NMJD(stored,cuts)=  70->  70
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    25 for MS_9427_1183
+     Done Reading CID MS_9427_1183      NMJD(found,stored)=  48   48
+       Analyze ISN=      25  for MS_9427_1183    NMJD(stored,cuts)=  48->  48
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    26 for MS_9427_3546
+     Done Reading CID MS_9427_3546      NMJD(found,stored)=  67   67
+       Analyze ISN=      26  for MS_9427_3546    NMJD(stored,cuts)=  67->  67
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    27 for MS_9427_1122
+     Done Reading CID MS_9427_1122      NMJD(found,stored)=  58   58
+       Analyze ISN=      27  for MS_9427_1122    NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    28 for MS_9427_2172
+     Done Reading CID MS_9427_2172      NMJD(found,stored)=  44   44
+       Analyze ISN=      28  for MS_9427_2172    NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    29 for MS_9427_438
+     Done Reading CID MS_9427_438       NMJD(found,stored)=  41   40
+       Analyze ISN=      29  for MS_9427_438     NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    30 for MS_9427_1757
+     Done Reading CID MS_9427_1757      NMJD(found,stored)=   8    8
+       Analyze ISN=      30  for MS_9427_1757    NMJD(stored,cuts)=   8->   8
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    31 for MS_9427_3874
+     Done Reading CID MS_9427_3874      NMJD(found,stored)=  58   58
+       Analyze ISN=      31  for MS_9427_3874    NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    32 for MS_9427_151
+     Done Reading CID MS_9427_151       NMJD(found,stored)=  14   14
+       Analyze ISN=      32  for MS_9427_151     NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    33 for MS_9427_1016
+     Done Reading CID MS_9427_1016      NMJD(found,stored)=   3    0
+                   SNANA cuts REJECT CID = MS_9427_  => SKIP 
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    34 for MS_9427_3545
+     Done Reading CID MS_9427_3545      NMJD(found,stored)=  33   29
+       Analyze ISN=      34  for MS_9427_3545    NMJD(stored,cuts)=  29->  29
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    35 for MS_9427_3751
+     Done Reading CID MS_9427_3751      NMJD(found,stored)=  47   45
+       Analyze ISN=      35  for MS_9427_3751    NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    36 for MS_9427_2175
+     Done Reading CID MS_9427_2175      NMJD(found,stored)=  51   49
+       Analyze ISN=      36  for MS_9427_2175    NMJD(stored,cuts)=  49->  49
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    37 for MS_9427_1547
+     Done Reading CID MS_9427_1547      NMJD(found,stored)=  61   59
+       Analyze ISN=      37  for MS_9427_1547    NMJD(stored,cuts)=  59->  59
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    38 for MS_9427_801
+     Done Reading CID MS_9427_801       NMJD(found,stored)=  42   41
+       Analyze ISN=      38  for MS_9427_801     NMJD(stored,cuts)=  41->  41
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    39 for MS_9427_133
+     Done Reading CID MS_9427_133       NMJD(found,stored)=  55   55
+       Analyze ISN=      39  for MS_9427_133     NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    40 for MS_9299_1511
+     Done Reading CID MS_9299_1511      NMJD(found,stored)=  39   39
+       Analyze ISN=      40  for MS_9299_1511    NMJD(stored,cuts)=  39->  39
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    41 for MS_9299_625
+     Done Reading CID MS_9299_625       NMJD(found,stored)=  16   16
+       Analyze ISN=      41  for MS_9299_625     NMJD(stored,cuts)=  16->  16
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    42 for MS_9427_1262
+     Done Reading CID MS_9427_1262      NMJD(found,stored)=  10   10
+       Analyze ISN=      42  for MS_9427_1262    NMJD(stored,cuts)=  10->  10
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    43 for hl_ms_10994
+     Done Reading CID hl_ms_10994       NMJD(found,stored)=  12   12
+       Analyze ISN=      43  for hl_ms_10994     NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    44 for MS_9299_2912
+     Done Reading CID MS_9299_2912      NMJD(found,stored)=  65   65
+       Analyze ISN=      44  for MS_9299_2912    NMJD(stored,cuts)=  65->  65
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    45 for MS_9299_2806
+     Done Reading CID MS_9299_2806      NMJD(found,stored)=  54   54
+       Analyze ISN=      45  for MS_9299_2806    NMJD(stored,cuts)=  54->  54
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    46 for MS_9171_3017
+     Done Reading CID MS_9171_3017      NMJD(found,stored)=  45   45
+       Analyze ISN=      46  for MS_9171_3017    NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    47 for MS_9299_880
+     Done Reading CID MS_9299_880       NMJD(found,stored)=  28   28
+       Analyze ISN=      47  for MS_9299_880     NMJD(stored,cuts)=  28->  28
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    48 for MS_9299_2693
+     Done Reading CID MS_9299_2693      NMJD(found,stored)=  38   38
+       Analyze ISN=      48  for MS_9299_2693    NMJD(stored,cuts)=  38->  38
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    49 for MS_9299_592
+     Done Reading CID MS_9299_592       NMJD(found,stored)=  16   16
+       Analyze ISN=      49  for MS_9299_592     NMJD(stored,cuts)=  16->  16
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    50 for MS_9299_1808
+     Done Reading CID MS_9299_1808      NMJD(found,stored)=  14   14
+       Analyze ISN=      50  for MS_9299_1808    NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    51 for MS_9427_3097
+     Done Reading CID MS_9427_3097      NMJD(found,stored)=  44   44
+       Analyze ISN=      51  for MS_9427_3097    NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    52 for MS_9427_901
+     Done Reading CID MS_9427_901       NMJD(found,stored)=  15   14
+       Analyze ISN=      52  for MS_9427_901     NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    53 for MS_9427_1071
+     Done Reading CID MS_9427_1071      NMJD(found,stored)=  65   65
+       Analyze ISN=      53  for MS_9427_1071    NMJD(stored,cuts)=  65->  65
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    54 for MS_9427_4005
+     Done Reading CID MS_9427_4005      NMJD(found,stored)=  60   60
+       Analyze ISN=      54  for MS_9427_4005    NMJD(stored,cuts)=  60->  60
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    55 for MS_9427_875
+     Done Reading CID MS_9427_875       NMJD(found,stored)=  44   44
+       Analyze ISN=      55  for MS_9427_875     NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    56 for MS_9427_1802
+     Done Reading CID MS_9427_1802      NMJD(found,stored)=  45   45
+       Analyze ISN=      56  for MS_9427_1802    NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    57 for MS_9427_1079
+     Done Reading CID MS_9427_1079      NMJD(found,stored)=  56   56
+       Analyze ISN=      57  for MS_9427_1079    NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    58 for MS_9427_733
+     Done Reading CID MS_9427_733       NMJD(found,stored)=  28   28
+       Analyze ISN=      58  for MS_9427_733     NMJD(stored,cuts)=  28->  28
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    59 for hl_ms_4611
+     Done Reading CID hl_ms_4611        NMJD(found,stored)=   7    7
+       Analyze ISN=      59  for hl_ms_4611      NMJD(stored,cuts)=   7->   7
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    60 for hl_ms_4624
+     Done Reading CID hl_ms_4624        NMJD(found,stored)=  14   14
+       Analyze ISN=      60  for hl_ms_4624      NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    61 for MS_9427_2562
+     Done Reading CID MS_9427_2562      NMJD(found,stored)=  64   64
+       Analyze ISN=      61  for MS_9427_2562    NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    62 for MS_9427_1135
+     Done Reading CID MS_9427_1135      NMJD(found,stored)=  61   61
+       Analyze ISN=      62  for MS_9427_1135    NMJD(stored,cuts)=  61->  61
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    63 for MS_9427_1301
+     Done Reading CID MS_9427_1301      NMJD(found,stored)=  54   54
+       Analyze ISN=      63  for MS_9427_1301    NMJD(stored,cuts)=  54->  54
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    64 for MS_9427_2245
+     Done Reading CID MS_9427_2245      NMJD(found,stored)=  61   61
+       Analyze ISN=      64  for MS_9427_2245    NMJD(stored,cuts)=  61->  61
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    65 for MS_9427_2731
+     Done Reading CID MS_9427_2731      NMJD(found,stored)=  54   54
+       Analyze ISN=      65  for MS_9427_2731    NMJD(stored,cuts)=  54->  54
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    66 for MS_9427_2177
+     Done Reading CID MS_9427_2177      NMJD(found,stored)=  53   53
+       Analyze ISN=      66  for MS_9427_2177    NMJD(stored,cuts)=  53->  53
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    67 for MS_9427_2280
+     Done Reading CID MS_9427_2280      NMJD(found,stored)=  50   50
+       Analyze ISN=      67  for MS_9427_2280    NMJD(stored,cuts)=  50->  50
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    68 for MS_9427_503
+     Done Reading CID MS_9427_503       NMJD(found,stored)=   4    4
+       Analyze ISN=      68  for MS_9427_503     NMJD(stored,cuts)=   4->   4
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    69 for MS_9427_543
+     Done Reading CID MS_9427_543       NMJD(found,stored)=  12   12
+       Analyze ISN=      69  for MS_9427_543     NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    70 for MS_9427_999
+     Done Reading CID MS_9427_999       NMJD(found,stored)=  25   25
+       Analyze ISN=      70  for MS_9427_999     NMJD(stored,cuts)=  25->  25
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    71 for hl_ms_1439
+     Done Reading CID hl_ms_1439        NMJD(found,stored)=  29   29
+       Analyze ISN=      71  for hl_ms_1439      NMJD(stored,cuts)=  29->  29
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    72 for MS_9427_2255
+     Done Reading CID MS_9427_2255      NMJD(found,stored)=  56   56
+       Analyze ISN=      72  for MS_9427_2255    NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    73 for MS_9427_822
+     Done Reading CID MS_9427_822       NMJD(found,stored)=  12   12
+       Analyze ISN=      73  for MS_9427_822     NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    74 for MS_9427_795
+     Done Reading CID MS_9427_795       NMJD(found,stored)=   8    8
+       Analyze ISN=      74  for MS_9427_795     NMJD(stored,cuts)=   8->   8
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    75 for MS_9427_4000
+     Done Reading CID MS_9427_4000      NMJD(found,stored)=  58   58
+       Analyze ISN=      75  for MS_9427_4000    NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    76 for MS_9427_4215
+     Done Reading CID MS_9427_4215      NMJD(found,stored)=  55   55
+       Analyze ISN=      76  for MS_9427_4215    NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    77 for MS_9427_1037
+     Done Reading CID MS_9427_1037      NMJD(found,stored)=  66   66
+       Analyze ISN=      77  for MS_9427_1037    NMJD(stored,cuts)=  66->  66
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    78 for MS_9427_1755
+     Done Reading CID MS_9427_1755      NMJD(found,stored)=  40   40
+       Analyze ISN=      78  for MS_9427_1755    NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    79 for MS_9427_550
+     Done Reading CID MS_9427_550       NMJD(found,stored)=  17   17
+       Analyze ISN=      79  for MS_9427_550     NMJD(stored,cuts)=  17->  17
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    80 for MS_9427_45
+     Done Reading CID MS_9427_45        NMJD(found,stored)=  40   40
+       Analyze ISN=      80  for MS_9427_45      NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    81 for MS_9427_3103
+     Done Reading CID MS_9427_3103      NMJD(found,stored)=  39   39
+       Analyze ISN=      81  for MS_9427_3103    NMJD(stored,cuts)=  39->  39
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    82 for hl_ms_3558
+     Done Reading CID hl_ms_3558        NMJD(found,stored)=  64   64
+       Analyze ISN=      82  for hl_ms_3558      NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    83 for MS_9427_1004
+     Done Reading CID MS_9427_1004      NMJD(found,stored)=  16   16
+       Analyze ISN=      83  for MS_9427_1004    NMJD(stored,cuts)=  16->  16
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    84 for MS_9427_661
+     Done Reading CID MS_9427_661       NMJD(found,stored)=  13   13
+       Analyze ISN=      84  for MS_9427_661     NMJD(stored,cuts)=  13->  13
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    85 for MS_9427_1017
+     Done Reading CID MS_9427_1017      NMJD(found,stored)=  15   15
+       Analyze ISN=      85  for MS_9427_1017    NMJD(stored,cuts)=  15->  15
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    86 for MS_9427_2276
+     Done Reading CID MS_9427_2276      NMJD(found,stored)=  10   10
+       Analyze ISN=      86  for MS_9427_2276    NMJD(stored,cuts)=  10->  10
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    87 for MS_9427_3032
+     Done Reading CID MS_9427_3032      NMJD(found,stored)=  37   37
+       Analyze ISN=      87  for MS_9427_3032    NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    88 for MS_9427_1749
+     Done Reading CID MS_9427_1749      NMJD(found,stored)=  46   46
+       Analyze ISN=      88  for MS_9427_1749    NMJD(stored,cuts)=  46->  46
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    89 for MS_9299_33
+     Done Reading CID MS_9299_33        NMJD(found,stored)=  35   33
+       Analyze ISN=      89  for MS_9299_33      NMJD(stored,cuts)=  33->  33
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    90 for MS_9427_139
+     Done Reading CID MS_9427_139       NMJD(found,stored)=  38   33
+       Analyze ISN=      90  for MS_9427_139     NMJD(stored,cuts)=  33->  33
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    91 for MS_9427_630
+     Done Reading CID MS_9427_630       NMJD(found,stored)=  40   40
+       Analyze ISN=      91  for MS_9427_630     NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    92 for MS_9427_4109
+     Done Reading CID MS_9427_4109      NMJD(found,stored)=  23   21
+       Analyze ISN=      92  for MS_9427_4109    NMJD(stored,cuts)=  21->  21
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    93 for MS_9299_970
+     Done Reading CID MS_9299_970       NMJD(found,stored)=  22   20
+       Analyze ISN=      93  for MS_9299_970     NMJD(stored,cuts)=  20->  20
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    94 for MS_9299_1634
+     Done Reading CID MS_9299_1634      NMJD(found,stored)=  58   58
+       Analyze ISN=      94  for MS_9299_1634    NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    95 for MS_9427_2495
+     Done Reading CID MS_9427_2495      NMJD(found,stored)=  29   27
+       Analyze ISN=      95  for MS_9427_2495    NMJD(stored,cuts)=  27->  27
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    96 for MS_9299_109
+     Done Reading CID MS_9299_109       NMJD(found,stored)=  34   34
+       Analyze ISN=      96  for MS_9299_109     NMJD(stored,cuts)=  34->  34
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    97 for MS_9299_3277
+     Done Reading CID MS_9299_3277      NMJD(found,stored)=  24   24
+       Analyze ISN=      97  for MS_9299_3277    NMJD(stored,cuts)=  24->  24
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    98 for MS_9299_218
+     Done Reading CID MS_9299_218       NMJD(found,stored)=  56   55
+       Analyze ISN=      98  for MS_9299_218     NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=    99 for MS_9427_2111
+     Done Reading CID MS_9427_2111      NMJD(found,stored)=  36   34
+       Analyze ISN=      99  for MS_9427_2111    NMJD(stored,cuts)=  34->  34
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   100 for MS_9427_3686
+     Done Reading CID MS_9427_3686      NMJD(found,stored)=  52   48
+       Analyze ISN=     100  for MS_9427_3686    NMJD(stored,cuts)=  48->  48
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   101 for MS_9299_4082
+     Done Reading CID MS_9299_4082      NMJD(found,stored)=  49   45
+       Analyze ISN=     101  for MS_9299_4082    NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   102 for MS_9299_656
+     Done Reading CID MS_9299_656       NMJD(found,stored)=  28   26
+       Analyze ISN=     102  for MS_9299_656     NMJD(stored,cuts)=  26->  26
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   103 for hl_ms_13352
+     Done Reading CID hl_ms_13352       NMJD(found,stored)=  31   30
+       Analyze ISN=     103  for hl_ms_13352     NMJD(stored,cuts)=  30->  30
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   104 for MS_9299_596
+     Done Reading CID MS_9299_596       NMJD(found,stored)=  24   21
+       Analyze ISN=     104  for MS_9299_596     NMJD(stored,cuts)=  21->  21
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   105 for MS_9299_614
+     Done Reading CID MS_9299_614       NMJD(found,stored)=  41   41
+       Analyze ISN=     105  for MS_9299_614     NMJD(stored,cuts)=  41->  41
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   106 for MS_9299_1667
+     Done Reading CID MS_9299_1667      NMJD(found,stored)=  13   12
+       Analyze ISN=     106  for MS_9299_1667    NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   107 for MS_9299_1597
+     Done Reading CID MS_9299_1597      NMJD(found,stored)=   8    8
+       Analyze ISN=     107  for MS_9299_1597    NMJD(stored,cuts)=   8->   8
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   108 for MS_9299_3686
+     Done Reading CID MS_9299_3686      NMJD(found,stored)=   1    1
+       Analyze ISN=     108  for MS_9299_3686    NMJD(stored,cuts)=   1->   1
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   109 for MS_9299_1254
+     Done Reading CID MS_9299_1254      NMJD(found,stored)=  52   52
+       Analyze ISN=     109  for MS_9299_1254    NMJD(stored,cuts)=  52->  52
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   110 for MS_9299_306
+     Done Reading CID MS_9299_306       NMJD(found,stored)=  47   45
+       Analyze ISN=     110  for MS_9299_306     NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   111 for MS_9299_2805
+     Done Reading CID MS_9299_2805      NMJD(found,stored)=  57   57
+       Analyze ISN=     111  for MS_9299_2805    NMJD(stored,cuts)=  57->  57
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   112 for MS_9299_338
+     Done Reading CID MS_9299_338       NMJD(found,stored)=  46   46
+       Analyze ISN=     112  for MS_9299_338     NMJD(stored,cuts)=  46->  46
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   113 for MS_9299_930
+     Done Reading CID MS_9299_930       NMJD(found,stored)=  10   10
+       Analyze ISN=     113  for MS_9299_930     NMJD(stored,cuts)=  10->  10
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   114 for MS_9299_71
+     Done Reading CID MS_9299_71        NMJD(found,stored)=  11   11
+       Analyze ISN=     114  for MS_9299_71      NMJD(stored,cuts)=  11->  11
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   115 for MS_9299_2950
+     Done Reading CID MS_9299_2950      NMJD(found,stored)=  64   64
+       Analyze ISN=     115  for MS_9299_2950    NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   116 for MS_9299_690
+     Done Reading CID MS_9299_690       NMJD(found,stored)=  48   48
+       Analyze ISN=     116  for MS_9299_690     NMJD(stored,cuts)=  48->  48
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   117 for MS_9299_2203
+     Done Reading CID MS_9299_2203      NMJD(found,stored)=  37   37
+       Analyze ISN=     117  for MS_9299_2203    NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   118 for MS_9299_2068
+     Done Reading CID MS_9299_2068      NMJD(found,stored)=  64   64
+       Analyze ISN=     118  for MS_9299_2068    NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   119 for hl_ms_12831
+     Done Reading CID hl_ms_12831       NMJD(found,stored)=  34   34
+       Analyze ISN=     119  for hl_ms_12831     NMJD(stored,cuts)=  34->  34
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   120 for MS_9299_1871
+     Done Reading CID MS_9299_1871      NMJD(found,stored)=  45   45
+       Analyze ISN=     120  for MS_9299_1871    NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   121 for MS_9299_3643
+     Done Reading CID MS_9299_3643      NMJD(found,stored)=  73   73
+       Analyze ISN=     121  for MS_9299_3643    NMJD(stored,cuts)=  73->  73
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   122 for hl_ms_15796
+     Done Reading CID hl_ms_15796       NMJD(found,stored)=  62   58
+       Analyze ISN=     122  for hl_ms_15796     NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   123 for MS_9427_2208
+     Done Reading CID MS_9427_2208      NMJD(found,stored)=  58   55
+       Analyze ISN=     123  for MS_9427_2208    NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   124 for MS_9427_2591
+     Done Reading CID MS_9427_2591      NMJD(found,stored)=  57   51
+       Analyze ISN=     124  for MS_9427_2591    NMJD(stored,cuts)=  51->  51
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   125 for MS_9427_2783
+     Done Reading CID MS_9427_2783      NMJD(found,stored)=  23   23
+       Analyze ISN=     125  for MS_9427_2783    NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   126 for MS_9427_1258
+     Done Reading CID MS_9427_1258      NMJD(found,stored)=  57   52
+       Analyze ISN=     126  for MS_9427_1258    NMJD(stored,cuts)=  52->  52
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   127 for MS_9427_2626
+     Done Reading CID MS_9427_2626      NMJD(found,stored)=  12   11
+       Analyze ISN=     127  for MS_9427_2626    NMJD(stored,cuts)=  11->  11
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   128 for MS_9427_1452
+     Done Reading CID MS_9427_1452      NMJD(found,stored)=  37   37
+       Analyze ISN=     128  for MS_9427_1452    NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   129 for MS_9427_201
+     Done Reading CID MS_9427_201       NMJD(found,stored)=   8    6
+       Analyze ISN=     129  for MS_9427_201     NMJD(stored,cuts)=   6->   6
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   130 for MS_9427_1010
+     Done Reading CID MS_9427_1010      NMJD(found,stored)=   3    3
+       Analyze ISN=     130  for MS_9427_1010    NMJD(stored,cuts)=   3->   3
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   131 for MS_9427_1276
+     Done Reading CID MS_9427_1276      NMJD(found,stored)=  42   40
+       Analyze ISN=     131  for MS_9427_1276    NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   132 for MS_9427_1951
+     Done Reading CID MS_9427_1951      NMJD(found,stored)=  51   51
+       Analyze ISN=     132  for MS_9427_1951    NMJD(stored,cuts)=  51->  51
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   133 for MS_9427_249
+     Done Reading CID MS_9427_249       NMJD(found,stored)=   8    8
+       Analyze ISN=     133  for MS_9427_249     NMJD(stored,cuts)=   8->   8
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   134 for MS_9427_3350
+     Done Reading CID MS_9427_3350      NMJD(found,stored)=   1    1
+       Analyze ISN=     134  for MS_9427_3350    NMJD(stored,cuts)=   1->   1
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   135 for MS_9427_2222
+     Done Reading CID MS_9427_2222      NMJD(found,stored)=   1    1
+       Analyze ISN=     135  for MS_9427_2222    NMJD(stored,cuts)=   1->   1
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   136 for MS_9427_2419
+     Done Reading CID MS_9427_2419      NMJD(found,stored)=  37   33
+       Analyze ISN=     136  for MS_9427_2419    NMJD(stored,cuts)=  33->  33
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   137 for hl_ms_3680
+     Done Reading CID hl_ms_3680        NMJD(found,stored)=  41   41
+       Analyze ISN=     137  for hl_ms_3680      NMJD(stored,cuts)=  41->  41
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   138 for MS_9427_106
+     Done Reading CID MS_9427_106       NMJD(found,stored)=  17   17
+       Analyze ISN=     138  for MS_9427_106     NMJD(stored,cuts)=  17->  17
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   139 for MS_9427_0
+     Done Reading CID MS_9427_0         NMJD(found,stored)=  23   23
+       Analyze ISN=     139  for MS_9427_0       NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   140 for MS_9427_602
+     Done Reading CID MS_9427_602       NMJD(found,stored)=  49   49
+       Analyze ISN=     140  for MS_9427_602     NMJD(stored,cuts)=  49->  49
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   141 for MS_9427_2244
+     Done Reading CID MS_9427_2244      NMJD(found,stored)=  27   23
+       Analyze ISN=     141  for MS_9427_2244    NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   142 for MS_9427_1322
+     Done Reading CID MS_9427_1322      NMJD(found,stored)=  33   33
+       Analyze ISN=     142  for MS_9427_1322    NMJD(stored,cuts)=  33->  33
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   143 for MS_9427_4031
+     Done Reading CID MS_9427_4031      NMJD(found,stored)=  57   57
+       Analyze ISN=     143  for MS_9427_4031    NMJD(stored,cuts)=  57->  57
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   144 for MS_9427_1234
+     Done Reading CID MS_9427_1234      NMJD(found,stored)=  51   51
+       Analyze ISN=     144  for MS_9427_1234    NMJD(stored,cuts)=  51->  51
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   145 for MS_9427_86
+     Done Reading CID MS_9427_86        NMJD(found,stored)=  14   14
+       Analyze ISN=     145  for MS_9427_86      NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   146 for MS_9427_754
+     Done Reading CID MS_9427_754       NMJD(found,stored)=  45   45
+       Analyze ISN=     146  for MS_9427_754     NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   147 for MS_9427_1586
+     Done Reading CID MS_9427_1586      NMJD(found,stored)=  12   12
+       Analyze ISN=     147  for MS_9427_1586    NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   148 for MS_9427_664
+     Done Reading CID MS_9427_664       NMJD(found,stored)=  13   13
+       Analyze ISN=     148  for MS_9427_664     NMJD(stored,cuts)=  13->  13
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   149 for MS_9299_53
+     Done Reading CID MS_9299_53        NMJD(found,stored)=   7    7
+       Analyze ISN=     149  for MS_9299_53      NMJD(stored,cuts)=   7->   7
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   150 for MS_9299_759
+     Done Reading CID MS_9299_759       NMJD(found,stored)=   9    9
+       Analyze ISN=     150  for MS_9299_759     NMJD(stored,cuts)=   9->   9
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   151 for MS_9299_2237
+     Done Reading CID MS_9299_2237      NMJD(found,stored)=  23   23
+       Analyze ISN=     151  for MS_9299_2237    NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   152 for MS_9299_2047
+     Done Reading CID MS_9299_2047      NMJD(found,stored)=  35   35
+       Analyze ISN=     152  for MS_9299_2047    NMJD(stored,cuts)=  35->  35
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   153 for MS_9299_154
+     Done Reading CID MS_9299_154       NMJD(found,stored)=  34   34
+       Analyze ISN=     153  for MS_9299_154     NMJD(stored,cuts)=  34->  34
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   154 for MS_9299_2211
+     Done Reading CID MS_9299_2211      NMJD(found,stored)=  52   52
+       Analyze ISN=     154  for MS_9299_2211    NMJD(stored,cuts)=  52->  52
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   155 for MS_9299_2821
+     Done Reading CID MS_9299_2821      NMJD(found,stored)=  56   56
+       Analyze ISN=     155  for MS_9299_2821    NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   156 for MS_9299_949
+     Done Reading CID MS_9299_949       NMJD(found,stored)=  37   37
+       Analyze ISN=     156  for MS_9299_949     NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   157 for MS_9299_784
+     Done Reading CID MS_9299_784       NMJD(found,stored)=  32   32
+       Analyze ISN=     157  for MS_9299_784     NMJD(stored,cuts)=  32->  32
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   158 for MS_9299_177
+     Done Reading CID MS_9299_177       NMJD(found,stored)=  51   51
+       Analyze ISN=     158  for MS_9299_177     NMJD(stored,cuts)=  51->  51
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   159 for MS_9427_101
+     Done Reading CID MS_9427_101       NMJD(found,stored)=  45   45
+       Analyze ISN=     159  for MS_9427_101     NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   160 for MS_9299_837
+     Done Reading CID MS_9299_837       NMJD(found,stored)=  22   22
+       Analyze ISN=     160  for MS_9299_837     NMJD(stored,cuts)=  22->  22
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   161 for MS_9299_2411
+     Done Reading CID MS_9299_2411      NMJD(found,stored)=  64   64
+       Analyze ISN=     161  for MS_9299_2411    NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   162 for MS_9299_1563
+     Done Reading CID MS_9299_1563      NMJD(found,stored)=  45   37
+       Analyze ISN=     162  for MS_9299_1563    NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   163 for MS_9299_25
+     Done Reading CID MS_9299_25        NMJD(found,stored)=  56   56
+       Analyze ISN=     163  for MS_9299_25      NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   164 for MS_9299_1669
+     Done Reading CID MS_9299_1669      NMJD(found,stored)=  38   38
+       Analyze ISN=     164  for MS_9299_1669    NMJD(stored,cuts)=  38->  38
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   165 for MS_9299_260
+     Done Reading CID MS_9299_260       NMJD(found,stored)=  15   15
+       Analyze ISN=     165  for MS_9299_260     NMJD(stored,cuts)=  15->  15
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   166 for MS_9299_136
+     Done Reading CID MS_9299_136       NMJD(found,stored)=  12   12
+       Analyze ISN=     166  for MS_9299_136     NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   167 for MS_9299_297
+     Done Reading CID MS_9299_297       NMJD(found,stored)=  56   56
+       Analyze ISN=     167  for MS_9299_297     NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   168 for MS_9299_1152
+     Done Reading CID MS_9299_1152      NMJD(found,stored)=  60   60
+       Analyze ISN=     168  for MS_9299_1152    NMJD(stored,cuts)=  60->  60
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   169 for MS_9299_563
+     Done Reading CID MS_9299_563       NMJD(found,stored)=  44   44
+       Analyze ISN=     169  for MS_9299_563     NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   170 for MS_9299_1427
+     Done Reading CID MS_9299_1427      NMJD(found,stored)=  41   41
+       Analyze ISN=     170  for MS_9299_1427    NMJD(stored,cuts)=  41->  41
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   171 for MS_9299_339
+     Done Reading CID MS_9299_339       NMJD(found,stored)=  43   43
+       Analyze ISN=     171  for MS_9299_339     NMJD(stored,cuts)=  43->  43
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   172 for MS_9299_865
+     Done Reading CID MS_9299_865       NMJD(found,stored)=  51   44
+       Analyze ISN=     172  for MS_9299_865     NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   173 for MS_9299_722
+     Done Reading CID MS_9299_722       NMJD(found,stored)=  42   42
+       Analyze ISN=     173  for MS_9299_722     NMJD(stored,cuts)=  42->  42
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   174 for MS_9299_658
+     Done Reading CID MS_9299_658       NMJD(found,stored)=  58   58
+       Analyze ISN=     174  for MS_9299_658     NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   175 for MS_9299_324
+     Done Reading CID MS_9299_324       NMJD(found,stored)=  57   57
+       Analyze ISN=     175  for MS_9299_324     NMJD(stored,cuts)=  57->  57
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   176 for MS_9299_308
+     Done Reading CID MS_9299_308       NMJD(found,stored)=  48   48
+       Analyze ISN=     176  for MS_9299_308     NMJD(stored,cuts)=  48->  48
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   177 for MS_9299_307
+     Done Reading CID MS_9299_307       NMJD(found,stored)=  16   16
+       Analyze ISN=     177  for MS_9299_307     NMJD(stored,cuts)=  16->  16
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   178 for MS_9299_343
+     Done Reading CID MS_9299_343       NMJD(found,stored)=  15   14
+       Analyze ISN=     178  for MS_9299_343     NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   179 for MS_9299_2363
+     Done Reading CID MS_9299_2363      NMJD(found,stored)=  24   24
+       Analyze ISN=     179  for MS_9299_2363    NMJD(stored,cuts)=  24->  24
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   180 for MS_9299_376
+     Done Reading CID MS_9299_376       NMJD(found,stored)=  42   39
+       Analyze ISN=     180  for MS_9299_376     NMJD(stored,cuts)=  39->  39
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   181 for MS_9299_1464
+     Done Reading CID MS_9299_1464      NMJD(found,stored)=  55   55
+       Analyze ISN=     181  for MS_9299_1464    NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   182 for MS_9299_2451
+     Done Reading CID MS_9299_2451      NMJD(found,stored)=  59   59
+       Analyze ISN=     182  for MS_9299_2451    NMJD(stored,cuts)=  59->  59
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   183 for MS_9299_411
+     Done Reading CID MS_9299_411       NMJD(found,stored)=  38   38
+       Analyze ISN=     183  for MS_9299_411     NMJD(stored,cuts)=  38->  38
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   184 for MS_9299_2799
+     Done Reading CID MS_9299_2799      NMJD(found,stored)=  61   61
+       Analyze ISN=     184  for MS_9299_2799    NMJD(stored,cuts)=  61->  61
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   185 for MS_9299_320
+     Done Reading CID MS_9299_320       NMJD(found,stored)=  35   35
+       Analyze ISN=     185  for MS_9299_320     NMJD(stored,cuts)=  35->  35
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   186 for MS_9299_163
+     Done Reading CID MS_9299_163       NMJD(found,stored)=  21   21
+       Analyze ISN=     186  for MS_9299_163     NMJD(stored,cuts)=  21->  21
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   187 for MS_9299_253
+     Done Reading CID MS_9299_253       NMJD(found,stored)=  20   20
+       Analyze ISN=     187  for MS_9299_253     NMJD(stored,cuts)=  20->  20
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   188 for MS_9427_593
+     Done Reading CID MS_9427_593       NMJD(found,stored)=  40   40
+       Analyze ISN=     188  for MS_9427_593     NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   189 for MS_9427_2060
+     Done Reading CID MS_9427_2060      NMJD(found,stored)=  55   55
+       Analyze ISN=     189  for MS_9427_2060    NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   190 for MS_9427_3435
+     Done Reading CID MS_9427_3435      NMJD(found,stored)=   5    5
+       Analyze ISN=     190  for MS_9427_3435    NMJD(stored,cuts)=   5->   5
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   191 for MS_9427_3035
+     Done Reading CID MS_9427_3035      NMJD(found,stored)=  13   13
+       Analyze ISN=     191  for MS_9427_3035    NMJD(stored,cuts)=  13->  13
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   192 for MS_9427_2558
+     Done Reading CID MS_9427_2558      NMJD(found,stored)=   2    2
+       Analyze ISN=     192  for MS_9427_2558    NMJD(stored,cuts)=   2->   2
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   193 for MS_9427_623
+     Done Reading CID MS_9427_623       NMJD(found,stored)=  41   41
+       Analyze ISN=     193  for MS_9427_623     NMJD(stored,cuts)=  41->  41
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   194 for MS_9427_1332
+     Done Reading CID MS_9427_1332      NMJD(found,stored)=  29   29
+       Analyze ISN=     194  for MS_9427_1332    NMJD(stored,cuts)=  29->  29
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   195 for MS_9427_3313
+     Done Reading CID MS_9427_3313      NMJD(found,stored)=  26   26
+       Analyze ISN=     195  for MS_9427_3313    NMJD(stored,cuts)=  26->  26
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   196 for MS_9299_618
+     Done Reading CID MS_9299_618       NMJD(found,stored)=  58   58
+       Analyze ISN=     196  for MS_9299_618     NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   197 for MS_9299_1491
+     Done Reading CID MS_9299_1491      NMJD(found,stored)=  65   59
+       Analyze ISN=     197  for MS_9299_1491    NMJD(stored,cuts)=  59->  59
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   198 for MS_9427_1341
+     Done Reading CID MS_9427_1341      NMJD(found,stored)=  69   69
+       Analyze ISN=     198  for MS_9427_1341    NMJD(stored,cuts)=  69->  69
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   199 for MS_9299_944
+     Done Reading CID MS_9299_944       NMJD(found,stored)=  40   40
+       Analyze ISN=     199  for MS_9299_944     NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   200 for MS_9427_1472
+     Done Reading CID MS_9427_1472      NMJD(found,stored)=  52   52
+       Analyze ISN=     200  for MS_9427_1472    NMJD(stored,cuts)=  52->  52
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   356 for MS_9299_2790
+     Done Reading CID MS_9299_2790      NMJD(found,stored)=  59   59
+       Analyze ISN=     356  for MS_9299_2790    NMJD(stored,cuts)=  59->  59
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   378 for MS_9299_79
+     Done Reading CID MS_9299_79        NMJD(found,stored)=  37   37
+       Analyze ISN=     378  for MS_9299_79      NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   400 for MS_9300_2845
+     Done Reading CID MS_9300_2845      NMJD(found,stored)=  68   67
+       Analyze ISN=     400  for MS_9300_2845    NMJD(stored,cuts)=  67->  67
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   422 for MS_9300_29
+     Done Reading CID MS_9300_29        NMJD(found,stored)=   5    5
+       Analyze ISN=     422  for MS_9300_29      NMJD(stored,cuts)=   5->   5
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   711 for MS_9427_440
+     Done Reading CID MS_9427_440       NMJD(found,stored)=   9    9
+       Analyze ISN=     711  for MS_9427_440     NMJD(stored,cuts)=   9->   9
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   733 for MS_9427_1608
+     Done Reading CID MS_9427_1608      NMJD(found,stored)=  61   61
+       Analyze ISN=     733  for MS_9427_1608    NMJD(stored,cuts)=  61->  61
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   755 for MS_9300_1431
+     Done Reading CID MS_9300_1431      NMJD(found,stored)=  27   27
+       Analyze ISN=     755  for MS_9300_1431    NMJD(stored,cuts)=  27->  27
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=   777 for MS_9427_36
+     Done Reading CID MS_9427_36        NMJD(found,stored)=  42   38
+       Analyze ISN=     777  for MS_9427_36      NMJD(stored,cuts)=  38->  38
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1066 for MS_9428_438
+     Done Reading CID MS_9428_438       NMJD(found,stored)=  15   15
+       Analyze ISN=    1066  for MS_9428_438     NMJD(stored,cuts)=  15->  15
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1088 for MS_9300_1421
+     Done Reading CID MS_9300_1421      NMJD(found,stored)=   7    7
+       Analyze ISN=    1088  for MS_9300_1421    NMJD(stored,cuts)=   7->   7
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1110 for MS_9300_2024
+     Done Reading CID MS_9300_2024      NMJD(found,stored)=  42   42
+       Analyze ISN=    1110  for MS_9300_2024    NMJD(stored,cuts)=  42->  42
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1132 for MS_9300_285
+     Done Reading CID MS_9300_285       NMJD(found,stored)=  69   69
+       Analyze ISN=    1132  for MS_9300_285     NMJD(stored,cuts)=  69->  69
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1421 for MS_9171_1104
+     Done Reading CID MS_9171_1104      NMJD(found,stored)=  22   22
+       Analyze ISN=    1421  for MS_9171_1104    NMJD(stored,cuts)=  22->  22
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1443 for MS_9299_752
+     Done Reading CID MS_9299_752       NMJD(found,stored)=  58   58
+       Analyze ISN=    1443  for MS_9299_752     NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1465 for MS_9171_48
+     Done Reading CID MS_9171_48        NMJD(found,stored)=  31   31
+       Analyze ISN=    1465  for MS_9171_48      NMJD(stored,cuts)=  31->  31
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1487 for MS_9300_367
+     Done Reading CID MS_9300_367       NMJD(found,stored)=  29   29
+       Analyze ISN=    1487  for MS_9300_367     NMJD(stored,cuts)=  29->  29
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1776 for MS_9300_1994
+     Done Reading CID MS_9300_1994      NMJD(found,stored)=  52   52
+       Analyze ISN=    1776  for MS_9300_1994    NMJD(stored,cuts)=  52->  52
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1798 for MS_9171_386
+     Done Reading CID MS_9171_386       NMJD(found,stored)=  27   27
+       Analyze ISN=    1798  for MS_9171_386     NMJD(stored,cuts)=  27->  27
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1820 for MS_9300_697
+     Done Reading CID MS_9300_697       NMJD(found,stored)=   2    2
+       Analyze ISN=    1820  for MS_9300_697     NMJD(stored,cuts)=   2->   2
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  1842 for MS_9301_2860
+     Done Reading CID MS_9301_2860      NMJD(found,stored)=  68   67
+       Analyze ISN=    1842  for MS_9301_2860    NMJD(stored,cuts)=  67->  67
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  2131 for MS_9172_189
+     Done Reading CID MS_9172_189       NMJD(found,stored)=  27   27
+       Analyze ISN=    2131  for MS_9172_189     NMJD(stored,cuts)=  27->  27
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  2153 for MS_9300_1843
+     Done Reading CID MS_9300_1843      NMJD(found,stored)=  50   50
+       Analyze ISN=    2153  for MS_9300_1843    NMJD(stored,cuts)=  50->  50
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+   Assign integer CID=  2175 for MS_9172_901
+     Done Reading CID MS_9172_901       NMJD(found,stored)=  62   62
+       Analyze ISN=    2175  for MS_9172_901     NMJD(stored,cuts)=  62->  62
+  
+  ######################################################## 
+    CALL USREND
+  ######################################################## 
+  
+   Close OUT_OPTIMIZE-03.OUTLIER.TEXT 
+  
+  ######################################################## 
+    Job Summary                                                                                                             
+  ######################################################## 
+  
+                          Number of SN passing incremental cut for
+CUTSTAT:  CUT-NAME      ITYPE=     ALL       0  
+ ------------------------------------------------------------------------
+CUTSTAT:  CID                     2182    2182  
+CUTSTAT:  NMJD_INCLUDE            2180    2180  
+  
+  
+ ------------------------------------------------------------------------
+
+    Finished processing    2180 SN after snana  cuts   (   2182 before cuts)
+  
+    Bad PHOTOMETRY FLAG for      796 of    82217 epochs
+  
+    TOTAL  INIT   TIME :            0  seconds 
+    TOTAL PROCESS TIME :    0.02 minutes     (  0.00 sec per SN)
+  
+  
+  PHOTFLAG BIT PERFORMANCE for REJECTING  10.0 sigma OUTLIERS:
+
+   BIT   EFF(OUTLIER)   1-EFF(BULK)   FoM
+   ----------------------------------------- 
+     0   0.179 +_ 0.036    0.812    0.145
+     5   0.000 +_ 0.000    1.000    0.000
+     6   0.000 +_ 0.000    1.000    0.000
+    10   0.009 +_ 0.009    1.000    0.009
+    11   0.009 +_ 0.009    0.990    0.009
+    12   0.045 +_ 0.020    0.988    0.044
+    13   0.000 +_ 0.000    0.991    0.000
+    17   0.045 +_ 0.020    0.992    0.044
+    21   0.000 +_ 0.000    0.999    0.000
+    22   0.107 +_ 0.029    0.988    0.106
+    23   0.009 +_ 0.009    0.994    0.009
+    24   0.009 +_ 0.009    0.997    0.009
+  
+     FLUX-OUTLIER SUMMARY per BAND for                       
+     |F_data-F_true(SIM)|/Sigma_F > 10.00 :                  
+        u-Outlier frac =  0.02058   (    81/  3936)          
+        g-Outlier frac =  0.00094   (     8/  8480)          
+        r-Outlier frac =  0.00054   (    12/ 22366)          
+        i-Outlier frac =  0.00036   (     8/ 22530)          
+        z-Outlier frac =  0.00010   (     1/ 10221)          
+        Y-Outlier frac =  0.00017   (     2/ 11892)          
+  
+    ENDING PROGRAM GRACEFULLY. 

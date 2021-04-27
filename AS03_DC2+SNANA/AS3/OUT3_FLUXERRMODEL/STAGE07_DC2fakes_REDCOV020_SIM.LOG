@@ -1,0 +1,383 @@
+
+ ****************************************************************** 
+   Begin execution of snlc_sim.exe    
+ SNDATA_ROOT = /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT 
+ SNANA_DIR   = /global/cfs/cdirs/lsst/groups/SN/snana/SNANA 
+   Full command: snlc_sim.exe STAGE03_simgen_fakes.input GENVERSION STAGE07_DC2fakes_REDCOV020 FLUXERRMODEL_FILE FLUXERRMODEL_SIM.DAT FLUXERRMODEL_REDCOV u:0.2,g:0.2,r:0.2,i:0.2,z:0.2,Y:0.2 
+
+  
+  ######################################################## 
+     INIT_SNVAR: Init variables.
+  ######################################################## 
+  
+   Allocate 12.50 MB for CIDMASK array (to check duplicates)
+   HOST MACHINE = x86_64-conda_cos6-linux-gnu   (x86_64-suse-linux)
+   SNDATA_ROOT = /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT
+   SNANA_DIR = /global/cfs/cdirs/lsst/groups/SN/snana/SNANA    (v11_02m)
+   sizeof(INPUTS) =   1.444 MB 
+   sizeof(GENLC)  =   7.818 MB 
+  init_SNDATA_GLOBAL: 
+ --------------------------------------------------------
+  Initialize NstringMatch for sim-input file
+  Read user input file 1: STAGE03_simgen_fakes.input 
+
+ ****************************************************************** 
+   init_HzFUN_INFO  
+	 H0         = 70.00      # km/s/Mpc 
+	 OM, OL, Ok = 0.31500, 0.68500, 0.00000 
+	 w0, wa     = -1.000,  0.000 
+
+ ****************************************************************** 
+    prep_user_inputs summary   
+	 SIMLIB file        : STAGE02_FAKES.SIMLIB   (start LIBID=0)
+	 Generation Version : STAGE07_DC2fakes_REDCOV020 
+	 Generation source  : RANDOM 
+	 Generation model   : SIMLIB 
+	 Number of LC to Generate: 0 
+	 OMEGA_(MATTER,LAMBDA)= 0.315, 0.685,    w0= -1.00   H0= 70.0 
+	 KCOR  file : /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/kcor/2017-04_approx/kcor_LSST.fits 
+	 Observer Gen-FILTERS  :  ugrizY  
+	 Random number seed: 12345  (NSTREAM=2)
+	 Gen-Range for RA(deg)  : -360.000 to  360.000 
+	 Gen-Range for DEC(deg): -360.000 to  360.000 
+	 Gen-Range for ZCMB :  0.012 to  1.900  (sigma= 0.0000, bias=0.00000) 
+	 Gen-Range for PEAKMJD  :  40000.0 to  80000.0  
+	 Gen-Range for Trest    :   -100.0 to    100.0  days 
+	 Gen-Range for SHAPEPAR  :      0.0 to      0.0  
+	 Gen-Range for AV  : 0.00 to 0.00  (dN/dAv = exp(-AV/0.00) 
+	 Gen-Mean  for RV  : 3.10  
+	 Gen-sigma for RV  : 0.00 , 0.00 (lower , upper ) 
+	 Gen-Range for RV  : 1.00 to 5.00 
+	 ZP offsets (ugrizY) :  0.000 0.000 0.000 0.000 0.000 0.000
+	 MODEL mag offsets (ugrizY) :   0.00  0.00  0.00  0.00  0.00  0.00
+
+
+ ****************************************************************** 
+    init_RANDOMsource : CIDOFF=0   
+
+ ****************************************************************** 
+   SIMLIB_readGlobalHeader_TEXT  
+	 Opened : STAGE02_FAKES.SIMLIB 
+
+	 ***** DOCANA WARNING ******* 
+  Missing required 'DOCUMENTATION:'  key in 
+    STAGE02_FAKES.SIMLIB 
+  See DOCANA examples with linux command: 
+    grep -R DOCUMENTATION_END $SNDATA_ROOT 
+  File must begin with 'DOCUMENTATION:' key
+
+
+ ****************************************************************** 
+   SIMLIB_prepGlobalHeader  
+	 SIMLIB Survey    : LSST 
+	 SIMLIB telescope : UNKNOWN 
+	 SIMLIB Filters   : ugrizY 
+	 SIMLIB PSF unit:    PIXEL_SIGMA 
+	 SIMLIB SKYSIG unit: ADU_PER_SQPIXEL 
+	 SIMLIB IGNORE FLUXERR_COR map. 
+
+ ****************************************************************** 
+   INIT_HOSTLIB(): Read host-galaxy library.  
+	 Reading /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT/simlib/DES/V21_DES_SVA2.HOSTLIB 
+	 Found match to HOSTLIB Variable 'GALID' (IVAR_STORE=0) 
+	 Found match to HOSTLIB Variable 'ZTRUE' (IVAR_STORE=1) 
+	 Found match to HOSTLIB Variable 'RA' (IVAR_STORE=2) 
+	 Found match to HOSTLIB Variable 'DEC' (IVAR_STORE=3) 
+	 Found match to HOSTLIB Variable 'ZPHOT_ERR' (IVAR_STORE=4) 
+	 Found match to HOSTLIB Variable 'u_obs' (IVAR_STORE=5) 
+	 Found match to HOSTLIB Variable 'g_obs' (IVAR_STORE=6) 
+	 Found match to HOSTLIB Variable 'r_obs' (IVAR_STORE=7) 
+	 Found match to HOSTLIB Variable 'i_obs' (IVAR_STORE=8) 
+	 Found match to HOSTLIB Variable 'z_obs' (IVAR_STORE=9) 
+	 Found match to HOSTLIB Variable 'n0_Sersic' (IVAR_STORE=10) 
+	 Found match to HOSTLIB Variable 'a0_Sersic' (IVAR_STORE=11) 
+	 Found match to HOSTLIB Variable 'b0_Sersic' (IVAR_STORE=12) 
+	 Found match to HOSTLIB Variable 'a_rot' (IVAR_STORE=13) 
+	 Found match to HOSTLIB Variable 'LOGMASS_TRUE' (IVAR_STORE=14) 
+	 Found match to HOSTLIB Variable 'LOGMASS_ERR' (IVAR_STORE=15) 
+	 Stored 353244 galaxies from HOSTLIB (from 353244 total). 
+	 Sort HOSTLIB by redshift (0.0097 to 2.0000) 
+	 |zSN-zGAL| tolerance zpoly: 0.05 
+	 Check HOSTLIB for duplicate entries. 
+	 Interpolate WGTMAP for each galaxy (3.53 MB) ... 
+	   WGT(igal=0,GALID=100545) = 1.000000 -> WGTSUM = 1.000000 
+	   WGT(igal=1,GALID=201571) = 1.000000 -> WGTSUM = 2.000000 
+	   WGT(igal=353243,GALID=527401) = 1.000000 -> WGTSUM = 353244.000000 
+	 Read 901 rows of b_n(n) table from 
+	   /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT/simlib/Sersic_bn.dat
+	 Init 51 log10(R/Re) bins from -4.000 to  2.000 
+	 Init 50 Sersic integral tables spanning n = 0.15 - 8.00 (80.4 kB) 
+	 init_SAMEHOST: Re-use host arbitrary number of times.
+	 Compute Host Galaxy Mags and Noise. 
+   OPEN_TEXTFILE: /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT/simlib/Gauss2dIntegrals.dat 
+   Read 4 table varNames from TEXT table=Gass2D 
+	 ==> Finished reading 3 of 4 variables with 51 entries
+	 Gauss2d Table radius : 0.00 - 5.00 (51 bins of 0.10) 
+	 Gauss2d Table sigma  : 0.50 - 0.50 (1 bins of 0.00) 
+	 HOSTLIB Init time: 3.00 seconds 
+
+ ****************************************************************** 
+   INIT_FLUXERRMODEL:  
+	 Opened : FLUXERRMODEL_SIM.DAT 
+    Load GRIDMAP-100 'FLUXERR(PSF)'  NROW=1 
+    Load GRIDMAP-101 'FLUXERR(PSF)'  NROW=1 
+    Load GRIDMAP-102 'FLUXERR(PSF)'  NROW=1 
+    Load GRIDMAP-103 'FLUXERR(PSF)'  NROW=1 
+    Load GRIDMAP-104 'FLUXERR(PSF)'  NROW=1 
+    Load GRIDMAP-105 'FLUXERR(PSF)'  NROW=1 
+
+       MAPNAME       BANDS         FIELDLIST        VARNAMES     SIZE 
+# --------------------------------------------------------------------------- 
+ FLUXERR_SCALE:0          u ALL                          PSF           1
+ FLUXERR_SCALE:0          g ALL                          PSF           1
+ FLUXERR_SCALE:0          r ALL                          PSF           1
+ FLUXERR_SCALE:0          i ALL                          PSF           1
+ FLUXERR_SCALE:0          z ALL                          PSF           1
+ FLUXERR_SCALE:0          Y ALL                          PSF           1
+# --------------------------------------------------------------------------- 
+ NINDEX_SPARSE_FLUXERRMAP = 1 
+ NREDCOV = 6  (number of reduced flux-cov)
+	 Excess scatter 0: REDCOV(u) =  0.200  (FIELD=ALL)
+	 Excess scatter 1: REDCOV(g) =  0.200  (FIELD=ALL)
+	 Excess scatter 2: REDCOV(r) =  0.200  (FIELD=ALL)
+	 Excess scatter 3: REDCOV(i) =  0.200  (FIELD=ALL)
+	 Excess scatter 4: REDCOV(z) =  0.200  (FIELD=ALL)
+	 Excess scatter 5: REDCOV(Y) =  0.200  (FIELD=ALL)
+
+ ****************************************************************** 
+   Initialize SEARCH EFFICIENCY for 'LSST' 
+  
+
+  Optional SEARCHEFF_PIPELINE_FILE not found -> skip. 
+
+  Optional SEARCHEFF_SPEC_FILE not specified -> EFF_SPEC=1 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+
+  Optional SEARCHEFF_zHOST_FILE not specified -> Eff=1.0 
+  
+  ============================================= 
+  RDKCOR_FITS: Read Calib/Kcor tables.
+    Opened /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/kcor/2017-04_approx/kcor_LSST.fits
+    with Blocksize=  1   and ISTAT=     0
+  
+      RDKCOR_FITS_HEAD    
+         Read VERSION      =   3  (kcor.exe version)
+         Read NPRIM        =   1  primary refs
+         Read NFILTERS     =   6  filters
+         Read NKCOR        =   0  K-COR tables
+      RDKCOR_FITS_ZPT 
+      RDKCOR_FITS_SNSED 
+      RDKCOR_FITS_KCOR  
+      RDKCOR_FITS_MAGS  
+      RDKCOR_FITS_FILTERS 
+      RDKCOR_FITS_PRIMARYSED  
+      FTCLOSE  
+         ---------------------- 
+         !!! RDKCOR_SUMMARY !!! 
+         ---------------------- 
+    Primary spectrum: AB                                      
+  
+  FILTER SUMMARY (RDKCOR) : 
+  internal                    LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ------------------------------------------------------------------
+  01 LSST-u                  3671  198      0-    0   0.000  0.000
+  02 LSST-g                  4827  424      0-    0   0.000  0.000
+  03 LSST-r                  6223  406      0-    0   0.000  0.000
+  04 LSST-i                  7546  376      0-    0   0.000  0.000
+  05 LSST-z                  8691  305      0-    0   0.000  0.000
+  06 LSST-Y                  9710  338      0-    0   0.000  0.000
+ ------------------------------------------------------------------
+    NFILTDEF[SURVEY,REST] =    6   0
+  
+  
+   RDKCOR: Done. 
+  ---------------------------------------------- 
+  
+    Zeropoint offsets (ZPOFF) from : KCOR file
+         Will apply net MAGOBS_SHIFT_ZP(u) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(g) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(r) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(i) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(z) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(Y) =  0.0000
+
+ Read SIM_MAGOBS from SIMLIB file. 
+
+ ****************************************************************** 
+   init_modelSmear: init intrinsic SN smearing with model=NONE  
+	 Smear-mode: interpolate from central filter wavelengths.
+
+ init_obs_atFLUXMAX: Fmax-clump [SNRCUT=5.0(3.0), MJDWIN=60.0, wgt=1] 
+
+ ****************************************************************** 
+    Fill comments for README doc-file  
+
+ ****************************************************************** 
+   clr_VERSION  
+	 LCMERGE Version STAGE07_DC2fakes_REDCOV020 does not exist. 
+	 SIM Version STAGE07_DC2fakes_REDCOV020 exists. 
+	 PHOTOMETRY Version STAGE07_DC2fakes_REDCOV020 does not exist. 
+	 Removing version STAGE07_DC2fakes_REDCOV020 files ... 
+ execute command: rm -rf  /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT/SIM/STAGE07_DC2fakes_REDCOV020/  
+ Done. 
+
+ ****************************************************************** 
+    Begin Generating Lightcurves.   
+	 Finished generating        1 of 2123 valid LIBIDs 
+	 Finished generating      500 of 2123 valid LIBIDs 
+	 Finished generating     1000 of 2123 valid LIBIDs 
+	 Finished generating     1500 of 2123 valid LIBIDs 
+	 Finished generating     2000 of 2123 valid LIBIDs 
+
+	 STOP generation after reading SIMLIB one time.
+	    (see option with SIMLIB_MSKOPT += 4) 
+
+
+ ****************************************************************** 
+    Done generating 2037 SN lightcurves from RANDOM source.  
+	 (1000000 lightcurves requested => 2037 were written) 
+
+   FLUXERRMAP                EXTRAP-FRACTION   (NLO,NHI) 
+   ------------------------------------------------------ 
+   FLUXERR_SCALE(ALL-u)      4924/4924 = 1.0000   (0,4924)
+   FLUXERR_SCALE(ALL-g)      8644/8644 = 1.0000   (0,8644)
+   FLUXERR_SCALE(ALL-r)      22132/22132 = 1.0000   (0,22132)
+   FLUXERR_SCALE(ALL-i)      22232/22232 = 1.0000   (0,22232)
+   FLUXERR_SCALE(ALL-z)      10013/10013 = 1.0000   (0,10013)
+   FLUXERR_SCALE(ALL-Y)      11568/11568 = 1.0000   (0,11568)
+
+ ****************************************************************** 
+    Fill comments for README doc-file  
+
+ ****************************************************************** 
+   DUMP README CONTENTS TO SCREEN
+  
+DOCUMENTATION: 
+  SURVEY:       LSST
+  GENMODEL:     SIMLIB 
+  HOST_MACHINE: x86_64-conda_cos6-linux-gnu 
+  USERNAME:  bos0109 
+  SNDATA_ROOT:  /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT 
+  SNANA_DIR:     /global/cfs/cdirs/lsst/groups/SN/snana/SNANA 
+  SNANA_VERSION: v11_02m 
+  CWD:   /global/cfs/cdirs/snana/SURVEYS/LSST/ROOT/starterKits/DC2+SNANA/AS3/OUT3_FLUXERRMODEL 
+DOCUMENTATION_END: 
+
+ FULL_DESCRIPTION: 
+	 SIMLIB filename  : STAGE02_FAKES.SIMLIB (start at LIBID=0) 
+	 SIMLIB SURVEY    : LSST  (TELESCOPE=UNKNOWN, MINOBS=1) 
+	 SIMLIB UNITS     : PIXEL_SIGMA for PSF,  ADU_PER_SQPIXEL for SKYSIG 
+	 SIMLIB MSKOPT   : 36 
+	 NEWMJD_DIF       : 10.08  minutes (defines trigger epoch)
+	 Generation VERSION: STAGE07_DC2fakes_REDCOV020 
+	 Generation source : RANDOM 
+	 Generation FILTERS: ugrizY 
+	 KCOR lookup tables: /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/kcor/2017-04_approx/kcor_LSST.fits 
+	 Flux-smearing is ON 
+	 Reported flux-uncertainty includes SKY+GALAXY+SOURCE
+	 Zeropt-smearing is OFF 
+	 Host-galaxy shot-noise  is ON 
+	 Host-galaxy image-noise  is OFF 
+	 MilkyWay extinction  is ON  
+	    Color law: CCM89+ODonell94  (OPT_MWCOLORLAW=94) 
+	    E(B-V): FILE value (SIMLIB or data header)   (OPT_MWEBV=1)
+	    sigma(MWEBV) = 0.00*MWEBV + 0.00  
+	    shift(MWEBV) = 0.000 mag 
+
+  GENERATION RANGES: 
+	 ==> Override gen-values with SIMLIB header values.
+	 Generate Redshift :  0.012 to  1.900  using  SIMLIB values. 
+	 REDSHIFT_FINAL is ZCMB_GEN smeared by :  0.00000 
+	 Peculiar Velocity (VPEC) Gauss sigma: 0.0 km/sec
+	 ugrizY   ZP   offsets :  0.000  0.000  0.000  0.000  0.000  0.000 
+	 ugrizY  MODEL offsets :  0.000  0.000  0.000  0.000  0.000  0.000 
+	 ugrizY  exposure times: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 
+	 RA       : -360.00 to 360.00  deg
+	 PEAKMJD  :  40000.0 to  80000.0   
+	 PEAKMJD-estimate  : Fmax-clump, MJDWIN=60.0, SNRCUT>5.0(3.0)
+	 Trest    :  -100.00 to   100.00  days 
+	 RISETIME-SHIFT(days) SIGMA(lo,hi) : 0.0 , 0.0  (Mean= 0.0) 
+	 FALLTIME-SHIFT(days) SIGMA(lo,hi) : 0.0 , 0.0  (Mean= 0.0) 
+	 Shape-par(NULL): Peak=0.00  SIG-+= 0.000,0.000  SKEW=0.00,0.00  BND=0.00,0.00
+
+  Host Extinction Parameters: NONE  (AV=0) 
+
+  Z-dependent SN-parameter shifts:  None. 
+
+  Intrinsic MAG-smearing models (sigma clip -3.0 to  3.0) : 
+   Model 1: Coherent MAG-smearing (GENMAG_SMEAR) :  0.000  
+   Model 2: passband MAG-smearing is OFF 
+   Model 3:  model-smear is OFF  
+   Model 4: intrinsic scatter matrix is OFF 
+   Model 5: GENMAG_SMEAR_USRFUN is  OFF 
+
+  AVWARP_OVERFLOWS:  NONE. 
+
+  Cosmology Parameters: 
+	 H0 =  70.00 km/s per MPc 
+	 Omega_{M,L} =  0.315,  0.685   w0,wa = -1.00,0.000  
+
+ --------------------------------------------------- 
+  Software-Pipeline Search Efficiency (MINOBS=2) from 
+
+  Spectroscopic Efficiency : 
+	 No spec-eff option specified ==> 100% efficiency. 
+
+  Unconfirmed zHOST Efficiency : 100% 
+
+  APPLY_SEARCHEFF_OPT=0 --> No trigger requirements 
+ --------------------------------------------------- 
+
+  HOSTLIB Summary: 
+	 Read 353244 total HOSTLIB entries from 
+	   /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT/simlib/DES/V21_DES_SVA2.HOSStored & z-sorted 353244 entries in GENRANGE_REDSHIFT= 0.012 - 1.900 
+	 Stored & z-sorted 353244 entries in GENRANGE_REDSHIFT= 0.012 - 1.900 
+	 HOSTLIB Z-RANGE = 0.0097 - 2.0000 
+	 HOSTLIB ZGAPMAX = 0.0057 (1.9943-2.0000)  <ZGAP>= 5.634e-06 
+	 HOSTLIB Opt:  compute host-noise contribution to SN noise 
+	 Weight MAP variables: none 
+	 GALSHAPE profile : a0_Sersic b0_Sersic 
+	 GALPOS generated with 0.9900 of total flux. 
+	 GALMAG ugriz interp-grid for PSFSIG(asec) = 0.013 0.030 0.043 0.085 0.170 0.340 GALMAG aperture integration bins:  
+	 GALMAG aperture integration bins:  
+	 	 100 x  0.085 arcsec radial bins. 
+	 	  36 x 10.000 degree azimuthal bins. 
+
+  Fudges on SIMLIB Seeing Conditions: NONE. 
+
+MAP: SIMLIB_FILE: STAGE02_FAKES.SIMLIB
+MAP: KCOR_FILE: /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/kcor/2017-04_approx/kcor_LSST.fits
+MAP: FLUXERRMODEL_FILE: FLUXERRMODEL_SIM.DAT
+
+ ============ END OF SIMULATION SUMMARY ============== 
+
+  Random Number Sync: 
+	 RANDOM SEED: 12345   (RANLIST_START_GENSMEAR: 1)
+   FIRST/LAST Random Number (List=1): 0.714178 0.699074  AVG(wrap) = 0.5 +_ 0.1 
+   FIRST/LAST Random Number (List=2): 0.841811 0.363633  AVG(wrap) = 0.3 +_ 0.0 
+   FIRST/LAST Random Number (List=3): 0.942959 0.334520  AVG(wrap) = 0.0 +_ 0.0 
+
+  Generation Statistics (gen CPU=0.2 minutes): 
+	 Generated  2037 simulated light curves (136/sec) 
+	 Wrote      2037 simulated light curves to SNDATA files (136/sec). 
+  Spectroscopic-type: 2037 -> 2037 (before -> after cuts)
+  Photometric-type:   0 -> 0 (before -> after cuts)
+  Rejection Statistics: 
+	     0 rejected by NEPOCH<1 
+	     0 rejected by GENRANGEs 
+	     0 rejected by SEARCH-TRIGGER 
+	     0 rejected by CUTWIN-SELECTION 
+  SEARCH+CUTS Efficiency:  1.0000 +-  0.0005 
+
+  WARNING: GENERATION STOPPED AFTER ONE PASS THRU SIMLIB
+	  AS REQUESTED BY SIM-INPUT SIMLIB_MSKOPT += 4
+
+	 ===== END OF README FILE ====== 
+
+  AUXILIARY FILES: 
+  /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT/SIM/STAGE07_DC2fakes_REDCOV020/STAGE07_DC2fakes_REDCOV020.LIST 
+  /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT/SIM/STAGE07_DC2fakes_REDCOV020/STAGE07_DC2fakes_REDCOV020.README 
+
+ DONE with snlc_sim.

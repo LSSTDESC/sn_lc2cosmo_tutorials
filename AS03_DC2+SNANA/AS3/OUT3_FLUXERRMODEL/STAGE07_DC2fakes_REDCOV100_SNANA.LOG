@@ -1,0 +1,1749 @@
+  Full command: snana.exe STAGE06_redcov.nml VERSION_PHOTOMETRY STAGE07_DC2fakes_REDCOV100 TEXTFILE_PREFIX STAGE07_DC2fakes_REDCOV100
+  
+  
+  ######################################################## 
+     INIT_SNVAR: Init variables.
+  ######################################################## 
+  
+   Allocate 12.50 MB for CIDMASK array (to check duplicates)
+   HOST MACHINE = x86_64-conda_cos6-linux-gnu   (x86_64-suse-linux)
+   SNDATA_ROOT = /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT
+   SNANA_DIR = /global/cfs/cdirs/lsst/groups/SN/snana/SNANA    (v11_02m)
+  
+  ######################################################## 
+     READ SNLCINP NAMELIST. 
+  ######################################################## 
+  
+    Read namelist file: STAGE06_redcov.nml
+      PROCESS COMMAND LINE ARG: VERSION_PHOTOMETRY
+      PROCESS COMMAND LINE ARG: TEXTFILE_PREFIX
+&SNLCINP
+ VERSION_PHOTOMETRY="STAGE07_DC2fakes_REDCOV100                                              ", 11*"NULL                                                                    ",
+ VERSION_REFORMAT_FITS="NULL                                                                    ",
+ VERSION_REFORMAT_TEXT="NULL                                                                    ",
+ PRIVATE_DATA_PATH="$SNANA_LSST_ROOT/lcmerge                                                                                                                                        ",
+ FILTER_UPDATE_PATH="                                                                                                                                                                ",
+ NONSURVEY_FILTERS="                                                                                                    ",
+ SNRMAX_FILTERS="                                                                                                    ",
+ VPEC_ERR_OVERRIDE=  0.00000000    ,
+ FILTER_REPLACE="                                                                                                    ",
+ FILTLIST_LAMSHIFT="                                                                                                    ",
+ JOBSPLIT= 2*1          ,
+ JOBSPLIT_EXTERNAL= 2*1          ,
+ SIM_PRESCALE=  1.00000000    ,
+ MXLC_FIT=999888777  ,
+ OPT_YAML=0          ,
+ OPTSIM_LCWIDTH=0          ,
+ OPT_REFORMAT_TEXT=0          ,
+ OPT_REFORMAT_SALT2=0          ,
+ REFORMAT_KEYS="NULL                                                                                                                                                                                                    ",
+ OPT_REFORMAT_FITS=0          ,
+ SNMJD_LIST_FILE="                                                                                                                                                                                                        ",
+ SNMJD_OUT_FILE="                                                                                                                                                                                                        ",
+ MNFIT_PKMJD_LOGFILE="MNFIT_PKMJD.LOG                                                                                                                                                                                         ",
+ HFILE_OUT="                                                                                                                                                                                                        ",
+ ROOTFILE_OUT="                                                                                                                                                                                                        ",
+ TEXTFILE_PREFIX="STAGE07_DC2fakes_REDCOV100                                                                                                                                                                              ",
+ SNTABLE_LIST="SNANA                                                                                                                                                                                                   ",
+ SNTABLE_FILTER_REMAP="                                                                                                                                                                                                        ",
+ MARZFILE_OUT="                                                                                                                                                                                                        ",
+ KCOR_FILE="$SNANA_LSST_ROOT/kcor/2017-04_approx/kcor_LSST.fits                                                                                                                                                     ",
+ OVERRIDE_RESTLAM_BOUNDARY="                                                                                ",
+ USERTAGS_FILE="                                                                                                                                                                                                        ",
+ VPEC_FILE="                                                                                                                                                                                                        ",
+ HEADER_OVERRIDE_FILE="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ",
+ EPOCH_IGNORE_FILE="DEFAULT                                                                                                                                                                                                 ",
+ OUT_EPOCH_IGNORE_FILE="                                                                                                                                                                                                        ",
+ SNCID_LIST_FILE="                                                                                                                                                                                                        ",
+ OPT_SNCID_LIST=0          ,
+ NONLINEARITY_FILE="                                                                                                                                                                                                        ",
+ SIMLIB_OUT="                                                                                                                                                                                                        ",
+ SIMLIB_OUTFILE="                                                                                                                                                                                                        ",
+ SIMLIB_ZPERR_LIST="                                                                                                                                                                                                        ",
+ OPT_SIMLIB_OUT=1          ,
+ SIMLIB_OUT_TMINFIX=99999      ,
+ NFIT_ITERATION=0          ,
+ MINUIT_PRINT_LEVEL=-1         ,
+ INTERP_OPT=1          ,
+ USE_MINOS=F,
+ OPT_SETPKMJD=-9         ,
+ SNRCUT_SETPKMJD=  5.00000000    ,
+ MJDWIN_SETPKMJD=  60.0000000    ,
+ SHIFT_SETPKMJD=  0.00000000    ,
+ OPT_DEBUG=0          ,
+ LSIM_SEARCH_SPEC=F,
+ LSIM_SEARCH_ZHOST=F,
+ LDMP_SNFAIL=F,
+ LDMP_SNANA_VERSION=F,
+ LTEST_KCOR=F,
+ LTEST_INTERP=F,
+ LTEST_MAG=F,
+ LTEST_U3BAND=F,
+ USESIM_SNIA=T,
+ USESIM_SNCC=T,
+ USESIM_TRUEFLUX=F,
+ USE_SNHOST_ZPHOT=F,
+ RESTORE_DES3YR=F,
+ RESTORE_WRONG_VPEC=F,
+ REQUIRE_DOCANA=0          ,
+ LPROB_TRUEFLUX=T,
+ ABORT_ON_NOEPOCHS=T,
+ ABORT_ON_BADAVWARP=T,
+ ABORT_ON_NOPKMJD=T,
+ ABORT_ON_BADZ=T,
+ ABORT_ON_BADKCOR=T,
+ ABORT_ON_BADSURVEY=T,
+ ABORT_ON_MARGPDF0=T,
+ ABORT_ON_TRESTCUT=T,
+ ABORT_ON_DUPLCID=T,
+ ABORT_ON_DUPLMJD=F,
+ ABORT_ON_BADFILTER=T,
+ H0_REF=  70.000000000000000     ,  7.0000000000000000     ,
+ OLAM_REF= 0.68500000238418579     ,  2.9999999329447746E-002,
+ OMAT_REF= 0.31499999761581421     ,  2.9999999329447746E-002,
+ W0_REF= -1.0000000000000000     , 0.10000000149011612     ,
+ DWDA_REF= 2*0.0000000000000000       ,
+ USE_MWCOR=F,
+ MXLC_PLOT=100        ,
+ NCCID_PLOT=0          ,
+ SNCCID_PLOT= 52*"                    ",
+ DTOBS_MODEL_PLOT=  2.00000000    ,
+ MULTISEASON_OPTMASK=0          ,
+ MULTISEASON_TGAP=  1.00000000E+09,
+ ZTOL_HELIO2CMB=  1.99999996E-02,
+ MULTISEASON_NREJECT_OUTLIER=  0.00000000    ,
+ MULTISEASON_CHI2RED_ACTIVE=  5.00000000    ,
+ PHOTFLAG_DETECT=0          ,
+ PHOTFLAG_TRIGGER=0          ,
+ SNTYPE_LIST= 52*0          ,
+ SNCID_LIST= 52*0          ,
+ SNCCID_LIST= 52*"                    ",
+ MXEVT_PROCESS=999888777  ,
+ SNCCID_IGNORE= 52*"                    ",
+ SNCID_IGNORE_FILE="                                                                                                                                                                                                        ",
+ SNCID_IGNORE= 52*0          ,
+ SNTYPE_IGNORE= 52*0          ,
+ CCDNUM_LIST= 52*0          ,
+ SIM_TEMPLATE_INDEX_LIST= 52*0          ,
+ SNFIELD_LIST="ALL                                                         ", 51*"                                                            ",
+ SNTEL_LIST="ALL                 ", 51*"                    ",
+ PHOTFLAG_MSKREJ=65536      , 4*0          ,
+ PHOTFLAG_BITLIST_REJECT=16         , 29*-9         ,
+ CUTWIN_CID= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_REDSHIFT= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_REDSHIFT_ERR= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_RA= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_DEC= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_HOSTSEP= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_NEPOCH= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_SNRMAX= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_SNRMAX2= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_NFIELD=  1.00000000    ,  999.000000    ,
+ CUTWIN_MWEBV= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_NSEASON_ACTIVE= -99.0000000    ,  99.0000000    ,
+ CUTWIN_TRESTMIN= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TRESTMAX= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TRESTRANGE= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TREST= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TOBS= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TGAPMAX= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_T0GAPMAX= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TOBSMIN= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_TOBSMAX= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_PEAKMJD= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_MJD= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_PSF= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_ZP= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_ZPADU= 2*0.00000000      ,
+ CUTWIN_ZPNPE= 2*0.00000000      ,
+ CUTWIN_ZPERR= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_PHOTPROB= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_ERRTEST= 0.500000000    ,  2.00000000    ,
+ CUTWIN_SIMPULL= -4.00000000    ,  4.00000000    ,
+ CUTWIN_TREST_TRUEFLUX= 2*999.000000      ,
+ CUTWIN_NBAND_THRESH= 2*-9.00000000     ,
+ CUTWIN_NFILT_SNRMAX=  1.00000000    ,  100.000000    ,
+ CUTWIN_NFILT_SNRMAX2=  1.00000000    ,  100.000000    ,
+ CUTWIN_NFILT_TRESTMIN=  1.00000000    ,  100.000000    ,
+ CUTWIN_NFILT_TRESTMAX=  1.00000000    ,  100.000000    ,
+ CUTWIN_TREST2= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_NFILT_TREST2=  1.00000000    ,  100.000000    ,
+ CUTWIN_RESTLAM=  2000.00000    ,  25000.0000    ,
+ CUTWIN_LAMREST=  2000.00000    ,  25000.0000    ,
+ CUTWIN_LAMOBS=  2000.00000    ,  25000.0000    ,
+ CUTWIN_SNR_NODETECT= 2*0.00000000      ,
+ PRIVATE_CUTWIN_STRING= 10*"                                                                                                                                                                ",
+ SIMVAR_CUTWIN_STRING="NEP_SIM_MAGOBS 4 9999                                                                                                                                           ",
+ EARLYLC_STRING="                                                                                                                                                                ",
+ REQUIRE_EPOCHS_STRING="                                                                                                    ",
+ DUMP_STRING="                                                                                                    ",
+ SNCUT_SNRMAX="                                                                                                                                                                ",
+ SNCUT_HOST_SBFLUX="                                                                                                                                                                ",
+ EPCUT_SNRMIN="                                                                                                                                                                ",
+ EPCUT_SKYSIG="                                                                                                                                                                ",
+ EPCUT_PSFSIG="                                                                                                                                                                ",
+ MAGOBS_SHIFT_PRIMARY="                                                                                                                                                                ",
+ MAGOBS_SHIFT_ZP="                                                                                                                                                                ",
+ MAGREST_SHIFT_PRIMARY="                                                                                                                                                                ",
+ MAGREST_SHIFT_ZP="                                                                                                                                                                ",
+ FILTER_LAMSHIFT="                                                                                                                                                                ",
+ MAGOBS_SHIFT_PRIMARY_PARAMS= 3*0.00000000      ,
+ MAGOBS_SHIFT_ZP_PARAMS= 3*0.00000000      ,
+ FUDGE_FLUXCAL_OFFSET="                                                                                                                                                                ",
+ FUDGE_FLUXCAL_ERROR="                                                                                                                                                                ",
+ FUDGE_FLUXCAL_ERRPIX="                                                                                                                                                                ",
+ FUDGE_FLUXERR_SCALE="                                                                                                                                                                ",
+ FUDGE_MAG_ERROR="                                                                                                                                                                ",
+ FUDGE_MAG_COVERR="                                                                                                                                                                ",
+ FLUXERRMODEL_FILE="FLUXERRMODEL_FAKE.DAT                                                                                                                                                                                   ",
+ SIM_FLUXERRMODEL_FILE="                                                                                                                                                                                                        ",
+ FLUXERRMODEL_OPTMASK=0          ,
+ MAGCOR_FILE="                                                                                                                                                                                                        ",
+ SIM_MAGCOR_FILE="                                                                                                                                                                                                        ",
+ FUDGE_HOSTNOISE_FILE="                                                                                                                                                                                                        ",
+ RV_MWCOLORLAW= -9.00000000    ,
+ OPT_MWCOLORLAW=-9         ,
+ OPT_MWEBV=-9         ,
+ MWEBV_SCALE=  1.00000000    ,
+ MWEBV_SHIFT=  0.00000000    ,
+ MWEBV_FORCE= -9.00000000    ,
+ REDSHIFT_FINAL_SHIFT=  0.00000000    ,
+ FLUXERRCALC_ZPTERR= -9.89999962    ,
+ CUTWIN_MJD_EXCLUDE= 2*0.00000000      ,
+ CUTWIN_MJD_INCLUDE= -9.99999996E+11,  9.99999996E+11,
+ CUTWIN_NMJD_INCLUDE= 0.990000010    ,  9.99999996E+11,
+ /
+  init_SNDATA_GLOBAL: 
+  ###################################################### 
+  RD_SNFITSIO_PREP: 
+  Prepare to read PHOTOMETRY VERSION 'STAGE07_DC2fakes_REDCOV100' from 
+	 /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT/SIM/STAGE07_DC2fakes_REDCOV100 
+  ###################################################### 
+  
+  ######################################################## 
+    RDGLOBAL: FETCH GLOBAL SURVEY INFO from HEADER              
+  ######################################################## 
+  
+    Found SURVEY  = LSST   (IDSURVEY= 12)
+    Found FILTERS = ugrizY   (NFILTDEF=  6)
+    Found    2037 SN Candidates to Process.
+  
+    SIMVAR_CUT on       NEP_SIM_MAGOBS :     4.0000 to  9999.0000
+  
+   !!! IGNORE FLUXERRMODEL_FILE for SIMULATION
+   !!!   (or switch to SIM_FLUXERRMODEL_FILE option)  
+  
+  
+  INIT_CUTMASK: NCUTBIT          =           59
+  INIT_CUTMASK: CUTMASK8_SN_ALL  =       562949953421311
+  INIT_CUTMASK: CUTMASK8_MJD_ALL =    575897802350002176
+  
+  ============================================= 
+  RDKCOR_FITS: Read Calib/Kcor tables.
+    Opened /global/cfs/cdirs/lsst/groups/SN/snana/SURVEYS/LSST/ROOT/kcor/2017-04_approx/kcor_LSST.fits
+    with Blocksize=  1   and ISTAT=     0
+  
+      RDKCOR_FITS_HEAD    
+         Read VERSION      =   3  (kcor.exe version)
+         Read NPRIM        =   1  primary refs
+         Read NFILTERS     =   6  filters
+         Read NKCOR        =   0  K-COR tables
+      RDKCOR_FITS_ZPT 
+      RDKCOR_FITS_SNSED 
+      RDKCOR_FITS_KCOR  
+      RDKCOR_FITS_MAGS  
+      RDKCOR_FITS_FILTERS 
+      RDKCOR_FITS_PRIMARYSED  
+      FTCLOSE  
+         ---------------------- 
+         !!! RDKCOR_SUMMARY !!! 
+         ---------------------- 
+    Primary spectrum: AB                                      
+  
+  FILTER SUMMARY (RDKCOR) : 
+  internal                    LAM  LAM   rest-lam      primary
+  index name                  AVG  RMS   kcor range    mag   ZP
+ ------------------------------------------------------------------
+  01 LSST-u                  3671  198      0-    0   0.000  0.000
+  02 LSST-g                  4827  424      0-    0   0.000  0.000
+  03 LSST-r                  6223  406      0-    0   0.000  0.000
+  04 LSST-i                  7546  376      0-    0   0.000  0.000
+  05 LSST-z                  8691  305      0-    0   0.000  0.000
+  06 LSST-Y                  9710  338      0-    0   0.000  0.000
+ ------------------------------------------------------------------
+    NFILTDEF[SURVEY,REST] =    6   0
+  
+  
+   RDKCOR: Done. 
+  ---------------------------------------------- 
+  
+    Zeropoint offsets (ZPOFF) from : KCOR file
+         Will apply net MAGOBS_SHIFT_ZP(u) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(g) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(r) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(i) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(z) =  0.0000
+         Will apply net MAGOBS_SHIFT_ZP(Y) =  0.0000
+  
+  ######################################################## 
+    INIT_GALextinct
+  ######################################################## 
+  
+    RV_MWCOLORLAW  ->  3.10 from Simulation
+    OPT_MWCOLORLAW ->  94 from Simulation
+    OPT_MWCOLORLAW =   94 -> CCM89+ODonell94
+  
+    OPT_MWEBV ->   1 from Simulation
+    OPT_MWEBV =    1 -> FILE value (SIMLIB or data header)
+  
+  ######################################################## 
+    INIT_SNTABLE_OPTIONS  
+  ######################################################## 
+  
+        SNANA-table: USE=1   TEXTFORMAT=key 
+       FITRES-table: USE=0   TEXTFORMAT=key 
+      SNLCPAK-table: MXLC_PLOT=     0   TEXTFORMAT=none
+      SPECPAK-table: MXLC_PLOT=     0   TEXTFORMAT=none
+    MODELSPEC-table: USE=0   TEXTFORMAT=none
+         MARZ-table: USE=0   TEXTFORMAT=none
+        SNANA-table: select CUTFLAG_SNANA &  63
+  
+  ######################################################## 
+    PLOT THEORY HUBBLE DIAGRAMS for REFERENCE
+  ######################################################## 
+  
+  
+  ######################################################## 
+    CALL USRINI
+  ######################################################## 
+  
+  
+  ######################################################## 
+    READ_EPIGNORE_FILE:
+  ######################################################## 
+  
+     Default IGNORE file does not exist -> skip read.
+  ###################################################### 
+  RD_SNFITSIO_PREP: 
+  Prepare to read PHOTOMETRY VERSION 'STAGE07_DC2fakes_REDCOV100' from 
+	 /global/cfs/cdirs/lsst/groups/SN/snana/SNDATA_ROOT/SIM/STAGE07_DC2fakes_REDCOV100 
+  ###################################################### 
+   STAGE07_DC2fakes_REDCOV100_HEAD.FITS contains 100 columns. 
+	  Found HEAD-Param[ 1] = SUBSURVEY (form = 40A)
+	  Found HEAD-Param[ 2] = SNID (form = 16A)
+	  Found HEAD-Param[ 3] = IAUC (form = 16A)
+	  Found HEAD-Param[ 4] = FAKE (form = 1I)
+	  Found HEAD-Param[ 5] = RA (form = 1D)
+	  Found HEAD-Param[ 6] = DEC (form = 1D)
+	  Found HEAD-Param[ 7] = PIXSIZE (form = 1E)
+	  Found HEAD-Param[ 8] = NXPIX (form = 1I)
+	  Found HEAD-Param[ 9] = NYPIX (form = 1I)
+	  Found HEAD-Param[10] = SNTYPE (form = 1J)
+	  Found HEAD-Param[11] = NOBS (form = 1J)
+	  Found HEAD-Param[12] = PTROBS_MIN (form = 1J)
+	  Found HEAD-Param[13] = PTROBS_MAX (form = 1J)
+	  Found HEAD-Param[14] = MWEBV (form = 1E)
+	  Found HEAD-Param[15] = MWEBV_ERR (form = 1E)
+	  Found HEAD-Param[16] = REDSHIFT_HELIO (form = 1E)
+	  Found HEAD-Param[17] = REDSHIFT_HELIO_ERR (form = 1E)
+	  Found HEAD-Param[18] = REDSHIFT_FINAL (form = 1E)
+	  Found HEAD-Param[19] = REDSHIFT_FINAL_ERR (form = 1E)
+	  Found HEAD-Param[20] = VPEC (form = 1E)
+	  Found HEAD-Param[21] = VPEC_ERR (form = 1E)
+	  Found HEAD-Param[22] = HOSTGAL_NMATCH (form = 1I)
+	  Found HEAD-Param[23] = HOSTGAL_NMATCH2 (form = 1I)
+	  Found HEAD-Param[24] = HOSTGAL_OBJID (form = 1K)
+	  Found HEAD-Param[25] = HOSTGAL_PHOTOZ (form = 1E)
+	  Found HEAD-Param[26] = HOSTGAL_PHOTOZ_ERR (form = 1E)
+	  Found HEAD-Param[27] = HOSTGAL_SPECZ (form = 1E)
+	  Found HEAD-Param[28] = HOSTGAL_SPECZ_ERR (form = 1E)
+	  Found HEAD-Param[29] = HOSTGAL_RA (form = 1D)
+	  Found HEAD-Param[30] = HOSTGAL_DEC (form = 1D)
+	  Found HEAD-Param[31] = HOSTGAL_SNSEP (form = 1E)
+	  Found HEAD-Param[32] = HOSTGAL_DDLR (form = 1E)
+	  Found HEAD-Param[33] = HOSTGAL_CONFUSION (form = 1E)
+	  Found HEAD-Param[34] = HOSTGAL_LOGMASS (form = 1E)
+	  Found HEAD-Param[35] = HOSTGAL_LOGMASS_ERR (form = 1E)
+	  Found HEAD-Param[36] = HOSTGAL_sSFR (form = 1E)
+	  Found HEAD-Param[37] = HOSTGAL_sSFR_ERR (form = 1E)
+	  Found HEAD-Param[38] = HOSTGAL_MAG_u (form = 1E)
+	  Found HEAD-Param[39] = HOSTGAL_MAG_g (form = 1E)
+	  Found HEAD-Param[40] = HOSTGAL_MAG_r (form = 1E)
+	  Found HEAD-Param[41] = HOSTGAL_MAG_i (form = 1E)
+	  Found HEAD-Param[42] = HOSTGAL_MAG_z (form = 1E)
+	  Found HEAD-Param[43] = HOSTGAL_MAG_Y (form = 1E)
+	  Found HEAD-Param[44] = HOSTGAL_MAGERR_u (form = 1E)
+	  Found HEAD-Param[45] = HOSTGAL_MAGERR_g (form = 1E)
+	  Found HEAD-Param[46] = HOSTGAL_MAGERR_r (form = 1E)
+	  Found HEAD-Param[47] = HOSTGAL_MAGERR_i (form = 1E)
+	  Found HEAD-Param[48] = HOSTGAL_MAGERR_z (form = 1E)
+	  Found HEAD-Param[49] = HOSTGAL_MAGERR_Y (form = 1E)
+	  Found HEAD-Param[50] = HOSTGAL_SB_FLUXCAL_u (form = 1E)
+	  Found HEAD-Param[51] = HOSTGAL_SB_FLUXCAL_g (form = 1E)
+	  Found HEAD-Param[52] = HOSTGAL_SB_FLUXCAL_r (form = 1E)
+	  Found HEAD-Param[53] = HOSTGAL_SB_FLUXCAL_i (form = 1E)
+	  Found HEAD-Param[54] = HOSTGAL_SB_FLUXCAL_z (form = 1E)
+	  Found HEAD-Param[55] = HOSTGAL_SB_FLUXCAL_Y (form = 1E)
+	  Found HEAD-Param[56] = PEAKMJD (form = 1E)
+	  Found HEAD-Param[57] = SEARCH_TYPE (form = 1J)
+	  Found HEAD-Param[58] = SIM_MODEL_NAME (form = 32A)
+	  Found HEAD-Param[59] = SIM_MODEL_INDEX (form = 1I)
+	  Found HEAD-Param[60] = SIM_TYPE_INDEX (form = 1I)
+	  Found HEAD-Param[61] = SIM_TYPE_NAME (form = 8A)
+	  Found HEAD-Param[62] = SIM_TEMPLATE_INDEX (form = 1J)
+	  Found HEAD-Param[63] = SIM_LIBID (form = 1J)
+	  Found HEAD-Param[64] = SIM_NGEN_LIBID (form = 1J)
+	  Found HEAD-Param[65] = SIM_NOBS_UNDEFINED (form = 1J)
+	  Found HEAD-Param[66] = SIM_SEARCHEFF_MASK (form = 1J)
+	  Found HEAD-Param[67] = SIM_REDSHIFT_HELIO (form = 1E)
+	  Found HEAD-Param[68] = SIM_REDSHIFT_CMB (form = 1E)
+	  Found HEAD-Param[69] = SIM_REDSHIFT_HOST (form = 1E)
+	  Found HEAD-Param[70] = SIM_REDSHIFT_FLAG (form = 1I)
+	  Found HEAD-Param[71] = SIM_VPEC (form = 1E)
+	  Found HEAD-Param[72] = SIM_HOSTLIB_GALID (form = 1K)
+	  Found HEAD-Param[73] = SIM_DLMU (form = 1E)
+	  Found HEAD-Param[74] = SIM_LENSDMU (form = 1E)
+	  Found HEAD-Param[75] = SIM_RA (form = 1D)
+	  Found HEAD-Param[76] = SIM_DEC (form = 1D)
+	  Found HEAD-Param[77] = SIM_MWEBV (form = 1E)
+	  Found HEAD-Param[78] = SIM_PEAKMJD (form = 1E)
+	  Found HEAD-Param[79] = SIM_MAGSMEAR_COH (form = 1E)
+	  Found HEAD-Param[80] = SIM_AV (form = 1E)
+	  Found HEAD-Param[81] = SIM_RV (form = 1E)
+	  Found HEAD-Param[82] = SIM_PEAKMAG_u (form = 1E)
+	  Found HEAD-Param[83] = SIM_PEAKMAG_g (form = 1E)
+	  Found HEAD-Param[84] = SIM_PEAKMAG_r (form = 1E)
+	  Found HEAD-Param[85] = SIM_PEAKMAG_i (form = 1E)
+	  Found HEAD-Param[86] = SIM_PEAKMAG_z (form = 1E)
+	  Found HEAD-Param[87] = SIM_PEAKMAG_Y (form = 1E)
+	  Found HEAD-Param[88] = SIM_EXPOSURE_u (form = 1E)
+	  Found HEAD-Param[89] = SIM_EXPOSURE_g (form = 1E)
+	  Found HEAD-Param[90] = SIM_EXPOSURE_r (form = 1E)
+	  Found HEAD-Param[91] = SIM_EXPOSURE_i (form = 1E)
+	  Found HEAD-Param[92] = SIM_EXPOSURE_z (form = 1E)
+	  Found HEAD-Param[93] = SIM_EXPOSURE_Y (form = 1E)
+	  Found HEAD-Param[94] = SIM_GALFRAC_u (form = 1E)
+	  Found HEAD-Param[95] = SIM_GALFRAC_g (form = 1E)
+	  Found HEAD-Param[96] = SIM_GALFRAC_r (form = 1E)
+	  Found HEAD-Param[97] = SIM_GALFRAC_i (form = 1E)
+	  Found HEAD-Param[98] = SIM_GALFRAC_z (form = 1E)
+	  Found HEAD-Param[99] = SIM_GALFRAC_Y (form = 1E)
+	  Found HEAD-Param[100] = SIM_SUBSAMPLE_INDEX (form = 1I)
+   STAGE07_DC2fakes_REDCOV100_PHOT.FITS contains 19 columns. 
+	  Found PHOT-Param[ 1] = MJD (form = 1D)
+	  Found PHOT-Param[ 2] = BAND (form = 2A)
+	  Found PHOT-Param[ 3] = CCDNUM (form = 1I)
+	  Found PHOT-Param[ 4] = FIELD (form = 12A)
+	  Found PHOT-Param[ 5] = PHOTFLAG (form = 1J)
+	  Found PHOT-Param[ 6] = PHOTPROB (form = 1E)
+	  Found PHOT-Param[ 7] = FLUXCAL (form = 1E)
+	  Found PHOT-Param[ 8] = FLUXCALERR (form = 1E)
+	  Found PHOT-Param[ 9] = PSF_SIG1 (form = 1E)
+	  Found PHOT-Param[10] = PSF_SIG2 (form = 1E)
+	  Found PHOT-Param[11] = PSF_RATIO (form = 1E)
+	  Found PHOT-Param[12] = SKY_SIG (form = 1E)
+	  Found PHOT-Param[13] = SKY_SIG_T (form = 1E)
+	  Found PHOT-Param[14] = RDNOISE (form = 1E)
+	  Found PHOT-Param[15] = ZEROPT (form = 1E)
+	  Found PHOT-Param[16] = ZEROPT_ERR (form = 1E)
+	  Found PHOT-Param[17] = GAIN (form = 1E)
+	  Found PHOT-Param[18] = SIM_MAGOBS (form = 1E)
+	  Found PHOT-Param[19] = SIM_FLUXCAL_HOSTERR (form = 1E)
+   Allocated  1.345 MB of memory for HEAD table (LEN=2037). 
+   Allocated  0.017 MB of memory for PHOT table (LEN=83). 
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1                 NMJD(found,stored)=  36   36
+  SNTABLE_CREATE_TEXT: init SNANA TEXT-table in key format. 
+     Create BLOCK = SNANA  for TABLE ID =  7100
+     Create BLOCK = SIM  for TABLE ID =  7100
+       Analyze ISN=       1  for 1               NMJD(stored,cuts)=  36->  36
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 2                 NMJD(found,stored)=  47   47
+       Analyze ISN=       2  for 2               NMJD(stored,cuts)=  47->  47
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 3                 NMJD(found,stored)=  19   19
+
+    *** DUPLICATE MJD WARNING *** CID=3   MJD=60261.071   BAND=u   FIELD=VOID  
+
+       Analyze ISN=       3  for 3               NMJD(stored,cuts)=  19->  19
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 4                 NMJD(found,stored)=  47   47
+
+    *** DUPLICATE MJD WARNING *** CID=4   MJD=60201.260   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=4   MJD=60232.132   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=4   MJD=60242.109   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=4   MJD=60274.100   BAND=Y   FIELD=VOID  
+
+       Analyze ISN=       4  for 4               NMJD(stored,cuts)=  47->  47
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 5                 NMJD(found,stored)=  44   44
+
+    *** DUPLICATE MJD WARNING *** CID=5   MJD=60540.349   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=5   MJD=60568.320   BAND=i   FIELD=VOID  
+
+       Analyze ISN=       5  for 5               NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 6                 NMJD(found,stored)=  31   31
+
+    *** DUPLICATE MJD WARNING *** CID=6   MJD=60628.074   BAND=Y   FIELD=VOID  
+
+       Analyze ISN=       6  for 6               NMJD(stored,cuts)=  31->  31
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 7                 NMJD(found,stored)=  43   43
+       Analyze ISN=       7  for 7               NMJD(stored,cuts)=  43->  43
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 8                 NMJD(found,stored)=  44   44
+
+    *** DUPLICATE MJD WARNING *** CID=8   MJD=60179.376   BAND=i   FIELD=VOID  
+
+       Analyze ISN=       8  for 8               NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 9                 NMJD(found,stored)=  46   46
+
+    *** DUPLICATE MJD WARNING *** CID=9   MJD=60976.119   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=9   MJD=60993.108   BAND=g   FIELD=VOID  
+
+       Analyze ISN=       9  for 9               NMJD(stored,cuts)=  46->  46
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 10                NMJD(found,stored)=  54   54
+
+    *** DUPLICATE MJD WARNING *** CID=10   MJD=60954.217   BAND=Y   FIELD=VOID  
+
+       Analyze ISN=      10  for 10              NMJD(stored,cuts)=  54->  54
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 11                NMJD(found,stored)=  56   56
+
+    *** DUPLICATE MJD WARNING *** CID=11   MJD=60897.401   BAND=z   FIELD=VOID  
+
+       Analyze ISN=      11  for 11              NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 12                NMJD(found,stored)=  35   35
+
+    *** DUPLICATE MJD WARNING *** CID=12   MJD=60234.159   BAND=r   FIELD=VOID  
+
+       Analyze ISN=      12  for 12              NMJD(stored,cuts)=  35->  35
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 13                NMJD(found,stored)=  11   11
+       Analyze ISN=      13  for 13              NMJD(stored,cuts)=  11->  11
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 14                NMJD(found,stored)=  21   21
+       Analyze ISN=      14  for 14              NMJD(stored,cuts)=  21->  21
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 15                NMJD(found,stored)=  78   78
+
+    *** DUPLICATE MJD WARNING *** CID=15   MJD=61306.217   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=15   MJD=61315.368   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=15   MJD=61340.136   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=15   MJD=61343.106   BAND=g   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=15   MJD=61392.194   BAND=r   FIELD=VOID  
+
+       Analyze ISN=      15  for 15              NMJD(stored,cuts)=  78->  78
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 16                NMJD(found,stored)=  23   23
+       Analyze ISN=      16  for 16              NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 17                NMJD(found,stored)=  64   64
+
+    *** DUPLICATE MJD WARNING *** CID=17   MJD=61286.266   BAND=i   FIELD=VOID  
+
+       Analyze ISN=      17  for 17              NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 18                NMJD(found,stored)=  32   32
+       Analyze ISN=      18  for 18              NMJD(stored,cuts)=  32->  32
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 19                NMJD(found,stored)=  23   23
+       Analyze ISN=      19  for 19              NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 20                NMJD(found,stored)=   8    8
+       Analyze ISN=      20  for 20              NMJD(stored,cuts)=   8->   8
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 21                NMJD(found,stored)=  42   42
+
+    *** DUPLICATE MJD WARNING *** CID=21   MJD=60991.089   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=21   MJD=60993.115   BAND=g   FIELD=VOID  
+
+       Analyze ISN=      21  for 21              NMJD(stored,cuts)=  42->  42
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 22                NMJD(found,stored)=  70   70
+       Analyze ISN=      22  for 22              NMJD(stored,cuts)=  70->  70
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 23                NMJD(found,stored)=  48   48
+       Analyze ISN=      23  for 23              NMJD(stored,cuts)=  48->  48
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 24                NMJD(found,stored)=  67   67
+
+    *** DUPLICATE MJD WARNING *** CID=24   MJD=60604.297   BAND=i   FIELD=VOID  
+
+       Analyze ISN=      24  for 24              NMJD(stored,cuts)=  67->  67
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 25                NMJD(found,stored)=  58   58
+
+    *** DUPLICATE MJD WARNING *** CID=25   MJD=60180.330   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=25   MJD=60242.122   BAND=Y   FIELD=VOID  
+
+       Analyze ISN=      25  for 25              NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 26                NMJD(found,stored)=  44   44
+       Analyze ISN=      26  for 26              NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 27                NMJD(found,stored)=  40   40
+       Analyze ISN=      27  for 27              NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 28                NMJD(found,stored)=  14   14
+
+    *** DUPLICATE MJD WARNING *** CID=28   MJD=60730.066   BAND=g   FIELD=VOID  
+
+       Analyze ISN=      28  for 28              NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 29                NMJD(found,stored)=  29   29
+       Analyze ISN=      29  for 29              NMJD(stored,cuts)=  29->  29
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 30                NMJD(found,stored)=  45   45
+       Analyze ISN=      30  for 30              NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 31                NMJD(found,stored)=  49   49
+       Analyze ISN=      31  for 31              NMJD(stored,cuts)=  49->  49
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 32                NMJD(found,stored)=  59   59
+       Analyze ISN=      32  for 32              NMJD(stored,cuts)=  59->  59
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 33                NMJD(found,stored)=  41   41
+
+    *** DUPLICATE MJD WARNING *** CID=33   MJD=60911.283   BAND=u   FIELD=VOID  
+
+       Analyze ISN=      33  for 33              NMJD(stored,cuts)=  41->  41
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 34                NMJD(found,stored)=  55   55
+
+    *** DUPLICATE MJD WARNING *** CID=34   MJD=60971.130   BAND=u   FIELD=VOID  
+
+       Analyze ISN=      34  for 34              NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 35                NMJD(found,stored)=  39   39
+
+    *** DUPLICATE MJD WARNING *** CID=35   MJD=60278.255   BAND=i   FIELD=VOID  
+
+       Analyze ISN=      35  for 35              NMJD(stored,cuts)=  39->  39
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 36                NMJD(found,stored)=  16   16
+       Analyze ISN=      36  for 36              NMJD(stored,cuts)=  16->  16
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 37                NMJD(found,stored)=  10   10
+       Analyze ISN=      37  for 37              NMJD(stored,cuts)=  10->  10
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 38                NMJD(found,stored)=  12   12
+
+    *** DUPLICATE MJD WARNING *** CID=38   MJD=61101.061   BAND=Y   FIELD=VOID  
+
+       Analyze ISN=      38  for 38              NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 39                NMJD(found,stored)=  65   65
+
+    *** DUPLICATE MJD WARNING *** CID=39   MJD=61001.090   BAND=r   FIELD=VOID  
+
+       Analyze ISN=      39  for 39              NMJD(stored,cuts)=  65->  65
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 40                NMJD(found,stored)=  54   54
+       Analyze ISN=      40  for 40              NMJD(stored,cuts)=  54->  54
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 41                NMJD(found,stored)=  45   45
+
+    *** DUPLICATE MJD WARNING *** CID=41   MJD=60309.212   BAND=i   FIELD=VOID  
+
+       Analyze ISN=      41  for 41              NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 42                NMJD(found,stored)=  28   28
+
+    *** DUPLICATE MJD WARNING *** CID=42   MJD=60524.363   BAND=g   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=42   MJD=60570.259   BAND=Y   FIELD=VOID  
+
+       Analyze ISN=      42  for 42              NMJD(stored,cuts)=  28->  28
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 43                NMJD(found,stored)=  38   38
+       Analyze ISN=      43  for 43              NMJD(stored,cuts)=  38->  38
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 44                NMJD(found,stored)=  16   16
+       Analyze ISN=      44  for 44              NMJD(stored,cuts)=  16->  16
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 45                NMJD(found,stored)=  14   14
+       Analyze ISN=      45  for 45              NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 46                NMJD(found,stored)=  44   44
+       Analyze ISN=      46  for 46              NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 47                NMJD(found,stored)=  14   14
+       Analyze ISN=      47  for 47              NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 48                NMJD(found,stored)=  65   65
+
+    *** DUPLICATE MJD WARNING *** CID=48   MJD=61364.222   BAND=i   FIELD=VOID  
+
+       Analyze ISN=      48  for 48              NMJD(stored,cuts)=  65->  65
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 49                NMJD(found,stored)=  60   60
+       Analyze ISN=      49  for 49              NMJD(stored,cuts)=  60->  60
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 50                NMJD(found,stored)=  44   44
+
+    *** DUPLICATE MJD WARNING *** CID=50   MJD=60187.326   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=50   MJD=60232.149   BAND=r   FIELD=VOID  
+
+       Analyze ISN=      50  for 50              NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 51                NMJD(found,stored)=  45   45
+       Analyze ISN=      51  for 51              NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 52                NMJD(found,stored)=  56   56
+
+    *** DUPLICATE MJD WARNING *** CID=52   MJD=60568.302   BAND=i   FIELD=VOID  
+
+       Analyze ISN=      52  for 52              NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 53                NMJD(found,stored)=  28   28
+       Analyze ISN=      53  for 53              NMJD(stored,cuts)=  28->  28
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 54                NMJD(found,stored)=   7    7
+       Analyze ISN=      54  for 54              NMJD(stored,cuts)=   7->   7
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 55                NMJD(found,stored)=  14   14
+       Analyze ISN=      55  for 55              NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 56                NMJD(found,stored)=  64   64
+       Analyze ISN=      56  for 56              NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 57                NMJD(found,stored)=  61   61
+
+    *** DUPLICATE MJD WARNING *** CID=57   MJD=60610.105   BAND=g   FIELD=VOID  
+
+       Analyze ISN=      57  for 57              NMJD(stored,cuts)=  61->  61
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 58                NMJD(found,stored)=  54   54
+       Analyze ISN=      58  for 58              NMJD(stored,cuts)=  54->  54
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 59                NMJD(found,stored)=  61   61
+       Analyze ISN=      59  for 59              NMJD(stored,cuts)=  61->  61
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 60                NMJD(found,stored)=  54   54
+       Analyze ISN=      60  for 60              NMJD(stored,cuts)=  54->  54
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 61                NMJD(found,stored)=  53   53
+       Analyze ISN=      61  for 61              NMJD(stored,cuts)=  53->  53
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 62                NMJD(found,stored)=  50   50
+       Analyze ISN=      62  for 62              NMJD(stored,cuts)=  50->  50
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 63                NMJD(found,stored)=   4    4
+       Analyze ISN=      63  for 63              NMJD(stored,cuts)=   4->   4
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 64                NMJD(found,stored)=  12   12
+       Analyze ISN=      64  for 64              NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 65                NMJD(found,stored)=  25   25
+       Analyze ISN=      65  for 65              NMJD(stored,cuts)=  25->  25
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 66                NMJD(found,stored)=  29   29
+       Analyze ISN=      66  for 66              NMJD(stored,cuts)=  29->  29
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 67                NMJD(found,stored)=  56   56
+       Analyze ISN=      67  for 67              NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 68                NMJD(found,stored)=  12   12
+       Analyze ISN=      68  for 68              NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 69                NMJD(found,stored)=   8    8
+       Analyze ISN=      69  for 69              NMJD(stored,cuts)=   8->   8
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 70                NMJD(found,stored)=  58   58
+       Analyze ISN=      70  for 70              NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 71                NMJD(found,stored)=  55   55
+       Analyze ISN=      71  for 71              NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 72                NMJD(found,stored)=  66   66
+
+    *** DUPLICATE MJD WARNING *** CID=72   MJD=60610.127   BAND=g   FIELD=VOID  
+
+       Analyze ISN=      72  for 72              NMJD(stored,cuts)=  66->  66
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 73                NMJD(found,stored)=  40   40
+       Analyze ISN=      73  for 73              NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 74                NMJD(found,stored)=  17   17
+       Analyze ISN=      74  for 74              NMJD(stored,cuts)=  17->  17
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 75                NMJD(found,stored)=  40   40
+       Analyze ISN=      75  for 75              NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 76                NMJD(found,stored)=  39   39
+       Analyze ISN=      76  for 76              NMJD(stored,cuts)=  39->  39
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 77                NMJD(found,stored)=  64   64
+       Analyze ISN=      77  for 77              NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 78                NMJD(found,stored)=  13   13
+       Analyze ISN=      78  for 78              NMJD(stored,cuts)=  13->  13
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 79                NMJD(found,stored)=  15   15
+       Analyze ISN=      79  for 79              NMJD(stored,cuts)=  15->  15
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 80                NMJD(found,stored)=  37   37
+       Analyze ISN=      80  for 80              NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 81                NMJD(found,stored)=  46   46
+       Analyze ISN=      81  for 81              NMJD(stored,cuts)=  46->  46
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 82                NMJD(found,stored)=  33   33
+       Analyze ISN=      82  for 82              NMJD(stored,cuts)=  33->  33
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 83                NMJD(found,stored)=  33   33
+       Analyze ISN=      83  for 83              NMJD(stored,cuts)=  33->  33
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 84                NMJD(found,stored)=  40   40
+       Analyze ISN=      84  for 84              NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 85                NMJD(found,stored)=  21   21
+       Analyze ISN=      85  for 85              NMJD(stored,cuts)=  21->  21
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 86                NMJD(found,stored)=  20   20
+
+    *** DUPLICATE MJD WARNING *** CID=86   MJD=61017.161   BAND=i   FIELD=VOID  
+
+       Analyze ISN=      86  for 86              NMJD(stored,cuts)=  20->  20
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 87                NMJD(found,stored)=  58   58
+       Analyze ISN=      87  for 87              NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 88                NMJD(found,stored)=  27   27
+
+    *** DUPLICATE MJD WARNING *** CID=88   MJD=61259.373   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=88   MJD=61297.246   BAND=u   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=88   MJD=61303.261   BAND=r   FIELD=VOID  
+
+       Analyze ISN=      88  for 88              NMJD(stored,cuts)=  27->  27
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 89                NMJD(found,stored)=  34   34
+       Analyze ISN=      89  for 89              NMJD(stored,cuts)=  34->  34
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 90                NMJD(found,stored)=  24   24
+       Analyze ISN=      90  for 90              NMJD(stored,cuts)=  24->  24
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 91                NMJD(found,stored)=  55   55
+       Analyze ISN=      91  for 91              NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 92                NMJD(found,stored)=  34   34
+       Analyze ISN=      92  for 92              NMJD(stored,cuts)=  34->  34
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 93                NMJD(found,stored)=  48   48
+       Analyze ISN=      93  for 93              NMJD(stored,cuts)=  48->  48
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 94                NMJD(found,stored)=  45   45
+       Analyze ISN=      94  for 94              NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 95                NMJD(found,stored)=  26   26
+       Analyze ISN=      95  for 95              NMJD(stored,cuts)=  26->  26
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 96                NMJD(found,stored)=  30   30
+       Analyze ISN=      96  for 96              NMJD(stored,cuts)=  30->  30
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 97                NMJD(found,stored)=  21   21
+       Analyze ISN=      97  for 97              NMJD(stored,cuts)=  21->  21
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 98                NMJD(found,stored)=  41   41
+       Analyze ISN=      98  for 98              NMJD(stored,cuts)=  41->  41
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 99                NMJD(found,stored)=  12   12
+       Analyze ISN=      99  for 99              NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 100               NMJD(found,stored)=  52   52
+       Analyze ISN=     100  for 100             NMJD(stored,cuts)=  52->  52
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 101               NMJD(found,stored)=  45   45
+       Analyze ISN=     101  for 101             NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 102               NMJD(found,stored)=  57   57
+       Analyze ISN=     102  for 102             NMJD(stored,cuts)=  57->  57
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 103               NMJD(found,stored)=  46   46
+       Analyze ISN=     103  for 103             NMJD(stored,cuts)=  46->  46
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 104               NMJD(found,stored)=  10   10
+       Analyze ISN=     104  for 104             NMJD(stored,cuts)=  10->  10
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 105               NMJD(found,stored)=  11   11
+       Analyze ISN=     105  for 105             NMJD(stored,cuts)=  11->  11
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 106               NMJD(found,stored)=  64   64
+       Analyze ISN=     106  for 106             NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 107               NMJD(found,stored)=  48   48
+       Analyze ISN=     107  for 107             NMJD(stored,cuts)=  48->  48
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 108               NMJD(found,stored)=  37   37
+       Analyze ISN=     108  for 108             NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 109               NMJD(found,stored)=  64   64
+       Analyze ISN=     109  for 109             NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 110               NMJD(found,stored)=  34   34
+       Analyze ISN=     110  for 110             NMJD(stored,cuts)=  34->  34
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 111               NMJD(found,stored)=  45   45
+
+    *** DUPLICATE MJD WARNING *** CID=111   MJD=60597.233   BAND=i   FIELD=VOID  
+
+       Analyze ISN=     111  for 111             NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 112               NMJD(found,stored)=  73   73
+
+    *** DUPLICATE MJD WARNING *** CID=112   MJD=61355.277   BAND=g   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=112   MJD=61384.180   BAND=g   FIELD=VOID  
+
+       Analyze ISN=     112  for 112             NMJD(stored,cuts)=  73->  73
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 113               NMJD(found,stored)=  58   58
+
+    *** DUPLICATE MJD WARNING *** CID=113   MJD=61251.342   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=113   MJD=61318.350   BAND=r   FIELD=VOID  
+
+       Analyze ISN=     113  for 113             NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 114               NMJD(found,stored)=  55   55
+       Analyze ISN=     114  for 114             NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 115               NMJD(found,stored)=  51   51
+       Analyze ISN=     115  for 115             NMJD(stored,cuts)=  51->  51
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 116               NMJD(found,stored)=  52   52
+       Analyze ISN=     116  for 116             NMJD(stored,cuts)=  52->  52
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 117               NMJD(found,stored)=  11   11
+       Analyze ISN=     117  for 117             NMJD(stored,cuts)=  11->  11
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 118               NMJD(found,stored)=  37   37
+       Analyze ISN=     118  for 118             NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 119               NMJD(found,stored)=   6    6
+       Analyze ISN=     119  for 119             NMJD(stored,cuts)=   6->   6
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 120               NMJD(found,stored)=  40   40
+       Analyze ISN=     120  for 120             NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 121               NMJD(found,stored)=  51   51
+       Analyze ISN=     121  for 121             NMJD(stored,cuts)=  51->  51
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 122               NMJD(found,stored)=   8    8
+       Analyze ISN=     122  for 122             NMJD(stored,cuts)=   8->   8
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 123               NMJD(found,stored)=  33   33
+       Analyze ISN=     123  for 123             NMJD(stored,cuts)=  33->  33
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 124               NMJD(found,stored)=  41   41
+       Analyze ISN=     124  for 124             NMJD(stored,cuts)=  41->  41
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 125               NMJD(found,stored)=  17   17
+       Analyze ISN=     125  for 125             NMJD(stored,cuts)=  17->  17
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 126               NMJD(found,stored)=  23   23
+       Analyze ISN=     126  for 126             NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 127               NMJD(found,stored)=  49   49
+       Analyze ISN=     127  for 127             NMJD(stored,cuts)=  49->  49
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 128               NMJD(found,stored)=  23   23
+       Analyze ISN=     128  for 128             NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 129               NMJD(found,stored)=  33   33
+       Analyze ISN=     129  for 129             NMJD(stored,cuts)=  33->  33
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 130               NMJD(found,stored)=  57   57
+       Analyze ISN=     130  for 130             NMJD(stored,cuts)=  57->  57
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 131               NMJD(found,stored)=  51   51
+       Analyze ISN=     131  for 131             NMJD(stored,cuts)=  51->  51
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 132               NMJD(found,stored)=  14   14
+       Analyze ISN=     132  for 132             NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 133               NMJD(found,stored)=  45   45
+       Analyze ISN=     133  for 133             NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 134               NMJD(found,stored)=  12   12
+       Analyze ISN=     134  for 134             NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 135               NMJD(found,stored)=  13   13
+       Analyze ISN=     135  for 135             NMJD(stored,cuts)=  13->  13
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 136               NMJD(found,stored)=   7    7
+       Analyze ISN=     136  for 136             NMJD(stored,cuts)=   7->   7
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 137               NMJD(found,stored)=   9    9
+       Analyze ISN=     137  for 137             NMJD(stored,cuts)=   9->   9
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 138               NMJD(found,stored)=  35   35
+       Analyze ISN=     138  for 138             NMJD(stored,cuts)=  35->  35
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 139               NMJD(found,stored)=  34   34
+       Analyze ISN=     139  for 139             NMJD(stored,cuts)=  34->  34
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 140               NMJD(found,stored)=  52   52
+       Analyze ISN=     140  for 140             NMJD(stored,cuts)=  52->  52
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 141               NMJD(found,stored)=  56   56
+       Analyze ISN=     141  for 141             NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 142               NMJD(found,stored)=  37   37
+       Analyze ISN=     142  for 142             NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 143               NMJD(found,stored)=  32   32
+       Analyze ISN=     143  for 143             NMJD(stored,cuts)=  32->  32
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 144               NMJD(found,stored)=  51   51
+       Analyze ISN=     144  for 144             NMJD(stored,cuts)=  51->  51
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 145               NMJD(found,stored)=  45   45
+       Analyze ISN=     145  for 145             NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 146               NMJD(found,stored)=  22   22
+       Analyze ISN=     146  for 146             NMJD(stored,cuts)=  22->  22
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 147               NMJD(found,stored)=  64   64
+       Analyze ISN=     147  for 147             NMJD(stored,cuts)=  64->  64
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 148               NMJD(found,stored)=  37   37
+       Analyze ISN=     148  for 148             NMJD(stored,cuts)=  37->  37
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 149               NMJD(found,stored)=  56   56
+       Analyze ISN=     149  for 149             NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 150               NMJD(found,stored)=  38   38
+       Analyze ISN=     150  for 150             NMJD(stored,cuts)=  38->  38
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 151               NMJD(found,stored)=  15   15
+       Analyze ISN=     151  for 151             NMJD(stored,cuts)=  15->  15
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 152               NMJD(found,stored)=  12   12
+       Analyze ISN=     152  for 152             NMJD(stored,cuts)=  12->  12
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 153               NMJD(found,stored)=  56   56
+
+    *** DUPLICATE MJD WARNING *** CID=153   MJD=60530.356   BAND=g   FIELD=VOID  
+
+       Analyze ISN=     153  for 153             NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 154               NMJD(found,stored)=  58   58
+       Analyze ISN=     154  for 154             NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 155               NMJD(found,stored)=  44   44
+
+    *** DUPLICATE MJD WARNING *** CID=155   MJD=60688.092   BAND=z   FIELD=VOID  
+
+       Analyze ISN=     155  for 155             NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 156               NMJD(found,stored)=  41   41
+       Analyze ISN=     156  for 156             NMJD(stored,cuts)=  41->  41
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 157               NMJD(found,stored)=  43   43
+       Analyze ISN=     157  for 157             NMJD(stored,cuts)=  43->  43
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 158               NMJD(found,stored)=  44   44
+       Analyze ISN=     158  for 158             NMJD(stored,cuts)=  44->  44
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 159               NMJD(found,stored)=  42   42
+       Analyze ISN=     159  for 159             NMJD(stored,cuts)=  42->  42
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 160               NMJD(found,stored)=  58   58
+       Analyze ISN=     160  for 160             NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 161               NMJD(found,stored)=  57   57
+       Analyze ISN=     161  for 161             NMJD(stored,cuts)=  57->  57
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 162               NMJD(found,stored)=  48   48
+       Analyze ISN=     162  for 162             NMJD(stored,cuts)=  48->  48
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 163               NMJD(found,stored)=  16   16
+       Analyze ISN=     163  for 163             NMJD(stored,cuts)=  16->  16
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 164               NMJD(found,stored)=  14   14
+       Analyze ISN=     164  for 164             NMJD(stored,cuts)=  14->  14
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 165               NMJD(found,stored)=  24   24
+       Analyze ISN=     165  for 165             NMJD(stored,cuts)=  24->  24
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 166               NMJD(found,stored)=  39   39
+       Analyze ISN=     166  for 166             NMJD(stored,cuts)=  39->  39
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 167               NMJD(found,stored)=  55   55
+       Analyze ISN=     167  for 167             NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 168               NMJD(found,stored)=  59   59
+
+    *** DUPLICATE MJD WARNING *** CID=168   MJD=61320.198   BAND=u   FIELD=VOID  
+
+       Analyze ISN=     168  for 168             NMJD(stored,cuts)=  59->  59
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 169               NMJD(found,stored)=  38   38
+       Analyze ISN=     169  for 169             NMJD(stored,cuts)=  38->  38
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 170               NMJD(found,stored)=  61   61
+       Analyze ISN=     170  for 170             NMJD(stored,cuts)=  61->  61
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 171               NMJD(found,stored)=  35   35
+
+    *** DUPLICATE MJD WARNING *** CID=171   MJD=61017.182   BAND=i   FIELD=VOID  
+
+       Analyze ISN=     171  for 171             NMJD(stored,cuts)=  35->  35
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 172               NMJD(found,stored)=  21   21
+
+    *** DUPLICATE MJD WARNING *** CID=172   MJD=60690.141   BAND=Y   FIELD=VOID  
+
+       Analyze ISN=     172  for 172             NMJD(stored,cuts)=  21->  21
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 173               NMJD(found,stored)=  20   20
+       Analyze ISN=     173  for 173             NMJD(stored,cuts)=  20->  20
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 174               NMJD(found,stored)=  40   40
+
+    *** DUPLICATE MJD WARNING *** CID=174   MJD=60957.198   BAND=z   FIELD=VOID  
+
+       Analyze ISN=     174  for 174             NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 175               NMJD(found,stored)=  55   55
+       Analyze ISN=     175  for 175             NMJD(stored,cuts)=  55->  55
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 176               NMJD(found,stored)=  13   13
+       Analyze ISN=     176  for 176             NMJD(stored,cuts)=  13->  13
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 177               NMJD(found,stored)=  41   41
+       Analyze ISN=     177  for 177             NMJD(stored,cuts)=  41->  41
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 178               NMJD(found,stored)=  29   29
+       Analyze ISN=     178  for 178             NMJD(stored,cuts)=  29->  29
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 179               NMJD(found,stored)=  26   26
+       Analyze ISN=     179  for 179             NMJD(stored,cuts)=  26->  26
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 180               NMJD(found,stored)=  58   58
+       Analyze ISN=     180  for 180             NMJD(stored,cuts)=  58->  58
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 181               NMJD(found,stored)=  59   59
+       Analyze ISN=     181  for 181             NMJD(stored,cuts)=  59->  59
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 182               NMJD(found,stored)=  69   69
+       Analyze ISN=     182  for 182             NMJD(stored,cuts)=  69->  69
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 183               NMJD(found,stored)=  40   40
+       Analyze ISN=     183  for 183             NMJD(stored,cuts)=  40->  40
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 184               NMJD(found,stored)=  52   52
+       Analyze ISN=     184  for 184             NMJD(stored,cuts)=  52->  52
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 185               NMJD(found,stored)=  20   20
+       Analyze ISN=     185  for 185             NMJD(stored,cuts)=  20->  20
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 186               NMJD(found,stored)=  11   11
+       Analyze ISN=     186  for 186             NMJD(stored,cuts)=  11->  11
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 187               NMJD(found,stored)=  46   46
+       Analyze ISN=     187  for 187             NMJD(stored,cuts)=  46->  46
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 188               NMJD(found,stored)=  59   59
+
+    *** DUPLICATE MJD WARNING *** CID=188   MJD=60961.203   BAND=g   FIELD=VOID  
+
+       Analyze ISN=     188  for 188             NMJD(stored,cuts)=  59->  59
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 189               NMJD(found,stored)=  50   50
+       Analyze ISN=     189  for 189             NMJD(stored,cuts)=  50->  50
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 190               NMJD(found,stored)=  36   36
+       Analyze ISN=     190  for 190             NMJD(stored,cuts)=  36->  36
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 191               NMJD(found,stored)=   7    7
+       Analyze ISN=     191  for 191             NMJD(stored,cuts)=   7->   7
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 192               NMJD(found,stored)=  25   25
+       Analyze ISN=     192  for 192             NMJD(stored,cuts)=  25->  25
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 193               NMJD(found,stored)=  59   59
+       Analyze ISN=     193  for 193             NMJD(stored,cuts)=  59->  59
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 194               NMJD(found,stored)=  45   45
+       Analyze ISN=     194  for 194             NMJD(stored,cuts)=  45->  45
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 195               NMJD(found,stored)=  16   16
+       Analyze ISN=     195  for 195             NMJD(stored,cuts)=  16->  16
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 196               NMJD(found,stored)=   8    8
+       Analyze ISN=     196  for 196             NMJD(stored,cuts)=   8->   8
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 197               NMJD(found,stored)=  13   13
+       Analyze ISN=     197  for 197             NMJD(stored,cuts)=  13->  13
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 198               NMJD(found,stored)=  48   48
+       Analyze ISN=     198  for 198             NMJD(stored,cuts)=  48->  48
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 199               NMJD(found,stored)=  63   63
+       Analyze ISN=     199  for 199             NMJD(stored,cuts)=  63->  63
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 200               NMJD(found,stored)=  57   57
+       Analyze ISN=     200  for 200             NMJD(stored,cuts)=  57->  57
+
+    *** DUPLICATE MJD WARNING *** CID=203   MJD=60711.099   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=204   MJD=61319.279   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=210   MJD=60912.347   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=217   MJD=60241.233   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=221   MJD=60557.257   BAND=u   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=225   MJD=61297.238   BAND=u   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=225   MJD=61371.287   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=255   MJD=60217.205   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=268   MJD=60904.377   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=270   MJD=61017.202   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=294   MJD=60912.325   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=324   MJD=61327.177   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=335   MJD=61334.125   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=335   MJD=61337.156   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=335   MJD=61373.037   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=336   MJD=60938.211   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=337   MJD=60893.415   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=340   MJD=60601.337   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=344   MJD=60964.183   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=353   MJD=60142.380   BAND=i   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 356               NMJD(found,stored)=  45   45
+       Analyze ISN=     356  for 356             NMJD(stored,cuts)=  45->  45
+
+    *** DUPLICATE MJD WARNING *** CID=360   MJD=60242.221   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=361   MJD=60887.388   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=374   MJD=60910.380   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=374   MJD=60942.200   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=374   MJD=60961.247   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=374   MJD=60991.074   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=375   MJD=60570.261   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=376   MJD=61306.207   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=376   MJD=61334.145   BAND=z   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 378               NMJD(found,stored)=  40   40
+       Analyze ISN=     378  for 378             NMJD(stored,cuts)=  40->  40
+
+    *** DUPLICATE MJD WARNING *** CID=380   MJD=61286.318   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=380   MJD=61297.244   BAND=u   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=382   MJD=61356.103   BAND=g   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=383   MJD=60158.388   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=392   MJD=60132.419   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=395   MJD=60973.168   BAND=i   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 400               NMJD(found,stored)=  33   33
+       Analyze ISN=     400  for 400             NMJD(stored,cuts)=  33->  33
+
+    *** DUPLICATE MJD WARNING *** CID=401   MJD=60234.142   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=401   MJD=60242.237   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=403   MJD=60530.343   BAND=g   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=404   MJD=61337.145   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=408   MJD=60973.148   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=410   MJD=61384.165   BAND=g   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=417   MJD=60702.094   BAND=u   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=418   MJD=60887.403   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=418   MJD=60897.409   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=418   MJD=60902.349   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=418   MJD=60943.220   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=419   MJD=61274.406   BAND=i   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 422               NMJD(found,stored)=  56   56
+
+    *** DUPLICATE MJD WARNING *** CID=422   MJD=60166.413   BAND=r   FIELD=VOID  
+
+       Analyze ISN=     422  for 422             NMJD(stored,cuts)=  56->  56
+
+    *** DUPLICATE MJD WARNING *** CID=429   MJD=60549.273   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=431   MJD=60952.195   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=433   MJD=60584.204   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=462   MJD=60542.313   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=462   MJD=60578.236   BAND=g   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=462   MJD=60605.311   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=464   MJD=60586.209   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=464   MJD=60605.200   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=480   MJD=60955.211   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=486   MJD=60894.400   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=500   MJD=60557.258   BAND=u   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=509   MJD=61259.392   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=511   MJD=60597.155   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=511   MJD=60605.297   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=523   MJD=61324.220   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=575   MJD=60275.045   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=579   MJD=61279.297   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=636   MJD=60912.371   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=696   MJD=61269.312   BAND=g   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 711               NMJD(found,stored)=  38   38
+       Analyze ISN=     711  for 711             NMJD(stored,cuts)=  38->  38
+
+    *** DUPLICATE MJD WARNING *** CID=717   MJD=60175.316   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=719   MJD=61315.371   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=719   MJD=61322.226   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=719   MJD=61329.158   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=719   MJD=61340.139   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=719   MJD=61360.190   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=720   MJD=60973.151   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=721   MJD=60179.353   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=721   MJD=60179.363   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=721   MJD=60224.167   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=721   MJD=60247.314   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=725   MJD=61076.118   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=726   MJD=60964.185   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=727   MJD=60625.092   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=728   MJD=61391.061   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=729   MJD=60628.071   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=730   MJD=60216.252   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=732   MJD=60934.242   BAND=g   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 733               NMJD(found,stored)=  45   45
+       Analyze ISN=     733  for 733             NMJD(stored,cuts)=  45->  45
+
+    *** DUPLICATE MJD WARNING *** CID=734   MJD=61309.243   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=736   MJD=60531.375   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=736   MJD=60531.394   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=736   MJD=60542.369   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=736   MJD=60587.244   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=737   MJD=60932.297   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=739   MJD=60893.416   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=740   MJD=60625.075   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=741   MJD=60604.319   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=741   MJD=60627.149   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=746   MJD=60280.224   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=749   MJD=60597.220   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=751   MJD=61017.269   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=753   MJD=60207.236   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=754   MJD=60961.184   BAND=g   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 755               NMJD(found,stored)=  27   27
+       Analyze ISN=     755  for 755             NMJD(stored,cuts)=  27->  27
+
+    *** DUPLICATE MJD WARNING *** CID=757   MJD=60158.407   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=759   MJD=61272.298   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=759   MJD=61303.237   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=762   MJD=60661.175   BAND=i   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 777               NMJD(found,stored)=  53   53
+       Analyze ISN=     777  for 777             NMJD(stored,cuts)=  53->  53
+
+    *** DUPLICATE MJD WARNING *** CID=779   MJD=61369.220   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=801   MJD=61001.107   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=807   MJD=60897.381   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=811   MJD=60542.295   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=837   MJD=60145.375   BAND=g   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=849   MJD=60179.365   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=858   MJD=60335.133   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=871   MJD=60661.158   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=897   MJD=60961.190   BAND=g   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=914   MJD=61286.301   BAND=i   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1066              NMJD(found,stored)=   5    5
+       Analyze ISN=    1066  for 1066            NMJD(stored,cuts)=   5->   5
+
+    *** DUPLICATE MJD WARNING *** CID=1073   MJD=60557.260   BAND=u   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1074   MJD=60193.340   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1075   MJD=60215.247   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1080   MJD=60952.253   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1083   MJD=60942.215   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1086   MJD=60249.256   BAND=i   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1088              NMJD(found,stored)=  56   56
+       Analyze ISN=    1088  for 1088            NMJD(stored,cuts)=  56->  56
+
+    *** DUPLICATE MJD WARNING *** CID=1096   MJD=61080.095   BAND=g   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1096   MJD=61095.062   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1098   MJD=60932.277   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1099   MJD=60207.249   BAND=i   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1104   MJD=60961.204   BAND=g   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1110              NMJD(found,stored)=  69   69
+
+    *** DUPLICATE MJD WARNING *** CID=1110   MJD=60568.249   BAND=Y   FIELD=VOID  
+
+       Analyze ISN=    1110  for 1110            NMJD(stored,cuts)=  69->  69
+
+    *** DUPLICATE MJD WARNING *** CID=1113   MJD=61327.165   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1114   MJD=61071.056   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1116   MJD=61324.204   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1119   MJD=61028.084   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1119   MJD=61044.123   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1120   MJD=60216.251   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1126   MJD=61278.306   BAND=Y   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1132              NMJD(found,stored)=  20   20
+       Analyze ISN=    1132  for 1132            NMJD(stored,cuts)=  20->  20
+
+    *** DUPLICATE MJD WARNING *** CID=1163   MJD=60966.163   BAND=u   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1230   MJD=61366.044   BAND=z   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1233   MJD=60584.208   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1264   MJD=61337.168   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1269   MJD=61322.241   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1280   MJD=60536.296   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1280   MJD=60605.182   BAND=r   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1282   MJD=61251.343   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1295   MJD=60952.196   BAND=Y   FIELD=VOID  
+
+
+    *** DUPLICATE MJD WARNING *** CID=1319   MJD=60531.329   BAND=r   FIELD=VOID  
+
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1421              NMJD(found,stored)=  31   31
+       Analyze ISN=    1421  for 1421            NMJD(stored,cuts)=  31->  31
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1443              NMJD(found,stored)=  20   20
+       Analyze ISN=    1443  for 1443            NMJD(stored,cuts)=  20->  20
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1465              NMJD(found,stored)=  54   54
+       Analyze ISN=    1465  for 1465            NMJD(stored,cuts)=  54->  54
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1487              NMJD(found,stored)=  56   56
+       Analyze ISN=    1487  for 1487            NMJD(stored,cuts)=  56->  56
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1776              NMJD(found,stored)=  23   23
+       Analyze ISN=    1776  for 1776            NMJD(stored,cuts)=  23->  23
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1798              NMJD(found,stored)=  15   15
+       Analyze ISN=    1798  for 1798            NMJD(stored,cuts)=  15->  15
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1820              NMJD(found,stored)=  54   54
+       Analyze ISN=    1820  for 1820            NMJD(stored,cuts)=  54->  54
+  *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+     Done Reading CID 1842              NMJD(found,stored)=  41   41
+       Analyze ISN=    1842  for 1842            NMJD(stored,cuts)=  41->  41
+  
+  ######################################################## 
+    CALL USREND
+  ######################################################## 
+  
+   Close STAGE07_DC2fakes_REDCOV100.SNANA.TEXT 
+  
+  ######################################################## 
+    Job Summary                                                                                                             
+  ######################################################## 
+  
+                          Number of SN passing incremental cut for
+CUTSTAT:  CUT-NAME      ITYPE=     ALL       0  
+ ------------------------------------------------------------------------
+CUTSTAT:  CID                     2037    2037  
+  
+  
+ ------------------------------------------------------------------------
+
+    Finished processing    2037 SN after snana  cuts   (   2037 before cuts)
+  
+    Bad PHOTOMETRY FLAG for        0 of    79508 epochs
+  
+    TOTAL  INIT   TIME :            0  seconds 
+    TOTAL PROCESS TIME :    0.03 minutes     (  0.00 sec per SN)
+  
+ @-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-
+ @-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-
+
+    SEVERE WARNING: FOUND 4423 Duplicate MJD+BAND   ( 5.563%)
+                    480 Duplicate MJDs are unique
+
+ @-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-
+ @-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-
+  
+    ENDING PROGRAM GRACEFULLY. 

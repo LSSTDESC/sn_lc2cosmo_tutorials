@@ -1,0 +1,17 @@
+ &SNLCINP
+
+ ! auto-generated input
+   PRIVATE_DATA_PATH    = '$SNANA_LSST_ROOT/lcmerge' 
+   VERSION_PHOTOMETRY   = 'STAGE03_simgen_fakes_bos0' 
+   KCOR_FILE            = '$SNANA_LSST_ROOT/kcor/2017-04_approx/kcor_LSST.fits' 
+   SNTABLE_LIST         = 'SNANA OUTLIER(nsig:0.0)' 
+   TEXTFILE_PREFIX      = 'STAGE04_fluxTable_SIM' 
+
+ ! user-generated input
+   PHOTFLAG_MSKREJ = 0,0
+   OPT_SETPKMJD    = -9
+   CUTWIN_ERRTEST  = 0.5, 2.0
+   CUTWIN_SIMPULL  = -4, 4
+   PHOTFLAG_BITLIST_REJECT = 16
+   SIMVAR_CUTWIN_STRING = 'NEP_SIM_MAGOBS 4 9999'
+ &END

@@ -1,0 +1,59 @@
+DOCUMENTATION:
+  PURPOSE: correct flux uncertainty for FAKES and DATA
+  REF:
+  - AUTHOR: Kessler et al, 2019 (DES3YR sims, see Sec 6.4)
+    ADS:    https://ui.adsabs.harvard.edu/abs/2019MNRAS.485.1171K
+  INTENT:  Test
+  USAGE_CODE:  snlc_fit.exe
+  USAGE_KEY:   FLUXERRMODEL_FILE in &SNLCINP
+  NOTES:
+  - map dependence is BAND PSF
+  - Nobs(FAKE) = 78525 
+  - map-create command =  /global/cfs/cdirs/lsst/groups/SN/snana/SNANA/util/make_fluxerr_model.py fluxerr_model.input 
+  - created by user=bos0109 on HOST=cori07  
+    
+DOCUMENTATION_END:
+
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: u 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.395    # N_FAKE = 3308  
+ENDMAP:
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: g 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.206    # N_FAKE = 8445  
+ENDMAP:
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: r 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.140    # N_FAKE = 22263  
+ENDMAP:
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: i 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.113    # N_FAKE = 22473  
+ENDMAP:
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: z 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.070    # N_FAKE = 10189  
+ENDMAP:
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: Y 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.077    # N_FAKE = 11847  
+ENDMAP:
+

@@ -1,0 +1,57 @@
+# Data/sim chi2red vs. Reduced Flux Correlation 
+
+REDCOV:   # band  rho  chi2red(data/sim)
+  - u   0.00     0.60   
+  - g   0.00     3.50   
+  - r   0.00     6.02   
+  - i   0.00     1.22   
+  - z   0.00     0.50   
+  - Y   0.00     1.43   
+  - ALL 0.00     5.18   # include ALL bands for chi2red
+  - SUM 0.00    13.29   # sum of chi2red over bands
+
+  - u   0.20     0.96   
+  - g   0.20     2.87   
+  - r   0.20     4.83   
+  - i   0.20     1.40   
+  - z   0.20     0.50   
+  - Y   0.20     1.64   
+  - ALL 0.20     5.16   # include ALL bands for chi2red
+  - SUM 0.20    12.20   # sum of chi2red over bands
+
+  - u   0.40     1.45   
+  - g   0.40     2.52   
+  - r   0.40     2.80   
+  - i   0.40     1.40   
+  - z   0.40     0.29   
+  - Y   0.40     1.85   
+  - ALL 0.40     4.70   # include ALL bands for chi2red
+  - SUM 0.40    10.31   # sum of chi2red over bands
+
+  - u   0.60     0.76   
+  - g   0.60     1.57   
+  - r   0.60     1.43   
+  - i   0.60     0.56   
+  - z   0.60     0.44   
+  - Y   0.60     0.62   
+  - ALL 0.60     2.29   # include ALL bands for chi2red
+  - SUM 0.60     5.38   # sum of chi2red over bands
+
+  - u   0.80     1.18   
+  - g   0.80     0.94   
+  - r   0.80     1.74   
+  - i   0.80     0.24   
+  - z   0.80     0.40   
+  - Y   0.80     0.66   
+  - ALL 0.80     0.93   # include ALL bands for chi2red
+  - SUM 0.80     5.15   # sum of chi2red over bands
+
+  - u   1.00     2.12   
+  - g   1.00     1.10   
+  - r   1.00     3.10   
+  - i   1.00     1.11   
+  - z   1.00     0.51   
+  - Y   1.00     0.71   
+  - ALL 1.00     0.37   # include ALL bands for chi2red
+  - SUM 1.00     8.65   # sum of chi2red over bands
+

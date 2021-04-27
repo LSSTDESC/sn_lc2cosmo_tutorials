@@ -1,0 +1,22 @@
+GENVERSION:        STAGE03_simgen_fakes_bos0
+SIMLIB_FILE:       STAGE02_FAKES.SIMLIB
+SIMLIB_MSKOPT:     4       # stop at end of SIMLIB file
+NGENTOT_LC:        1000000  # any large number
+GENSOURCE:         RANDOM
+GENMODEL:          SIMLIB
+GENFILTERS:        ugrizY
+KCOR_FILE:         $SNANA_LSST_ROOT/kcor/2017-04_approx/kcor_LSST.fits
+HOSTLIB_FILE:      $SNDATA_ROOT/simlib/DES/V21_DES_SVA2.HOSTLIB
+HOSTLIB_MSKOPT:    258
+RANSEED:           12345 
+FORMAT_MASK:       32  # 2=TEXT  32=FITS 
+SMEARFLAG_FLUX:    1   # Poisson noise from sky+source
+SMEARFLAG_ZEROPT:  0
+OPT_MWEBV:         1  # write MWEBV to data; not applied
+GENSIGMA_MWEBV_RATIO: 0
+ 
+USE_SIMLIB_PEAKMJD:   1 
+USE_SIMLIB_REDSHIFT:  1 
+GENRANGE_PEAKMJD:     40000  80000 
+GENRANGE_REDSHIFT:    0.012  1.9 
+GENRANGE_TREST:      -100 100 

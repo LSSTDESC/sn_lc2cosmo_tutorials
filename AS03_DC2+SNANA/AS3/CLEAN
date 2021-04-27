@@ -1,0 +1,2 @@
+rm OUT_DEBUG* 
+rm OUT_OPTIMIZE*

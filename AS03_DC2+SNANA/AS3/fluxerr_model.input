@@ -1,0 +1,36 @@
+# input file for
+#    make_fluxerr_model.py  fluxerr_model.input
+#
+# Create flux-uncertainty scale correction vs. SBMAG and/or PSF.
+# A separate map is created for data(fakes) and sim.
+#
+
+OUTDIR:           OUT3_FLUXERRMODEL
+
+VERSION_FAKES:    $SNANA_LSST_ROOT/lcmerge/DC2_run22i_FITS
+HOSTLIB_FILE:     $SNDATA_ROOT/simlib/DES/V21_DES_SVA2.HOSTLIB
+KCOR_FILE:        $SNANA_LSST_ROOT/kcor/2017-04_approx/kcor_LSST.fits
+
+OPT_SIMLIB:  2  # 1=all epochs, 2=only epochs with Ftrue>0
+
+# reject extreme NSIG outliers
+CUTWIN_NSIG:  0.0  5.0
+
+EXTRA_SNLCINP_ARGS:
+  - PHOTFLAG_MSKREJ = 0,0           # waiting for PHOTFLAGS ...
+  - OPT_SETPKMJD    = -9            # dont waste time estimating PKMJD
+  - CUTWIN_ERRTEST  = 0.5, 2.0      # reject crazy stuff
+  - CUTWIN_SIMPULL  = -4, 4         # reject 4 sigma outliers
+  - PHOTFLAG_BITLIST_REJECT = 16    # reject epochs with these PHOTFLAG bits
+  - SIMVAR_CUTWIN_STRING = 'NEP_SIM_MAGOBS 4 9999' # at least 4 trueFlux obs
+
+#  - MXEVT_PROCESS = 1500
+
+FLUXERRMAP_BINS:   # VARNAME(OUTLIER table)  NBIN  MIN  MAX
+  - BAND                 # auto compute bins
+  - PSF   1  1.0  5.0    # 1 PSF bin -> 1 correction per band
+
+#  - PSF   2  1.2  3.2   # no trend with 2 PSF bins; note Y band stats per bin
+#  - SBMAG   8  20 28    # surface brightness at SN location
+
+

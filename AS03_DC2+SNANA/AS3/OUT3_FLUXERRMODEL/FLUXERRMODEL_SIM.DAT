@@ -1,0 +1,59 @@
+DOCUMENTATION:
+  PURPOSE: correct flux uncertainty for SIM
+  REF:
+  - AUTHOR: Kessler et al, 2019 (DES3YR sims, see Sec 6.4)
+    ADS:    https://ui.adsabs.harvard.edu/abs/2019MNRAS.485.1171K
+  INTENT:  Test
+  USAGE_CODE:  snana.exe and snlc_sim.exe
+  USAGE_KEY:   FLUXERRMODEL_FILE
+  NOTES:
+  - map dependence is BAND PSF
+  - Nobs(FAKE,SIM) = 78525, 77228
+  - map-create command =  /global/cfs/cdirs/lsst/groups/SN/snana/SNANA/util/make_fluxerr_model.py fluxerr_model.input 
+  - created by user=bos0109 on HOST=cori07  
+    
+DOCUMENTATION_END:
+
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: u 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.472    # N_[FAKE,SIM] = 3308 , 3471 
+ENDMAP:
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: g 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.243    # N_[FAKE,SIM] = 8445 , 8280 
+ENDMAP:
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: r 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.189    # N_[FAKE,SIM] = 22263 , 21924 
+ENDMAP:
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: i 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.148    # N_[FAKE,SIM] = 22473 , 22072 
+ENDMAP:
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: z 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.070    # N_[FAKE,SIM] = 10189 , 9966 
+ENDMAP:
+
+
+MAPNAME: FLUXERR_SCALE 
+BAND: Y 
+VARNAMES: PSF   ERRSCALE
+ROW:   3.0000     1.080    # N_[FAKE,SIM] = 11847 , 11515 
+ENDMAP:
+
