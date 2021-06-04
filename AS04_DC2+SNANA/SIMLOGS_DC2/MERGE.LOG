@@ -1,0 +1,21 @@
+FAIL_SUMMARY:
+   NJOB_FAIL(TOTAL):           0  # 
+
+# STATE  IVER     GENVERSION     NLC_GEN NLC_WRITE NSPEC_WRITE  CPU  NSPLIT    
+SPLIT: 
+  - ['DONE', 0, 'TMP_kess_DC2SIM_StarterKit_Data_AS4_SNIaMODEL0', 24000, 4540, 0, 4.3, 40]
+  - ['DONE', 1, 'TMP_kess_DC2SIM_StarterKit_BiasCor_AS4_SNIaMODEL0', 2400000, 452559, 0, 541.4, 40]
+
+# STATE     IVER  GENVERSION     NLC_GEN NLC_WRITE NSPEC_WRITE CPU    
+MERGE: 
+  - ['DONE', 0, 'DC2SIM_StarterKit_Data_AS4', 24000, 4540, 0, 4.3]
+  - ['DONE', 1, 'DC2SIM_StarterKit_BiasCor_AS4', 2400000, 452559, 0, 541.4]
+
+SURVEY:         LSST 
+IDSURVEY:       12 
+UNIT_TIME:      minutes  
+WALL_TIME:      17.81   
+TMIN_PENDING:   0.50  
+TMAX_PENDING:   0.60  
+CPU_SUM:        545.700  
+EFFIC_CPU:      0.766   # CPU/core/T_wall 

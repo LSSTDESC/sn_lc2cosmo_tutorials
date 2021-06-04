@@ -1,0 +1,23 @@
+FAIL_SUMMARY:
+   NJOB_FAIL(TOTAL):           0  # 
+
+# STATE  IVER     GENVERSION     NLC_GEN NLC_WRITE NSPEC_WRITE  CPU  NSPLIT      
+SPLIT: 
+  - ['DONE', 0, 'TMP_kess_DC2SIM_StarterKit_fluxerrcor0_AS3b_SNIaMODEL0', 24000, 4553, 0, 4.3, 40]
+  - ['DONE', 1, 'TMP_kess_DC2SIM_StarterKit_fluxerrcor1_AS3b_SNIaMODEL0', 24000, 4519, 0, 4.2, 40]
+  - ['DONE', 2, 'TMP_kess_DC2SIM_StarterKit_fluxerrcor2_AS3b_SNIaMODEL0', 24000, 4427, 0, 4.7, 40]
+
+# STATE     IVER  GENVERSION     NLC_GEN NLC_WRITE NSPEC_WRITE CPU      
+MERGE: 
+  - ['DONE', 0, 'DC2SIM_StarterKit_fluxerrcor0_AS3b', 24000, 4553, 0, 4.3]
+  - ['DONE', 1, 'DC2SIM_StarterKit_fluxerrcor1_AS3b', 24000, 4519, 0, 4.2]
+  - ['DONE', 2, 'DC2SIM_StarterKit_fluxerrcor2_AS3b', 24000, 4427, 0, 4.7]
+
+SURVEY:         LSST 
+IDSURVEY:       12 
+UNIT_TIME:      minutes  
+WALL_TIME:      28.60   
+TMIN_PENDING:   2.39  
+TMAX_PENDING:   25.86  
+CPU_SUM:        13.200  
+EFFIC_CPU:      0.012   # CPU/core/T_wall 

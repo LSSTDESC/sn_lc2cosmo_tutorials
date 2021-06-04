@@ -1,0 +1,118 @@
+# ==============================================
+# input file to simulate DC2 with goal of
+#  1. bias corrections for BBC
+#  2. simulatex data sets to check analysis
+# ==============================================
+
+NGENTOT_LC: 50
+GENVERSION: DC2_TEMP
+GENSOURCE:  RANDOM
+
+GENTYPE: 1
+
+# ----------------------------------------------------
+# SNIa model and populations based on our understanding of 
+# how DC2 was generated.
+
+GENMODEL:        $SNDATA_ROOT/models/SALT2/SALT2.P18_UV2IR
+GENMAG_SMEAR:       0.15   # coherent scatter for all bands & phases
+GENMAG_OFF_GLOBAL:  0.0    # 
+GENMODEL_MSKOPT:    16     # if Flam<0 then Flam=0 (forbid neg flux)
+
+# stretch and population parameters from
+#   https://github.com/rbiswas4/SNPop/blob/master/snpop/saltdists.py#L158
+GENPEAK_SALT2x1:     0.8727
+GENSIGMA_SALT2x1:    1.428 0.3587
+GENRANGE_SALT2x1:   -3.0   2.0
+
+GENPEAK_SALT2c:    -0.0475
+GENSIGMA_SALT2c:    0.04284 0.0965
+GENRANGE_SALT2c:   -0.40   0.40
+
+# D. Rubin code has alpha=0.137 and beta=3.21, 
+# but Rahul says they used a=0.11 and b=3.14
+GENPEAK_SALT2ALPHA:   0.11
+GENPEAK_SALT2BETA:    3.14
+
+# cosmological parameters from  https://arxiv.org/pdf/1907.06530.pdf :
+#   "We used a cosmological model close to the best-fit WMAP-7 parameter 
+#   set (Komatsu et al. 2011) given by wcdm = 0.1109, wb = 0.02258, 
+#   ns = 0.963, h = 0.71, sigma8 = 0.8, and w = −1.0 (and flat).
+#  --> O_M = (0.1109+0.02258)/0.71**2  = 0.265 and O_DE = 0.735
+#
+OMEGA_MATTER:  0.265
+OMEGA_LAMBDA:  0.735
+w0_LAMBDA:    -1.0
+wa_LAMBDA:     0.0
+
+# -----------------------
+
+# cadence file created from picking a few thousand random RA,DEC
+# values over DC2 footprint, and extracting all overlap CCDs.
+
+SIMLIB_FILE:     $SNANA_LSST_ROOT/simlibs/LSST_DC2_Run2.2i_WFD.SIMLIB
+SIMLIB_MSKOPT:   0  
+
+# try DES-based HOSTLIB from Vincenzi 2021 ... hopefully same universe as in DC2
+HOSTLIB_FILE:    $SNDATA_ROOT/simlib/DES/V21_DES_SVA2.HOSTLIB
+HOSTLIB_MSKOPT:  258  # 2(add Poisson noise) + 256(verbose)
+
+# ---------------------------------------------------
+
+RANSEED:        123459
+FORMAT_MASK:    32           ! 2=TEXT  32=FITS
+
+GENFILTERS:   ugrizY
+KCOR_FILE:    $SNANA_LSST_ROOT/kcor/2017-04_approx/kcor_LSST.fits
+
+# selection criteria for generation: 59580 - 60675
+GENRANGE_PEAKMJD:  59585  61445
+
+# select option for rough PEAKMJD estimate.
+# Note that OPT_SETPKMJD options can be replicated with real data.
+OPT_SETPKMJD:      16    # Fmax-clump method (ignores isolated crazy fluxes)
+#OPT_SETPKMJD:      8     # naive Fmax over all epochs
+#GENSIGMA_PEAKMJD:  2.0   # sigma (days) for Gauss smear
+
+
+DNDZ: POWERLAW 2.5E-5  1.5    # Dilday 2008
+GENRANGE_REDSHIFT:  0.02   1.00
+GENSIGMA_REDSHIFT:  0.00001
+GENRANGE_TREST:    -20.0  60.0
+SOLID_ANGLE:   0.0046     # 15 sq degrees
+
+#GENSIGMA_VPEC: 300.0  # peculiar velocity spread without correction, km/sec
+#VPEC_ERR:      300.0  # --> no correction
+
+UVLAM_EXTRAPFLUX:  500  # extrapolate fluxes down to 500 A.
+
+LENSING_PROBMAP_FILE:  $SNDATA_ROOT/models/lensing/LENSING_PROBMAP_LogNormal+MICECATv1.DAT
+
+# smear flags: 0=off, 1=on
+SMEARFLAG_FLUX:    1  # photo-stat smearing of signal, sky, etc ...
+SMEARFLAG_ZEROPT:  1  # smear zero-point with zptsig
+
+
+OPT_MWEBV:      2    # SFD98
+#OPT_MWEBV:      3    # SFD98 + Schalfly2011
+OPT_MWCOLORLAW: 99   # Fitzpatrick
+
+# 1=> software trigger 3=software & spec trigger
+APPLY_SEARCHEFF_OPT:  1
+SEARCHEFF_PIPELINE_EFF_FILE: $SNANA_LSST_ROOT/models/searcheff/SEARCHEFF_PIPELINE_LSST_DC2_Run2.2i_WFD.DAT
+
+# define pipeline logic for trigger (e.g., 2 detetions)
+SEARCHEFF_PIPELINE_LOGIC_FILE:  $SNANA_LSST_ROOT/models/searcheff/SEARCHEFF_PIPELINE_LOGIC.DAT
+
+
+APPLY_CUTWIN_OPT: 1
+CUTWIN_NEPOCH:  0 99999   # require few epochs to reject out-of-season
+NEWMJD_DIF: 0.021         # for trigger, require 30 min between detections
+
+# SIMGEN_DUMPALL gives summary for every generated event;
+# SIMGEN_DUMP    gives summary for subset passing trigger+cuts (i.e., written to disk)
+SIMGEN_DUMP:  26
+   CID LIBID SIM_EFFMASK  ZCMB ZHELIO ZCMB_SMEAR RA DEC MWEBV
+   MU  PEAKMJD  MJD_TRIGGER  DTSEASON_PEAK NOBS TRESTMIN TRESTMAX
+   SIM_c SIM_x1 SIM_x0 SIM_mB
+   PEAKMAG_u PEAKMAG_g PEAKMAG_r PEAKMAG_i PEAKMAG_z PEAKMAG_Y

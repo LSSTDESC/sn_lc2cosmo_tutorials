@@ -1,0 +1,61 @@
+
+# pippin requires minimal config with batch info, even if
+# batch info is specified in pippin yaml input.
+CONFIG:
+  BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_DEFAULT.TEMPLATE 10
+  
+#END_YAML
+
+
+# ================================================
+# below is science input for snlc_fit.exe
+
+ &SNLCINP
+   FLUXERRMODEL_FILE  = '$SNANA_LSST_ROOT/lcmerge/FLUXERRMODEL_DC2_FAKE.DAT'
+   PRIVATE_DATA_PATH  = '$SNANA_LSST_ROOT/lcmerge'  
+   VERSION_PHOTOMETRY = 'DC2_run22i_FITS'
+   PHOTFLAG_BITLIST_REJECT = 16  ! remove some outliers
+
+   SNTABLE_LIST       = 'SNANA(text:key) FITRES'
+   TEXTFILE_PREFIX    = 'OUT_DC2'
+   ROOTFILE_OUT       = 'OUT_DC2.ROOT'
+  !HFILE_OUT          = 'OUT_DC2.HBOOK'
+   ABORT_ON_NOEPOCHS  = F
+
+   KCOR_FILE = '$SNANA_LSST_ROOT/kcor/2017-04_approx/kcor_LSST.fits'
+
+   USE_MINOS      = F
+   NFIT_ITERATION = 2
+   OPT_SETPKMJD     = 20  ! 16=maxClump method; 4=> don't abort on trouble
+   OPT_MWEBV        =  2  ! SFD98
+
+   cutwin_Nepoch    =  6
+   cutwin_redshift  =  0.00,  1.0
+   cutwin_Trest     = -20.0, 50.0
+   cutwin_Trestmin  = -99.0, 0.0
+   cutwin_Trestmax  =  10.0, 200.0
+
+   CUTWIN_SNRMAX       =  4.0, 1.0E8
+   CUTWIN_NFILT_SNRMAX =  1.0, 99.
+
+   CUTWIN_SNRMAX2       = 3.0, 1.0E8
+   CUTWIN_NFILT_SNRMAX2 = 2, 99
+
+ &END
+
+ &FITINP
+     FITMODEL_NAME       = 'SALT2.P18_UV2IR' 
+     RESTLAMBDA_FITRANGE = 2500.0, 12000.0  
+     ALLOW_NEGFLUX_SALT2 = F                ! special hack for DC2 only
+
+     PRIOR_SHAPE_RANGE = -5.0, +4.0  ! flat prior to avoid craziness
+     PRIOR_MJDSIG      = 10          ! weak t0 prior to avoid craziness
+
+     FUDGEALL_ITER1_MAXFRAC = 0.05
+     
+     FITWIN_TREST = -15.0,  45.0     ! restrict epochs after 1st fit iter
+     FITWIN_SHAPE = -3.00, +3.00     ! cut on fitted x1 
+     FITWIN_COLOR = -0.30, +0.30     ! cut on fitted c
+     FITWIN_PROB  = -0.01,  1.01     ! cut on PROB(chi2,Ndof)
+     FILTLIST_FIT = 'ugrizY'         ! fit with all LSST bands
+  &END

@@ -1,0 +1,39 @@
+# generate 3 samples
+# 0) no fluxErr correction
+# 1) fluxErr scales
+# 2) fluxErr scales + REDCOV (nominal for cosmology analysis)
+#
+
+CONFIG: 
+  BATCH_INFO: sbatch  $SBATCH_TEMPLATES/SBATCH_DEFAULT.TEMPLATE 40
+  BATCH_WALLTIME:  '01:00:00'
+  RANSEED_REPEAT:   40  123459
+  RESET_CIDOFF:  2
+  FORMAT_MASK:   48                  # +32->FITS format, +16->random SNIDs
+  PATH_SNDATA_SIM:  $SNANA_LSST_SIM  # Reroute sim data to scratch
+  SIMGEN_INFILE_Ia:
+  - SIMGEN_LSST_DC2.INPUT
+  GENPREFIX:   DC2
+
+# include error scale for all sims
+GENOPT_GLOBAL: {}
+
+GENVERSION_LIST:
+
+  - GENVERSION: DC2SIM_StarterKit_fluxerrcor0_AS3b
+    GENOPT:
+      NGENTOT_LC: 600
+      
+  - GENVERSION: DC2SIM_StarterKit_fluxerrcor1_AS3b
+    GENOPT:
+      NGENTOT_LC: 600
+      FLUXERRMODEL_FILE: $SNANA_LSST_ROOT/lcmerge/FLUXERRMODEL_DC2_SIM.DAT
+
+  - GENVERSION: DC2SIM_StarterKit_fluxerrcor2_AS3b
+    GENOPT:
+      NGENTOT_LC: 600
+      FLUXERRMODEL_FILE: $SNANA_LSST_ROOT/lcmerge/FLUXERRMODEL_DC2_SIM.DAT
+      FLUXERRMODEL_REDCOV:  u:0.6,g:0.8,r:0.8,i:0.99,z:0.99,Y:0.99
+
+      
+#END_YAML

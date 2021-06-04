@@ -1,0 +1,35 @@
+
+CONFIG: 
+  BATCH_INFO: sbatch  $SBATCH_TEMPLATES/SBATCH_DEFAULT.TEMPLATE 40
+#  BATCH_INFO: sbatch  $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+  BATCH_WALLTIME:  '02:00:00'
+  RANSEED_REPEAT:   40  123459
+  RESET_CIDOFF:  2
+  FORMAT_MASK:   48                  # +32->FITS format, +16->random SNIDs
+  PATH_SNDATA_SIM:  $SNANA_LSST_SIM  # Reroute sim data to scratch
+  SIMGEN_INFILE_Ia:
+  - SIMGEN_LSST_DC2.INPUT
+  GENPREFIX:   DC2
+
+# include error scale for all sims
+GENOPT_GLOBAL:
+  FLUXERRMODEL_FILE:    $SNANA_LSST_ROOT/lcmerge/FLUXERRMODEL_DC2_SIM.DAT
+  FLUXERRMODEL_REDCOV:  u:0.6,g:0.8,r:0.8,i:0.99,z:0.99,Y:0.99
+
+GENVERSION_LIST:
+
+# generate data set with x few data stats
+# Use simgen-dumpall for data (not biasCor) to enable measuring efficiency.
+  - GENVERSION: DC2SIM_StarterKit_Data_AS4
+    GENOPT:
+      NGENTOT_LC: 600
+      SIMGEN_DUMPALL:  SWITCH
+      
+# generate large biasCor for BBC5D; use alpha+beta grid
+  - GENVERSION: DC2SIM_StarterKit_BiasCor_AS4
+    GENOPT:
+      NGENTOT_LC:  60000
+      BIASCOR_SALT2ALPHA_GRID: 0.08  0.16
+      BIASCOR_SALT2BETA_GRID:  2.5   3.6
+
+#END_YAML

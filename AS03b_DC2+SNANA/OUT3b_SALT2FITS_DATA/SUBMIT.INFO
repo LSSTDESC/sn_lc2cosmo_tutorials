@@ -1,0 +1,55 @@
+
+# Required info 
+CWD:         /global/cfs/cdirs/snana/SURVEYS/LSST/ROOT/starterKits/DC2+SNANA/AS3b
+ARG_LIST:    LCFIT_DATA.NML
+TIME_STAMP_NSEC:   68333    # submit time; Nsec since midnight
+TIME_STAMP_SUBMIT: 2021-05-03 18:58:53.778794    
+SUBMIT_MODE:       BATCH 
+SCRIPT_DIR:       /global/cfs/cdirs/snana/SURVEYS/LSST/ROOT/starterKits/DC2+SNANA/AS3b/OUT3b_SALT2FITS_DATA/SPLIT_JOBS_LCFIT 
+DONE_STAMP_LIST:  ['ALL.DONE'] 
+CLEANUP_FLAG:     1 
+N_JOB_TOT:        8     # total number of jobs (excludes sym links)
+N_DONE_TOT:       8     # total number of done files (includes sym links)
+N_JOB_SPLIT:      1     # njob to merge per task after processing
+N_CORE:           12     # number of cores 
+N_CORE_WITH_JOBS: 8   # n_core with jobs 
+FORCE_CRASH_PREP:    False 
+FORCE_CRASH_MERGE:   False
+FORCE_ABORT_MERGE:   False
+
+
+# Fit info
+N_JOB_LINK:          0   # Njob with link to FITOPT000
+JOBFILE_WILDCARD:    '*SPLIT*' 
+TABLE_FORMATS:       ['TEXT', 'HBOOK', 'ROOT'] 
+USE_TABLE_FORMAT:    [True, False, True] 
+IGNORE_FITOPT:       False
+PRIVATE_DATA_PATH:   $SNANA_LSST_ROOT/lcmerge 
+APPEND_TABLE_VARLIST:   RA DEC SNRMAX_u SNRMAX_g SNRMAX_r SNRMAX_i SNRMAX_z SNRMAX_Y FLUXCALMAX_u FLUXCALMAX_g FLUXCALMAX_r FLUXCALMAX_i FLUXCALMAX_z FLUXCALMAX_Y  m0obs_u m0obs_g m0obs_r m0obs_i m0obs_z m0obs_Y TrestMIN TrestMAX T0GAPMAX TGAPMAX TrestRange 
+
+VERSION_LIST: 
+  - DC2_run22i_FITS
+  - DC2SIM_StarterKit_fluxerrcor0_AS3b
+  - DC2SIM_StarterKit_fluxerrcor1_AS3b
+  - DC2SIM_StarterKit_fluxerrcor2_AS3b
+
+FITOPT_LIST: 
+  - ['FITOPT000', None, ''] 
+  - ['FITOPT001', None, 'FLUXERRMODEL_FILE $SNANA_LSST_ROOT/lcmerge/FLUXERRMODEL_DC2_FAKE.DAT'] 
+
+LINK_FITOPT000_LIST: []
+
+
+SBATCH_LIST:  # [CPU,PID,JOB_NAME] 
+  - [   0, 42322828, LCFIT_DATA.NML-CPU0000 ] 
+  - [   1, 42322831, LCFIT_DATA.NML-CPU0001 ] 
+  - [   2, 42322833, LCFIT_DATA.NML-CPU0002 ] 
+  - [   3, 42322835, LCFIT_DATA.NML-CPU0003 ] 
+  - [   4, 42322837, LCFIT_DATA.NML-CPU0004 ] 
+  - [   5, 42322838, LCFIT_DATA.NML-CPU0005 ] 
+  - [   6, 42322840, LCFIT_DATA.NML-CPU0006 ] 
+  - [   7, 42322842, LCFIT_DATA.NML-CPU0007 ] 
+  - [   8, 42322844, LCFIT_DATA.NML-CPU0008 ] 
+  - [   9, 42322846, LCFIT_DATA.NML-CPU0009 ] 
+  - [  10, 42322847, LCFIT_DATA.NML-CPU0010 ] 
+  - [  11, 42322848, LCFIT_DATA.NML-CPU0011 ] 

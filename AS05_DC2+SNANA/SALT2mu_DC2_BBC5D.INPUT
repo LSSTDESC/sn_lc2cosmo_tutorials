@@ -1,0 +1,87 @@
+#
+# Read SALT2 fit parameters and fit for distances in redshift bins
+# using BBC technique from https://arxiv.org/abs/1610.04677
+#
+
+CONFIG:
+  BATCH_INFO: sbatch  $SBATCH_TEMPLATES/SBATCH_DEFAULT.TEMPLATE  4
+  BATCH_WALLTIME:  '00:30:00'
+  
+# with large 5D biasCor to read and process, let's save CPU time and select only
+# the relevant FITOPTxMUOPT (default is entire FITOPT x MUOPT matrix)
+  FITOPTxMUOPT: 
+  - 0+0    # either nominal FITOPT000 or MUOPT000
+
+# give wfit options to trigger post-processing with wfit
+# Use WMAP-style prior,	but with exact sim parameters and half the error.
+  WFITMUDIF_OPT: -cmb_sim  -om_sim 0.265  -sigma_Rcmb 0.01 
+
+
+#END_YAML
+
+# =================================================================
+# note that input FITRES files are gzipped, but no need to specify .gz
+
+datafile=none
+prefix=OUT_DUMMY
+
+# Here we select 5D biasCor with COVSCALE to match scatter in z,c bins.
+# see all biasCor options with
+#    grep MASK_BIASCOR $SNANA_DIR/src/SALT2mu.c | grep def
+opt_biascor=48  # 16(5D) + 32(COVSCALE)
+
+simfile_biascor=dummary
+
+surveygroup_biascor='LSST(zbin=.05)'
+
+#simfile_ccprior=NONE
+
+minos=0          # faster fit with MIGRAD errors
+powzbin=2.0      # bin size ~ (1+z)^2
+blindflag=0
+ndump_nobiascor=20  # dump first 20 events that have no biasCor
+lensing_zpar=0.055
+min_per_zbin=1
+redchi2_tol=.01
+fitflag_sigmb=2
+sig1=0.15    # start with sigint=0.15, then iterate
+zmin=0.01
+zmax=0.90
+nzbin=10
+x1min=-3.0
+x1max=+3.0
+cmax=+0.3
+cmin=-0.3
+CUTWIN  x1ERR     0.    2.0
+CUTWIN  PKMJDERR  0.    3.0
+CUTWIN  FITPROB   0.05  1.0
+errmask_write=0
+p1=0.14
+p2=3.1
+p3=0.0
+p4=0.0
+p5=0.0
+p6=0.0
+p7=0.0
+p8=0.0
+p9=0.735
+p10=0.0
+p11=-1.0
+p12=0.0
+p13=0.0
+u1=1
+u2=1
+u3=0
+u4=0
+u5=0
+u6=0
+u7=0
+u8=0
+u9=0
+u10=0
+u11=0
+u12=0
+u13=0
+h0=70.0
+mag0=-30.00
+uave=1

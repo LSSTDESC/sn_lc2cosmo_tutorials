@@ -1,0 +1,22 @@
+FAIL_SUMMARY:
+   NJOB_FAIL(TOTAL):           0  # 
+
+# STATE   VERSION  FITOPT  NEVT_ALL  NEVT_SNANACUT NEVT_FITCUT  CPU    
+MERGE: 
+  - ['DONE', 'DC2_run22i_FITS', 'FITOPT000', 2182, 1626, 1218, 5.1]
+  - ['DONE', 'DC2_run22i_FITS', 'FITOPT001', 2182, 1555, 1178, 4.3]
+  - ['DONE', 'DC2SIM_StarterKit_fluxerrcor0_AS3b', 'FITOPT000', 4553, 4012, 3473, 10.8]
+  - ['DONE', 'DC2SIM_StarterKit_fluxerrcor0_AS3b', 'FITOPT001', 4553, 4012, 3473, 10.6]
+  - ['DONE', 'DC2SIM_StarterKit_fluxerrcor1_AS3b', 'FITOPT000', 4519, 3993, 3318, 13.2]
+  - ['DONE', 'DC2SIM_StarterKit_fluxerrcor1_AS3b', 'FITOPT001', 4519, 3993, 3318, 10.7]
+  - ['DONE', 'DC2SIM_StarterKit_fluxerrcor2_AS3b', 'FITOPT000', 4427, 3870, 3106, 10.6]
+  - ['DONE', 'DC2SIM_StarterKit_fluxerrcor2_AS3b', 'FITOPT001', 4427, 3870, 3106, 10.6]
+
+SURVEY:         LSST 
+IDSURVEY:       12 
+UNIT_TIME:      minutes  
+WALL_TIME:      17.93   
+TMIN_PENDING:   3.00  
+TMAX_PENDING:   3.95  
+CPU_SUM:        75.900  
+EFFIC_CPU:      0.529   # CPU/core/T_wall 
