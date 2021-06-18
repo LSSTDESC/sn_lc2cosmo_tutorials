@@ -1,0 +1,24 @@
+
+To handle unanticipated data updates bewtween official releases,
+here is an illustration using the override feature:
+
+  ls $SNANA_LSST_ROOT/lcmerge/DC2_run22i_FITS/OVERRIDE*
+
+OVERRIDE.LIST is a list of all override files, and this example
+shows overrides for a few redshifts, coordinates, and host galaxies.
+At the start of each data file release, OVERRIDE.LIST is empty ..
+and then it may grow slowly as data-file mistakes are found.
+The FITS files and OVERRIDE files should be maintained by a
+specific sub-group with clear responsibility.
+[SNANA does not read these OVERRIDE files (yet?), so the AS1-5
+ examples are not disturbed by these extra files]
+
+A tricky issue concerns archiving data for a publication or for public
+results via seminar of conferences. Do we allow results that use
+override files, or require that public results are based on a clean
+data version with no overrides? What if an analysis has three
+stages, and each stage was performed on a different data version?
+Do we require that all analysis stages be repeated on a single
+data version ? Using a single data version is ideal, but students
+often use labor intensive methods, not realizing that it might have
+to be repeated later.

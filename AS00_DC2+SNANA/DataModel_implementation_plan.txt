@@ -1,0 +1,50 @@
+
+    Discussion: Data Tagging and Overrides
+             Jun 18 2021
+
+An explicit example of data-override implementation
+is on Cori:
+   $SNANA_LSST/ROOT/starterKits/DC2+SNANA/AS0/OVERRIDE_EXAMPLE.TXT
+
+This examples allows stability by analyzing FITS data files from
+original data release (DR), and it allows using supplmental OVERRIDE
+files that includes fixes between data releases. With each new DR,
+the override list is reset to empty. Below are issues from today's
+discussion.
+
+Challenges:
+  * knowing if/what overrides are used in any particular analysis
+     -> each software reader (SNcosmo,SNANA ...) should write
+        a standard "this is what I read" block in stdout.
+  * tracking asyncronous code tags and DR tags
+  * analysis leads should be prepared to re-run analysis on tagged DR
+    before a Significant Result Presentation (SRP) such as publication,
+    prelim presentation at conference or collab meeting, sprint week, etc ...
+  * Data team (e.g., 2 people for 3 month shifts) should have tools
+    to rapidly make new DR as needed for finalizing analysis; i.e.,
+    people should not be forced to wait a long time to re-analyze on
+    a newly minted DR tag.
+  *   
+DR properties:
+  * no overrides
+  * change-log w.r.t. previous version
+  * passes monitoring and validation tests (separate discussion for later)
+  * higher level pub doc should match publication to DR tag  
+     [what about matching SRP (not publication) to DR tag?]
+
+Code readers:
+ * Need standard python I/O.
+ * SNANA (c-code)
+ * All code readers should write standard description (tag, overrides ...)
+   to STDOUT.
+
+Tutorial notebooks ?
+
+Significant Result Presentation :
+  Who decides if data version/tag is adequate, or of analysis needs
+  to be re-run on current data tag ? IR and/or WG leaders ?
+  What policy underlies such a decision ?
+  
+DESC/SN leadership needs to set culture of preparing for
+rapid reproducibility.
+
